@@ -1,0 +1,170 @@
+{
+  "schema_version": "2026.10.27",
+  "domain": "apicostaudit.com",
+  "license": "CC-BY-4.0",
+  "llm_models": [
+    {
+      "id": "gpt-5",
+      "provider": "OpenAI",
+      "model": "GPT-5 / GPT-4o Flagship",
+      "input_1m_usd": 2.5,
+      "output_1m_usd": 10.0,
+      "cached_input_1m_usd": 1.25,
+      "batch_discount_pct": 50,
+      "context_window": "128k-400k"
+    },
+    {
+      "id": "claude-4-5-sonnet",
+      "provider": "Anthropic",
+      "model": "Claude 4.5 Sonnet / 3.7 Sonnet",
+      "input_1m_usd": 3.0,
+      "output_1m_usd": 15.0,
+      "cached_input_1m_usd": 0.3,
+      "batch_discount_pct": 50,
+      "context_window": "200k"
+    },
+    {
+      "id": "claude-4-5-opus",
+      "provider": "Anthropic",
+      "model": "Claude 4.5 Opus",
+      "input_1m_usd": 15.0,
+      "output_1m_usd": 75.0,
+      "cached_input_1m_usd": 1.5,
+      "batch_discount_pct": 50,
+      "context_window": "200k"
+    },
+    {
+      "id": "gemini-2-5-pro",
+      "provider": "Google Vertex / AI Studio",
+      "model": "Gemini 2.5 Pro",
+      "input_1m_usd": 1.25,
+      "output_1m_usd": 10.0,
+      "cached_input_1m_usd": 0.31,
+      "batch_discount_pct": 50,
+      "context_window": "2M"
+    },
+    {
+      "id": "gemini-2-5-flash",
+      "provider": "Google Vertex / AI Studio",
+      "model": "Gemini 2.5 Flash",
+      "input_1m_usd": 0.15,
+      "output_1m_usd": 0.6,
+      "cached_input_1m_usd": 0.0375,
+      "batch_discount_pct": 50,
+      "context_window": "1M"
+    },
+    {
+      "id": "deepseek-v3-r1",
+      "provider": "DeepSeek / Together / Fireworks",
+      "model": "DeepSeek V3 / R1",
+      "input_1m_usd": 0.27,
+      "output_1m_usd": 1.1,
+      "cached_input_1m_usd": 0.07,
+      "batch_discount_pct": 50,
+      "context_window": "128k"
+    },
+    {
+      "id": "llama-4-maverick",
+      "provider": "Meta Llama 4 (Groq / Together / Fireworks)",
+      "model": "Llama 4 Maverick / 3.3 70B",
+      "input_1m_usd": 0.2,
+      "output_1m_usd": 0.6,
+      "cached_input_1m_usd": 0.1,
+      "batch_discount_pct": 50,
+      "context_window": "128k"
+    }
+  ],
+  "voice_providers": [
+    {
+      "id": "retell-all-in",
+      "provider": "Retell AI",
+      "stack": "Managed Voice Agent (Platform + Deepgram STT + ElevenLabs TTS + LLM)",
+      "per_min_usd": 0.11,
+      "concurrency_included": 20,
+      "telephony_per_min_usd": 0.015
+    },
+    {
+      "id": "vapi-unbundled",
+      "provider": "Vapi",
+      "stack": "Unbundled Orchestrator ($0.05/min) + STT ($0.01) + LLM ($0.03) + TTS ($0.04) + SIP ($0.015)",
+      "per_min_usd": 0.145,
+      "concurrency_included": 10,
+      "telephony_per_min_usd": 0.015
+    },
+    {
+      "id": "openai-realtime",
+      "provider": "OpenAI Realtime API",
+      "stack": "Native Speech-to-Speech ($0.06/min audio in + $0.24/min audio out)",
+      "per_min_usd": 0.18,
+      "concurrency_included": 50,
+      "telephony_per_min_usd": 0.015
+    },
+    {
+      "id": "cascaded-diy",
+      "provider": "Direct Cascaded Stack",
+      "stack": "Deepgram Nova-3 ($0.0043/min) + Gemini 2.5 Flash ($0.004/min) + ElevenLabs Flash ($0.035/min) + Twilio SIP ($0.014/min)",
+      "per_min_usd": 0.058,
+      "concurrency_included": 100,
+      "telephony_per_min_usd": 0.014
+    }
+  ],
+  "gpu_vector_providers": [
+    {
+      "id": "pinecone-serverless",
+      "provider": "Pinecone Serverless",
+      "category": "Vector DB",
+      "storage_gb_mo_usd": 0.33,
+      "read_1m_ru_usd": 8.25,
+      "write_1m_wu_usd": 2.0
+    },
+    {
+      "id": "qdrant-cloud",
+      "provider": "Qdrant Cloud",
+      "category": "Vector DB",
+      "storage_gb_mo_usd": 0.25,
+      "read_1m_ru_usd": 4.5,
+      "write_1m_wu_usd": 1.5
+    },
+    {
+      "id": "runpod-h100",
+      "provider": "RunPod Serverless / Pods",
+      "category": "GPU Cloud",
+      "h100_hr_usd": 2.69,
+      "a100_hr_usd": 1.39,
+      "l40s_hr_usd": 1.14
+    },
+    {
+      "id": "digitalocean-h100",
+      "provider": "DigitalOcean GPU Droplets",
+      "category": "GPU Cloud",
+      "h100_hr_usd": 2.99,
+      "a100_hr_usd": 1.59,
+      "l40s_hr_usd": 1.29
+    },
+    {
+      "id": "vast-ai-h100",
+      "provider": "Vast.ai On-Demand",
+      "category": "GPU Cloud",
+      "h100_hr_usd": 1.89,
+      "a100_hr_usd": 0.99,
+      "l40s_hr_usd": 0.79
+    }
+  ],
+  "b2b_api_providers": [
+    {
+      "id": "twilio-sms",
+      "provider": "Twilio Programmable SMS & Verify",
+      "base_unit": "$0.0083/SMS segment + $0.0035 carrier 10DLC fee + $0.05/Verify OTP"
+    },
+    {
+      "id": "auth0-workos",
+      "provider": "Auth0 vs Clerk vs WorkOS B2B Auth",
+      "base_unit": "Clerk $0.02/MAU (>10k) + $100/org vs WorkOS $125/mo per Enterprise SAML SSO connection"
+    },
+    {
+      "id": "plaid-stripe-id",
+      "provider": "Plaid Auth/Balance & Stripe Identity",
+      "base_unit": "Plaid Auth $1.50/link + Balance $0.10/call \u00b7 Stripe Identity $1.50/verification"
+    }
+  ]
+}

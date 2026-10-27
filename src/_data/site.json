@@ -1,0 +1,24 @@
+{
+  "name": "API Cost Audit",
+  "legalEntity": "Research Triangle Park AI Transformation LLC (EIN 42-3641177)",
+  "url": "https://apicostaudit.com",
+  "domain": "apicostaudit.com",
+  "tagline": "Independent B2B LLM Token, Prompt Caching, Batch API, Voice AI Per-Minute, Serverless GPU, Vector DB & B2B API TCO Auditor (2026 Verified Rate Cards)",
+  "updated": "2026-10-27",
+  "posthogKey": "phc_v89RLR6JhvrN3Hy7mmWPBSQqVGwFAr7dPLpLan9Pjky8",
+  "posthogProjectId": "685354",
+  "githubRepoUrl": "https://github.com/rtpait/apicostaudit",
+  "affiliateNetworks": {
+    "cjCid": "8108003",
+    "awinId": "3133124",
+    "rakutenSid": "4767884",
+    "impactId": "714f5d78-7e2a-43b7-8971-27919db894fa"
+  },
+  "primaryPartner": "Pinecone Serverless",
+  "primaryPartnerUrl": "https://www.pinecone.io/pricing/?utm_source=apicostaudit.com&utm_medium=affiliate",
+  "secondaryPartner": "ElevenLabs API",
+  "secondaryPartnerUrl": "https://elevenlabs.io/pricing?utm_source=apicostaudit.com&utm_medium=affiliate",
+  "proExportPriceMonthly": 29,
+  "proExportPass7Day": 9,
+  "freeCalcRunsLimit": 3
+}

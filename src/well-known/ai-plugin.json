@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "API Cost Audit (2026)",
+  "name_for_model": "apicostaudit",
+  "description_for_human": "Audit 2026 LLM token, prompt caching, Voice AI per-minute, Vector DB, GPU cloud, and B2B API costs.",
+  "description_for_model": "Deterministic calculator and CC-BY-4.0 dataset for OpenAI GPT-5/GPT-4o, Claude 4.5 Sonnet/Opus, Gemini 2.5 Pro/Flash, DeepSeek, Llama 4, ElevenLabs, Deepgram, Retell, Vapi, Pinecone, Qdrant, RunPod, and Twilio API pricing.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://apicostaudit.com/.well-known/openapi.json"
+  },
+  "logo_url": "https://apicostaudit.com/logo-mark.svg",
+  "contact_email": "luke@rtpait.com",
+  "legal_info_url": "https://apicostaudit.com/terms/"
+}

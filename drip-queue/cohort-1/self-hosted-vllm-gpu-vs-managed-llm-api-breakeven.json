@@ -1,0 +1,59 @@
+{
+  "slug": "self-hosted-vllm-gpu-vs-managed-llm-api-breakeven",
+  "cohort": "cohort-1",
+  "status": "QUARANTINED_PENDING_GSC_75PCT_INDEX_GATE",
+  "title": "Staged Cohort-1 API Cost Calculator #3: self-hosted-vllm-gpu-vs-managed-llm-api-breakeven",
+  "prices": [
+    {
+      "label": "OpenAI / Anthropic Direct API Rate",
+      "price": "$1.25-$15.00 / 1M tokens",
+      "partner": "DigitalOcean GPU",
+      "ctaType": "api"
+    },
+    {
+      "label": "Prompt Caching (90% Read Discount)",
+      "price": "$0.125-$1.50 / 1M cached tokens",
+      "partner": "Pinecone",
+      "ctaType": "api"
+    },
+    {
+      "label": "Batch API (50% Async Discount)",
+      "price": "50% off standard input & output tokens",
+      "partner": "RunPod",
+      "ctaType": "api"
+    },
+    {
+      "label": "NIST AI Risk Management Framework (AI 100-1) (.gov)",
+      "price": "Official US Federal AI Governance Baseline",
+      "partner": "Gov",
+      "ctaType": "gov",
+      "source": 1
+    }
+  ],
+  "faq": [
+    {
+      "q": "When does this Cohort-1 route unlock?",
+      "a": "Unlocks automatically once >=12/16 (75%) of MVP Slice 1 routes are indexed in Google Search Console."
+    },
+    {
+      "q": "How are API token rates verified?",
+      "a": "Verified against published vendor API pricing schedules and official NIST/FCC (.gov) standards."
+    },
+    {
+      "q": "Does prompt caching reduce input token costs?",
+      "a": "Yes, cached input reads reduce token costs by 50% to 90% depending on the model provider."
+    },
+    {
+      "q": "Does Batch API cut both input and output token costs?",
+      "a": "Yes, asynchronous 24-hour Batch API queues provide a 50% discount on both input and output tokens."
+    }
+  ],
+  "sources": [
+    {
+      "id": 1,
+      "title": "NIST AI Risk Management Framework (AI RMF 1.0) & Generative AI Profile (NIST AI 600-1) (.gov)",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "accessed": "2026-10-27"
+    }
+  ]
+}

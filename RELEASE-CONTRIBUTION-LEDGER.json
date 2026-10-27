@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "domain": "apicostaudit.com",
+  "release_version": "v1.0.0",
+  "released_at_utc": "2026-10-27T13:40:00Z",
+  "owning_po": "SaaS Cost Audit PO (bc09e0d9-5fae-487c-b526-020d9aac1bd1)",
+  "hub_pm": "B2B Audit Family PM (9c1c413e-5df2-4d17-a576-11713450fceb)",
+  "active_html_routes": 16,
+  "subdivisions": [
+    "/llm-api/",
+    "/voice-video-api/",
+    "/ai-infra-gpu/",
+    "/b2b-apis/"
+  ]
+}

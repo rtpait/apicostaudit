@@ -1,0 +1,133 @@
+{% import "macros.njk" as m %}
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+<meta name="keywords" content="{{ keywords or 'llm api token cost calculator, openai vs anthropic api pricing, gemini 2.5 vs deepseek batch api cost, elevenlabs vs retell vs vapi voice ai cost per minute, pinecone vs qdrant vector db pricing, runpod vs digitalocean h100 gpu cost, twilio sms 10dlc api calculator' }}">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="API Cost Audit (Research Triangle Park AI Transformation LLC)">
+<meta name="impact-site-verification" content="714f5d78-7e2a-43b7-8971-27919db894fa" value="714f5d78-7e2a-43b7-8971-27919db894fa">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<link rel="icon" href="/logo-mark.svg" type="image/svg+xml">
+<link rel="manifest" href="/.well-known/webmcp.json">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:image" content="{{ site.url }}/og-image.svg">
+<meta property="og:image:alt" content="{{ title }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ title }}">
+<meta name="twitter:description" content="{{ description }}">
+<meta name="twitter:image" content="{{ site.url }}/og-image.svg">
+<link rel="preload" href="/style.css?v=20261027" as="style">
+<link rel="stylesheet" href="/style.css?v=20261027">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"{{ site.url }}/#organization","name":"API Cost Audit","alternateName":["apicostaudit","apicostaudit.com","B2B API & LLM Token FinOps Auditor"],"sameAs":["https://github.com/rtpait/apicostaudit"],"description":"Deterministic B2B API Total Cost of Ownership (TCO) auditor for Metered LLM Token APIs (OpenAI GPT-5/GPT-4o, Anthropic Claude 4.5 Sonnet & Opus, Google Gemini 2.5 Pro & Flash, DeepSeek, Llama 4), Voice AI Per-Minute Stacks, Serverless GPU & Vector DB Read/Write Units, and B2B APIs.","url":"{{ site.url }}","logo":"{{ site.url }}/logo-mark.svg","image":"{{ site.url }}/og-image.svg","areaServed":{"@type":"Country","name":"United States"},"knowsAbout":["LLM API Per-Million Token Pricing & Prompt Caching","24-Hour Batch API 50% Discounts","Voice AI Agent Per-Minute Cost Stacking (ElevenLabs, Deepgram, Retell, Vapi, OpenAI Realtime)","Serverless Vector Database Read/Write Units (Pinecone, Qdrant)","H100 & L40S GPU Cloud Token Breakeven","Twilio SMS 10DLC Carrier Fees & B2B Auth MAU Cliffs"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"{{ site.url }}/#website","name":"API Cost Audit","url":"{{ site.url }}","publisher":{"@type":"Organization","@id":"{{ site.url }}/#organization","name":"API Cost Audit"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":{{ title | json | safe }},"applicationCategory":"BusinessApplication","operatingSystem":"Web, WebMCP, OpenAPI 3.1","url":"{{ site.url }}{{ page.url }}","offers":{"@type":"Offer","price":"0.00","priceCurrency":"USD","description":"Free deterministic B2B API & LLM token TCO calculator (3 free FinOps CSV/PDF exports; $29/mo Pro unlimited)"},"publisher":{"@type":"Organization","@id":"{{ site.url }}/#organization","name":"API Cost Audit"}}</script>
+{% if serviceOffer %}{{ m.serviceOfferSchema(serviceOffer, site, page.url) }}{% endif %}
+{% if faqList and faqList.length %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{% for f in faqList %}{"@type":"Question","name":{{ f.q | json | safe }},"acceptedAnswer":{"@type":"Answer","text":{{ f.a | json | safe }}}}{% if not loop.last %},{% endif %}{% endfor %}]}</script>{% endif %}
+<script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);posthog.init("phc_v89RLR6JhvrN3Hy7mmWPBSQqVGwFAr7dPLpLan9Pjky8",{api_host:"https://us.i.posthog.com",defaults:"2025-05-24",person_profiles:"identified_only"});try{posthog.register({product_domain:"apicostaudit.com",sister_family_group:"b2b-audit-family",category_key:"API_COSTS",is_headless_or_webdriver:Boolean(navigator.webdriver||(window.screen&&window.screen.width===800&&window.screen.height===600)),analytics_filter_policy:"3_bucket_analytics_only_no_edge_block"});}catch(e){}(function(){try{var r=(document.referrer||"").toLowerCase(),u=(navigator.userAgent||"").toLowerCase(),q=new URLSearchParams(window.location.search),s=((q.get("utm_source")||"")+" "+(q.get("utm_medium")||"")).toLowerCase(),b=r+" "+u+" "+s,m=null;if(b.indexOf("gptbot")!==-1||b.indexOf("oai-searchbot")!==-1||b.indexOf("chatgpt")!==-1||b.indexOf("openai")!==-1)m="ChatGPT / OpenAI";else if(b.indexOf("perplexitybot")!==-1||b.indexOf("perplexity")!==-1)m="Perplexity AI";else if(b.indexOf("claudebot")!==-1||b.indexOf("claude")!==-1||b.indexOf("anthropic")!==-1)m="Claude / Anthropic";else if(b.indexOf("gemini")!==-1||b.indexOf("google-extended")!==-1)m="Google Gemini";else if(b.indexOf("copilot")!==-1)m="Microsoft Copilot";if(m&&window.posthog&&typeof window.posthog.capture==="function"){window.posthog.capture("llm_query",{ai_source:m,product_domain:"apicostaudit.com",topic:document.title,route_slug:window.location.pathname,query_url:window.location.href,referrer:document.referrer||"$direct"});}}catch(e){}})();</script>
+</head><body>
+<nav class="family-top-bar" aria-label="B2B Audit Family Cross-Domain Network Switcher">
+  <span><strong>🏛️ B2B Cost Audit Family:</strong></span>
+  <div>
+    <a href="https://b2bfeeaudit.com/" rel="noopener">B2BFeeAudit.com (Payment &amp; Filing Fees)</a>
+    <a href="https://b2bcostaudit.com/" rel="noopener">B2BCostAudit.com (E&amp;O/Cyber &amp; Labor Burden)</a>
+    <a href="https://saascostaudit.com/" rel="noopener">SaaSCostAudit.com (UCaaS &amp; Per-Seat SaaS)</a>
+    <a href="https://apicostaudit.com/" class="active-family-domain" aria-current="page">APICostAudit.com (LLM Token, Voice &amp; GPU APIs)</a>
+  </div>
+</nav>
+<header>
+  <a href="/" style="font-size:1.15rem"><img src="/logo-mark.svg" alt="API Cost Audit logo — LLM Token, Voice AI, GPU & Vector DB TCO Auditor" width="24" height="24" decoding="async" style="vertical-align:-5px;margin-right:7px"><strong>{{ site.name }}</strong></a>
+  <nav class="nav-links" aria-label="Main navigation">
+    <a href="/llm-api/">LLM Token APIs</a>
+    <a href="/voice-video-api/">Voice &amp; Video AI</a>
+    <a href="/ai-infra-gpu/">GPU &amp; Vector DB</a>
+    <a href="/b2b-apis/">B2B &amp; Twilio APIs</a>
+    <a href="/methodology/">2026 Methodology</a>
+    <a href="/about/">About</a>
+    <a href="/.well-known/webmcp.json">WebMCP Spec</a>
+  </nav>
+</header>
+<main>{{ content | safe }}</main>
+<footer>
+  <hr>
+  <small>
+    <strong>{{ site.name }}</strong> ({{ site.domain }}) · Independent B2B LLM Token, Prompt Caching, Batch API, Voice AI Per-Minute, Serverless GPU, Vector DB &amp; B2B API Cost Auditor · Operated by <strong>Research Triangle Park AI Transformation LLC</strong> · Verified Oct 2026 against published vendor API rate cards, NIST AI RMF (<code>.gov</code>), and FCC USF telecom rules (<code>.gov</code>).<br>
+    Commercial infrastructure &amp; sister-funnel links may earn a referral commission via CJ (<code>8108003</code>), AWIN (<code>3133124</code>), Rakuten (<code>4767884</code>), Impact, or PartnerStack at zero extra cost to you.
+    <a href="/">Master API Calculator</a> ·
+    <a href="/llm-api/">LLM Token Hub</a> ·
+    <a href="/voice-video-api/">Voice AI Hub</a> ·
+    <a href="/ai-infra-gpu/">GPU &amp; Vector DB Hub</a> ·
+    <a href="/b2b-apis/">B2B API Hub</a> ·
+    <a href="/methodology/">Methodology</a> ·
+    <a href="/privacy/">Privacy</a> ·
+    <a href="/terms/">Terms</a> ·
+    <a href="/about/">About</a> ·
+    <a href="/llms.txt">llms.txt</a> ·
+    <a href="/.well-known/webmcp.json">WebMCP</a> ·
+    <a href="/datasets/api-llm-voice-gpu-benchmarks-2026.json">Open Dataset (CC-BY-4.0)</a><br>
+    <strong>Sister B2B Audit Family (Cross-Family Traffic Funnel):</strong>
+    <a href="https://b2bfeeaudit.com/" rel="noopener" data-funnel-role="footer" data-4axis-key="sister_family_funnel:funnel_api_to_fee_footer:B2B_FEES.merchant_processing:footer">B2BFeeAudit.com (Merchant IC+ &amp; Wire Fees)</a> ·
+    <a href="https://b2bcostaudit.com/" rel="noopener" data-funnel-role="footer" data-4axis-key="sister_family_funnel:funnel_api_to_cost_footer:B2B_COSTS.eo_cyber_insurance:footer">B2BCostAudit.com (Tech E&amp;O / Cyber Insurance &amp; W-2 Burden)</a> ·
+    <a href="https://saascostaudit.com/" rel="noopener" data-funnel-role="footer" data-4axis-key="sister_family_funnel:funnel_api_to_saas_footer:SAAS_COSTS.ucaas_seats:footer">SaaSCostAudit.com (UCaaS &amp; Per-Seat SaaS Tiers)</a> ·
+    <a href="https://apicostaudit.com/" rel="noopener">APICostAudit.com (API &amp; Token Costs)</a>
+  </small>
+</footer>
+{% set stickySlug = rSlug or "api-hub" %}
+<aside class="mobile-comparison-bar" id="mobile-comparison-bar" aria-label="Live API Cost Comparison and Partner Verification Actions">
+  <div class="mcb-tiers">
+    <div class="mcb-tier">
+      <span class="mcb-label">🤖 Prompt Cache</span>
+      <strong class="mcb-val">50%–90% Off</strong>
+    </div>
+    <div class="mcb-tier">
+      <span class="mcb-label">🎙️ Voice AI Stack</span>
+      <strong class="mcb-val">$0.058–$0.18/m</strong>
+    </div>
+    <div class="mcb-tier">
+      <span class="mcb-label">⚡ H100 GPU Pod</span>
+      <strong class="mcb-val">$1.89–$2.99/hr</strong>
+    </div>
+  </div>
+  <div class="mcb-actions">
+    <a class="cta mcb-btn" data-partner="Generic API Infra Slot (DigitalOcean GPU)" data-cta-slot="sticky_mobile_bar" data-funnel-role="footer" data-4axis-key="generic_api_partner_slot:api_b2b_overage_footer_placeholder:API_COSTS.gpu_vector_infra:footer" data-route-slug="{{ stickySlug }}" data-calc-inputs='{"slot":"sticky_api_footer"}' data-clickref="api_b2b_overage_footer_placeholder_{{ stickySlug }}" href="https://www.digitalocean.com/pricing/gpu-droplets?utm_source=apicostaudit.com&amp;utm_medium=affiliate&amp;sid=8108003&amp;clickref=api_b2b_overage_footer_placeholder_{{ stickySlug }}" target="_blank" rel="sponsored nofollow noopener">⚡ H100 GPU Breakeven</a>
+    <a class="cta-secondary mcb-btn" data-partner="Sister Family Funnel (SaaSCostAudit)" data-cta-slot="sticky_mobile_bar" data-funnel-role="footer" data-4axis-key="sister_family_funnel:funnel_api_to_saas_footer:SAAS_COSTS.crm_devtools_ai_seats:footer" data-route-slug="{{ stickySlug }}" data-calc-inputs='{"slot":"sticky_sister_funnel"}' data-clickref="funnel_api_to_saas_footer_{{ stickySlug }}" href="https://saascostaudit.com/ucaas/?utm_source=apicostaudit.com&amp;utm_medium=sister_funnel&amp;clickref=funnel_api_to_saas_footer_{{ stickySlug }}" target="_blank" rel="noopener">🔄 API vs. Seat TCO</a>
+  </div>
+</aside>
+<script>
+(function(){
+  document.addEventListener("click", function(ev) {
+    if (!window.posthog || typeof window.posthog.capture !== "function") return;
+    var link = ev.target && ev.target.closest ? ev.target.closest("a") : null;
+    if (!link || !link.href) return;
+    var href = link.href;
+    if (link.matches("[data-partner], [data-4axis-key], .cta, .cta-secondary, .tbl-cta-btn, a[rel*='sponsored']")) {
+      var payload = {
+        product_domain: "apicostaudit.com",
+        partner: link.getAttribute("data-partner") || "API_Partner_Slot",
+        cta_slot: link.getAttribute("data-cta-slot") || "inline_cta",
+        funnel_role: link.getAttribute("data-funnel-role") || "mid_content",
+        four_axis_key: link.getAttribute("data-4axis-key") || "generic_api_partner_slot:api_default:API_COSTS.llm_token_api:mid_content",
+        route_slug: link.getAttribute("data-route-slug") || window.location.pathname,
+        calc_inputs: link.getAttribute("data-calc-inputs") || "{}",
+        clickref: link.getAttribute("data-clickref") || "default",
+        page_path: window.location.pathname,
+        href: href
+      };
+      window.posthog.capture("cta_click", payload);
+      window.posthog.capture("affiliate_cta_clicked", payload);
+    } else if (href.indexOf(".gov") !== -1) {
+      window.posthog.capture("gov_citation_clicked", {
+        product_domain: "apicostaudit.com",
+        gov_url: href,
+        link_text: (link.textContent || "").trim(),
+        page_path: window.location.pathname
+      });
+    }
+  });
+})();
+</script>
+</body></html>

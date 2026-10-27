@@ -1,0 +1,89 @@
+---
+layout: "base.njk"
+permalink: "/"
+rSlug: "home-hub"
+title: "API Cost Audit: 2026 LLM Token, Voice & GPU API Calculators"
+description: "Audit 2026 LLM token APIs (GPT-5, Claude 4.5, Gemini 2.5, DeepSeek), prompt caching, Batch APIs, Voice AI per-minute stacks, Pinecone & H100 GPU TCO."
+serviceOffer: {"seoTitle": "API Cost Audit: 2026 LLM Token, Voice & GPU API Calculators", "seoDescription": "Audit 2026 LLM token APIs (GPT-5, Claude 4.5, Gemini 2.5, DeepSeek), prompt caching, Batch APIs, Voice AI per-minute stacks, Pinecone & H100 GPU TCO.", "prices": [{"label": "OpenAI GPT-5 / GPT-4o API ($2.50/1M In \u00b7 $1.25 Cached \u00b7 $10/1M Out)", "price": "$4,500\u2013$5,355/yr (120M in / 30M out w/ 50% Cache & 25% Batch API)", "partner": "Generic API Infra Slot (DigitalOcean H100 GPU)", "network": "generic_api_partner_slot", "ctaType": "api", "ctaLabel": "Compare H100 GPU Breakeven \u2192", "ctaUrl": "https://www.digitalocean.com/pricing/gpu-droplets?utm_source=apicostaudit.com&utm_medium=affiliate&sid=8108003", "source": 1}, {"label": "Anthropic Claude 4.5 Sonnet API ($3.00/1M In \u00b7 $0.30 Cached 90% Off \u00b7 $15/1M Out)", "price": "$5,256\u2013$6,998/yr (90% Prompt Cache Read Discount + 50% Batch API)", "partner": "Generic API Slot (Pinecone Serverless RAG)", "network": "generic_api_partner_slot", "ctaType": "api", "ctaLabel": "Optimize RAG Context on Pinecone \u2192", "ctaUrl": "https://www.pinecone.io/pricing/?utm_source=apicostaudit.com&utm_medium=affiliate", "source": 2}, {"label": "ElevenLabs Flash TTS + Deepgram Nova-3 + Retell AI Voice Agent Stack", "price": "$0.058/min Cascaded DIY vs. $0.07\u2013$0.11/min Retell vs. $0.18/min Realtime", "partner": "Generic API Slot (ElevenLabs 22% / Retell 20%)", "network": "generic_api_partner_slot", "ctaType": "api", "ctaLabel": "Audit ElevenLabs & Voice API Rates \u2192", "ctaUrl": "https://elevenlabs.io/pricing?utm_source=apicostaudit.com&utm_medium=affiliate", "source": 3}, {"label": "Sister B2B Family Funnel: Per-Seat AI/UCaaS, Stripe IC+ Fees & AI Tech E&O", "price": "Save $2,400\u2013$12,600/yr across SaaSCostAudit.com, B2BFeeAudit.com & B2BCostAudit.com", "partner": "Sister B2B Family Funnel", "network": "sister_family_funnel", "ctaType": "sister", "ctaLabel": "Compare Seat vs. API TCO (SaaSCostAudit.com) \u2192", "ctaUrl": "https://saascostaudit.com/ucaas/?utm_source=apicostaudit.com&utm_medium=sister_funnel", "source": 4}, {"label": "NIST AI Risk Management Framework (AI 100-1 / AI 600-1) & FCC USF (.gov)", "price": "Official US Federal AI Evaluation & Telecom Surcharge Baseline (.gov)", "partner": "Gov", "network": "gov", "ctaType": "gov", "source": 1}]}
+faqList: [{"q": "How does API Cost Audit calculate 12-month LLM token, prompt caching, and Batch API TCO?", "a": "Our deterministic calculator separates uncached input tokens, cached prefix read tokens (90% off on Anthropic Claude 4.5, 75% off on Google Gemini 2.5, 50% off on OpenAI GPT-5/GPT-4o), and output tokens, then applies the 50% asynchronous 24-hour Batch API discount to the percentage of workloads routed through batch queues."}, {"q": "When does self-hosting Llama 4 or DeepSeek on H100 GPUs beat managed LLM token APIs?", "a": "A single H100 80GB GPU on RunPod ($2.69/hr), Vast.ai ($1.89/hr), or DigitalOcean GPU Droplets ($2.99/hr) costs ~$1,380 to $2,180/month and sustains ~450M\u2013900M tokens/month via vLLM continuous batching. Once your monthly frontier API bill exceeds ~$2,000/month with steady utilization, dedicated GPU pods reduce unit token cost by 55%\u201378%."}, {"q": "Why do Voice AI agents cost $0.14\u2013$0.24/minute in production despite $0.05/min headline pricing?", "a": "Headline orchestrator pricing (such as Vapi at $0.05/min) covers only the orchestration layer. Production calls stack Speech-to-Text (Deepgram Nova-3 at $0.0043\u2013$0.01/min), LLM turn-by-turn context tokens ($0.02\u2013$0.06/min), Text-to-Speech (ElevenLabs Flash/Turbo at $0.035\u2013$0.06/min), and SIP trunking + FCC USF/E911 taxes ($0.015/min)."}, {"q": "How does the 4-Axis Affiliate Taxonomy and Cross-Family Traffic Funnel work on apicostaudit.com?", "a": "Every commercial slot is tagged with <partner_network>:<tracking_sub_id>:<product_vertical>:<funnel_role> across top_of_page, mid_content, and footer. Where direct LLM APIs (like OpenAI or Anthropic) have no affiliate program, we pair generic API infrastructure slots (GPU cloud, Vector DBs, Voice AI) with direct funnels to our sister properties: SaaSCostAudit.com (per-seat SaaS/UCaaS), B2BFeeAudit.com (Stripe vs. Interchange-Plus payment fees), and B2BCostAudit.com (AI Tech E&O & Cyber Liability insurance)."}]
+sourcesList: [{"id": 1, "title": "NIST AI Risk Management Framework (AI RMF 1.0) & Generative AI Profile (NIST AI 600-1) (.gov)", "url": "https://www.nist.gov/itl/ai-risk-management-framework", "accessed": "2026-10-27"}, {"id": 2, "title": "Federal Communications Commission (FCC) Universal Service Fund (USF) Contribution Factor & Interconnected VoIP Rules (.gov)", "url": "https://www.fcc.gov/general/universal-service-fund", "accessed": "2026-10-27"}, {"id": 3, "title": "FTC 16 CFR Part 255 \u2014 Guides Concerning the Use of Endorsements and Testimonials in Advertising (.gov)", "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-255", "accessed": "2026-10-27"}, {"id": 4, "title": "Published October 2026 API Pricing Schedules (OpenAI, Anthropic, Google Vertex AI, DeepSeek, ElevenLabs, Deepgram, Retell AI, Vapi, Pinecone, Qdrant, RunPod, DigitalOcean, Twilio)", "url": "https://www.pinecone.io/pricing/", "accessed": "2026-10-27"}]
+verdictObj: {"title": "2026 Multi-Model LLM Token, Voice AI & GPU Infrastructure TCO Audit", "winner": "Save 50%\u201390% on input tokens via Prompt Caching (Claude $0.30/1M, Gemini $0.31/1M, OpenAI $1.25/1M) + 50% off via 24h Batch APIs; switch above ~$2,000/mo API spend to dedicated H100 GPUs ($1.89\u2013$2.99/hr).", "trap": "Engineering teams lose $3,000\u2013$35,000/yr to uncached multi-turn agent loops (5x\u201320x token amplification), Vapi/Retell 4-layer Voice AI markup stacking ($0.14\u2013$0.22/min), and Twilio 10DLC carrier segment surcharges.", "action": "Run the interactive Multi-Model Token Calculator below or jump to any of our 4 API Cost Audit subdivisions."}
+---
+{% import "macros.njk" as m %}
+{{ m.breadcrumbs(site, [["API Cost Audit Hub", "/"]]) }}
+{{ m.verifiedGovBadge("2026-10-27", "NIST AI RMF (AI 600-1) · FCC USF Telecom Rules · FTC 16 CFR Part 255 (.gov)") }}
+
+<h1>2026 B2B LLM Token, Voice AI Per-Minute, Vector DB &amp; Serverless GPU API Cost Auditor</h1>
+<p><strong>Stop Overpaying 40%–75% on Uncached LLM Tokens, Unbundled Voice AI Stacks &amp; Idle Vector Pods:</strong> Compare verified October 2026 API rate cards across OpenAI GPT-5/GPT-4o, Anthropic Claude 4.5 Sonnet &amp; Opus, Google Gemini 2.5 Pro &amp; Flash, DeepSeek R1/V3, Meta Llama 4, ElevenLabs, Deepgram Nova-3, Retell AI, Vapi, Pinecone Serverless, and H100 GPU clouds.</p>
+
+{{ m.verdictCard(verdictObj, site, "home-hub") }}
+
+{{ m.llmTokenCalc("home-hub", 120, 30, 50, 25) }}
+
+
+<section class="tco-calc-box" id="four-api-subdivisions" aria-label="4 API Cost Audit Subdivisions">
+  <span class="verified-gov-badge">🗂️ 4 NON-OVERLAPPING API COST AUDIT SUBDIVISIONS (17 LIVE SPRINT 1 ROUTES)</span>
+  <h2 style="margin:.4rem 0 .25rem;border-top:0;padding-top:0">Explore All 4 Metered API Cost Subdivisions on <code>apicostaudit.com</code></h2>
+  <p style="margin:0 0 .85rem;font-size:.94rem;color:#334155">Each subdivision isolates one metered API billing unit—per-1M tokens, per-minute voice/video streams, per-read/write unit &amp; GPU hour, and per-call B2B API overages:</p>
+  <div class="card-grid-2">
+    <div class="calc-vendor-card vendor-best">
+      <small>Subdivision 1 · <code>/llm-api/</code></small>
+      <h3 style="margin:.25rem 0 .35rem"><a href="/llm-api/">1. LLM Token Pricing, Prompt Caching &amp; Batch API Hub</a></h3>
+      <p style="margin:0 0 .5rem;font-size:.86rem;color:#334155">Compare GPT-5/GPT-4o, Claude 4.5 Sonnet &amp; Opus, Gemini 2.5 Pro &amp; Flash, DeepSeek R1/V3, and Llama 4 across cached reads (50%–90% off) and 24h Batch APIs (50% off).</p>
+      <ul style="margin:0 0 .6rem;padding-left:1.1rem;font-size:.83rem">
+        <li><a href="/llm-api/openai-vs-anthropic-claude-token-calculator/">OpenAI vs. Anthropic Claude Token Calculator</a></li>
+        <li><a href="/llm-api/gemini-vs-deepseek-batch-api-audit/">Gemini 2.5 vs. DeepSeek Batch API Audit</a></li>
+        <li><a href="/llm-api/prompt-caching-vs-batch-api-savings-calculator/">Prompt Caching (90% Off) vs. Batch API (50% Off)</a></li>
+      </ul>
+      <a class="cta tbl-cta-btn" href="/llm-api/">Open LLM Token Hub →</a>
+    </div>
+    <div class="calc-vendor-card vendor-best">
+      <small>Subdivision 2 · <code>/voice-video-api/</code></small>
+      <h3 style="margin:.25rem 0 .35rem"><a href="/voice-video-api/">2. Voice AI, STT/TTS &amp; WebRTC Per-Minute Cost Hub</a></h3>
+      <p style="margin:0 0 .5rem;font-size:.86rem;color:#334155">Audit stacked per-minute Voice AI costs ($0.058–$0.24/min) across ElevenLabs Flash TTS, Deepgram Nova-3 STT, Retell AI, Vapi, and OpenAI Realtime API.</p>
+      <ul style="margin:0 0 .6rem;padding-left:1.1rem;font-size:.83rem">
+        <li><a href="/voice-video-api/elevenlabs-vs-openai-realtime-voice-tco/">ElevenLabs vs. OpenAI Realtime Voice TCO</a></li>
+        <li><a href="/voice-video-api/retell-vs-vapi-voice-agent-per-minute-cost-calculator/">Retell AI vs. Vapi Per-Minute Calculator</a></li>
+      </ul>
+      <a class="cta tbl-cta-btn" href="/voice-video-api/">Open Voice AI Hub →</a>
+    </div>
+    <div class="calc-vendor-card vendor-best">
+      <small>Subdivision 3 · <code>/ai-infra-gpu/</code></small>
+      <h3 style="margin:.25rem 0 .35rem"><a href="/ai-infra-gpu/">3. Serverless GPU, Vector DB &amp; Egress Cost Hub</a></h3>
+      <p style="margin:0 0 .5rem;font-size:.86rem;color:#334155">Calculate token-to-GPU breakeven on H100/L40S instances (RunPod, Vast.ai, Modal, DigitalOcean GPU) and audit Pinecone Read/Write Units vs. Qdrant Cloud.</p>
+      <ul style="margin:0 0 .6rem;padding-left:1.1rem;font-size:.83rem">
+        <li><a href="/ai-infra-gpu/pinecone-vs-qdrant-vector-db-tco/">Pinecone vs. Qdrant Vector DB TCO Calculator</a></li>
+        <li><a href="/ai-infra-gpu/runpod-vs-vast-ai-gpu-inference-cost-calculator/">RunPod vs. Vast.ai vs. DigitalOcean H100 Calculator</a></li>
+      </ul>
+      <a class="cta-secondary tbl-cta-btn" href="/ai-infra-gpu/">Open GPU &amp; Vector Hub →</a>
+    </div>
+    <div class="calc-vendor-card vendor-best">
+      <small>Subdivision 4 · <code>/b2b-apis/</code></small>
+      <h3 style="margin:.25rem 0 .35rem"><a href="/b2b-apis/">4. B2B Auth, Messaging, Maps &amp; Webhook API Hub</a></h3>
+      <p style="margin:0 0 .5rem;font-size:.86rem;color:#334155">Audit Twilio SMS segments + 10DLC carrier surcharges + Verify OTPs ($0.05), Auth0/Clerk/WorkOS MAU &amp; SAML SSO cliffs, Plaid, and Make/n8n operations.</p>
+      <ul style="margin:0 0 .6rem;padding-left:1.1rem;font-size:.83rem">
+        <li><a href="/b2b-apis/twilio-sms-voice-verify-per-call-fee-calculator/">Twilio SMS, 10DLC &amp; Verify OTP Fee Calculator</a></li>
+      </ul>
+      <a class="cta-secondary tbl-cta-btn" href="/b2b-apis/">Open B2B APIs Hub →</a>
+    </div>
+  </div>
+</section>
+
+
+{{ m.prices(serviceOffer.prices, site, "home-hub", "API_COSTS.llm_token_api") }}
+
+{{ m.crossFamilyFunnelBanner("home-hub") }}
+
+<section class="box" id="agentic-open-data">
+  <span class="badge-agent">🤖 AGENTIC ENGINE OPTIMIZATION (WEBMCP + OPENAPI 3.1 + LLMS.TXT)</span>
+  <h2 style="margin-top:.35rem;border-top:0;padding-top:0">Machine-Readable Endpoints for AI Agents &amp; FinOps Analysts</h2>
+  <ul>
+    <li><a href="/.well-known/webmcp.json"><strong><code>/.well-known/webmcp.json</code></strong></a> — WebMCP tool manifest exposing 4 deterministic API TCO calculators.</li>
+    <li><a href="/.well-known/openapi.json"><strong><code>/.well-known/openapi.json</code></strong></a> &amp; <a href="/.well-known/ai-plugin.json"><strong><code>/.well-known/ai-plugin.json</code></strong></a> — OpenAPI 3.1.0 specification.</li>
+    <li><a href="/llms.txt"><strong><code>/llms.txt</code></strong></a> &amp; <a href="/llms-full.txt"><strong><code>/llms-full.txt</code></strong></a> — Complete 2026 LLM token, Voice AI, GPU, Vector DB &amp; B2B API rate card tables.</li>
+    <li><a href="/datasets/api-llm-voice-gpu-benchmarks-2026.json"><strong><code>/datasets/api-llm-voice-gpu-benchmarks-2026.json</code></strong></a> &amp; <a href="/datasets/api-llm-voice-gpu-benchmarks-2026.csv"><strong><code>.csv</code></strong></a> — CC-BY-4.0 open benchmark dataset.</li>
+  </ul>
+</section>
+
+{{ m.faq(faqList) }}
+{{ m.sources(sourcesList) }}

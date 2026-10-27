@@ -1,0 +1,7 @@
+{
+  "domain": "apicostaudit.com",
+  "stage_1_single_lookup": "FREE_FOREVER",
+  "stage_2_bulk_feed_gate": "DISARMED_FREE_GROWTH_MODE",
+  "weekly_agentic_hits": 0,
+  "threshold": 500
+}

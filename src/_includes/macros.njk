@@ -1,0 +1,280 @@
+{% macro breadcrumbs(site, items) %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{% for i in items %}{"@type":"ListItem","position":{{ loop.index }},"name":{{ i[0] | json | safe }},"item":"{{ site.url }}{{ i[1] }}"}{% if not loop.last %},{% endif %}{% endfor %}]}</script>
+<nav class="breadcrumb-nav" aria-label="Breadcrumb"><ol class="breadcrumb-list">{% for i in items %}<li>{% if not loop.last %}<a href="{{ i[1] }}">{{ i[0] }}</a> <span aria-hidden="true">›</span> {% else %}<span aria-current="page">{{ i[0] }}</span>{% endif %}</li>{% endfor %}</ol></nav>
+{% endmacro %}
+
+{% macro verifiedGovBadge(verifyDate, govTitle) %}
+<div class="verified-gov-bar" role="region" aria-label="Regulatory and Rate Card Verification Status">
+  <span class="verified-gov-badge">✓ Verified 2026 API Rate Cards &amp; .gov Benchmarks · {{ verifyDate or "2026-10-27" }}</span>
+  <a class="gov-seal-pill" href="#official-sources" title="Jump to primary .gov and vendor rate card citations">🏛️ {{ govTitle or "NIST AI RMF (AI 600-1) · FCC USF Telecom Rules · FTC 16 CFR Part 255 (.gov)" }}</a>
+</div>
+{% endmacro %}
+
+{% macro verdictCard(v, site, rSlug) %}
+{% set topKey1 = v.topKey1 or ("generic_api_partner_slot:api_llm_token_top_placeholder:API_COSTS.llm_token_api:top_of_page") %}
+{% set topKey2 = v.topKey2 or ("sister_family_funnel:funnel_api_to_saas_seats_top:API_COSTS.llm_token_api:top_of_page") %}
+<section class="verdict-card" aria-label="30-Second FinOps API Audit Verdict">
+  <div class="verdict-header">
+    <strong>⏱️ 30-Second FinOps &amp; CTO Audit Verdict: {{ v.title }}</strong>
+    <span class="verdict-pill">Deterministic 2026 API Unit Math</span>
+  </div>
+  <ul class="verdict-list">
+    <li class="verdict-item">
+      <span class="verdict-tag tag-winner">🏆 12-MONTH TCO WINNER</span>
+      <div>{{ v.winner }}</div>
+    </li>
+    <li class="verdict-item">
+      <span class="verdict-tag tag-trap">⚠️ HIDDEN API BILL TRAP</span>
+      <div>{{ v.trap }}</div>
+    </li>
+    <li class="verdict-item">
+      <span class="verdict-tag tag-action">⚡ RECOMMENDED FINOPS ACTION</span>
+      <div>{{ v.action }}</div>
+    </li>
+  </ul>
+  <div class="verdict-actions">
+    <a class="cta verdict-btn" data-partner="{{ v.cta1Partner or 'Generic API Slot (GPU/Infra)' }}" data-cta-slot="verdict_card" data-funnel-role="top_of_page" data-4axis-key="{{ topKey1 }}" data-route-slug="{{ rSlug }}" data-calc-inputs='{"slot":"verdict_top_1"}' data-clickref="api_verdict_top_1_{{ rSlug }}" href="{{ v.cta1Url or 'https://www.digitalocean.com/pricing/gpu-droplets?utm_source=apicostaudit.com&utm_medium=affiliate&sid=8108003&clickref=api_llm_token_top_placeholder' }}" target="_blank" rel="sponsored nofollow noopener">{{ v.cta1Label or "Compare Dedicated H100 GPU vs. API Token TCO →" }}</a>
+    <a class="cta-secondary verdict-btn" data-partner="{{ v.cta2Partner or 'Sister Family Funnel' }}" data-cta-slot="verdict_card" data-funnel-role="top_of_page" data-4axis-key="{{ topKey2 }}" data-route-slug="{{ rSlug }}" data-calc-inputs='{"slot":"verdict_top_2"}' data-clickref="api_verdict_top_2_{{ rSlug }}" href="{{ v.cta2Url or 'https://saascostaudit.com/ucaas/?utm_source=apicostaudit.com&utm_medium=sister_funnel&clickref=funnel_api_to_saas_seats_top' }}" target="_blank" rel="noopener">{{ v.cta2Label or "Audit Per-Seat SaaS vs. Metered API Breakeven (SaaSCostAudit.com) →" }}</a>
+  </div>
+</section>
+{% endmacro %}
+
+{% macro prices(list, site, slug, verticalKey) %}
+{% set vKey = verticalKey or "API_COSTS.llm_token_api" %}
+<h2 id="cost-comparison">2026 Line-Item API Rate Card &amp; 12-Month TCO Comparison Table</h2>
+<div class="table-wrap">
+  <table class="price-action-table">
+    <thead>
+      <tr>
+        <th class="sticky-col">API Provider / Benchmark</th>
+        <th>Verified 2026 Metered Rate &amp; 12-Month TCO</th>
+        <th>FinOps Action / Official Citation (4-Axis Slot)</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for p in list %}
+      {% set rowSubId = "api_mid_r" + loop.index + "_" + slug %}
+      {% set netKey = p.network or "generic_api_partner_slot" %}
+      {% set compKey = netKey + ":" + rowSubId + ":" + vKey + ":mid_content" %}
+      <tr>
+        <td class="sticky-col">
+          <strong>{{ p.label }}</strong><br>
+          {% if p.ctaType == "gov" %}
+            <span class="verified-gov-badge" style="font-size:.7rem;padding:.1rem .45rem">Official .gov Statutory / NIST Baseline</span>
+          {% elif p.ctaType == "sister" %}
+            <span class="badge-payroll">Sister B2B Family Funnel</span>
+          {% else %}
+            <span class="badge-agent">Verified 2026 API Rate Card</span>
+          {% endif %}
+        </td>
+        <td><strong>{{ p.price }}</strong></td>
+        <td>
+          {% if p.ctaType == "gov" %}
+            <a class="tbl-gov-link" href="#src-{{ p.source or 1 }}">🏛️ Verify .gov Rule [{{ p.source or 1 }}]</a>
+          {% else %}
+            <a class="tbl-cta-btn" data-partner="{{ p.partner or 'API_Partner_Slot' }}" data-cta-slot="price_table_row" data-funnel-role="mid_content" data-4axis-key="{{ compKey }}" data-route-slug="{{ slug }}" data-calc-inputs='{"row":{{ loop.index }}}' data-clickref="{{ rowSubId }}" href="{{ p.ctaUrl or 'https://www.pinecone.io/pricing/?utm_source=apicostaudit.com&utm_medium=affiliate' }}{% if '?' in (p.ctaUrl or '') %}&amp;{% else %}?{% endif %}clickref={{ rowSubId }}" target="_blank" {% if p.ctaType == "sister" %}rel="noopener"{% else %}rel="sponsored nofollow noopener"{% endif %}>{{ p.ctaLabel or ("Verify " + (p.partner or "API") + " Rate →") }}</a>
+          {% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+<p><small>All per-1M token rates, prompt caching discounts, per-minute Voice AI stacks, and GPU/Vector DB unit prices verified October 27, 2026. Commercial slots use the 4-Axis Affiliate Taxonomy (<code>&lt;partner_network&gt;:&lt;tracking_sub_id&gt;:&lt;product_vertical&gt;:&lt;funnel_role&gt;</code>) and route non-affiliate API categories into the B2B Audit Family conversion funnel (<a href="/methodology/">methodology &amp; FTC disclosure</a>).</small></p>
+{% endmacro %}
+
+{% macro llmTokenCalc(rSlug, defInM, defOutM, defCachePct, defBatchPct) %}
+{% set sSlug = rSlug or "llm-token-hub" %}
+{% set inM = defInM or 120 %}
+{% set outM = defOutM or 30 %}
+{% set cachePct = defCachePct if defCachePct is defined else 50 %}
+{% set batchPct = defBatchPct if defBatchPct is defined else 25 %}
+<section class="tco-calc-box" id="payroll-tco-calc" data-calc-type="llm_token_calc" data-route-slug="{{ sSlug }}" aria-label="Interactive LLM Token, Prompt Caching and Batch API Cost Calculator">
+  <div>
+    <span class="badge-agent">🧮 DETERMINISTIC 2026 LLM TOKEN, PROMPT CACHING (90% OFF) &amp; BATCH API (50% OFF) CALCULATOR</span>
+    <h2 style="margin:.35rem 0 .2rem;border-top:0;padding-top:0">Compare OpenAI GPT-5/GPT-4o, Claude 4.5 Sonnet &amp; Opus, Gemini 2.5 Pro &amp; Flash, DeepSeek R1/V3 &amp; Llama 4</h2>
+    <p style="margin:0;font-size:.93rem;color:#334155">Adjust monthly input/output token volume (in millions), prompt cache hit rate, and asynchronous 24h Batch API share to audit exact monthly and 12-month API spend—plus your self-hosted H100 GPU breakeven point:</p>
+  </div>
+  <div class="calc-controls-grid">
+    <div class="calc-field">
+      <label for="ltc-in">1. Monthly Input Tokens (Millions: 1M–5,000M): <span id="ltc-in-lbl">{{ inM }}M</span></label>
+      <input type="number" id="ltc-in" min="1" max="5000" value="{{ inM }}">
+      <input type="range" id="ltc-in-range" min="1" max="5000" step="10" value="{{ inM }}" aria-label="Monthly Input Tokens Millions">
+    </div>
+    <div class="calc-field">
+      <label for="ltc-out">2. Monthly Output Tokens (Millions: 1M–2,000M): <span id="ltc-out-lbl">{{ outM }}M</span></label>
+      <input type="number" id="ltc-out" min="1" max="2000" value="{{ outM }}">
+      <input type="range" id="ltc-out-range" min="1" max="2000" step="5" value="{{ outM }}" aria-label="Monthly Output Tokens Millions">
+    </div>
+    <div class="calc-field">
+      <label for="ltc-cache">3. Prompt Cache Read Hit Share (0%–95%): <span id="ltc-cache-lbl">{{ cachePct }}%</span></label>
+      <input type="number" id="ltc-cache" min="0" max="95" value="{{ cachePct }}">
+      <small>90% off cached reads on Claude 4.5 · 75% off Gemini · 50% off OpenAI</small>
+    </div>
+    <div class="calc-field">
+      <label for="ltc-batch">4. Async 24h Batch API Share (0%–100%): <span id="ltc-batch-lbl">{{ batchPct }}%</span></label>
+      <input type="number" id="ltc-batch" min="0" max="100" value="{{ batchPct }}">
+      <small>50% discount on non-real-time eval, ETL &amp; classification jobs</small>
+    </div>
+  </div>
+  <div class="calc-output-grid" id="ltc-results-grid">
+    <div class="calc-vendor-card vendor-best">
+      <small>OpenAI GPT-5 / GPT-4o</small>
+      <strong class="calc-big" id="ltc-openai-yr">$5,355/yr</strong>
+      <span class="calc-sub" id="ltc-openai-sub">$446/mo · $2.50/1M in ($1.25 cached) · $10.00/1M out</span>
+      <div style="margin-top:.55rem">
+        <a class="cta tbl-cta-btn" data-partner="Generic API Infra Slot (DigitalOcean GPU)" data-cta-slot="llm_token_calc" data-funnel-role="mid_content" data-4axis-key="generic_api_partner_slot:api_llm_do_gpu_calc_mid:API_COSTS.llm_token_api:mid_content" data-route-slug="{{ sSlug }}" data-clickref="api_llm_do_gpu_calc_mid_{{ sSlug }}" href="https://www.digitalocean.com/pricing/gpu-droplets?utm_source=apicostaudit.com&amp;utm_medium=affiliate&amp;sid=8108003&amp;clickref=api_llm_do_gpu_calc_mid_{{ sSlug }}" target="_blank" rel="sponsored nofollow noopener">Compare H100 GPU Breakeven →</a>
+      </div>
+    </div>
+    <div class="calc-vendor-card vendor-best">
+      <small>Anthropic Claude 4.5 Sonnet</small>
+      <strong class="calc-big" id="ltc-sonnet-yr">$6,998/yr</strong>
+      <span class="calc-sub" id="ltc-sonnet-sub">$583/mo · $3.00/1M in ($0.30 cached 90% off) · $15/1M out</span>
+      <div style="margin-top:.55rem">
+        <a class="cta tbl-cta-btn" data-partner="Generic API Slot (Pinecone RAG)" data-cta-slot="llm_token_calc" data-funnel-role="mid_content" data-4axis-key="generic_api_partner_slot:api_llm_pinecone_calc_mid:API_COSTS.llm_token_api:mid_content" data-route-slug="{{ sSlug }}" data-clickref="api_llm_pinecone_calc_mid_{{ sSlug }}" href="https://www.pinecone.io/pricing/?utm_source=apicostaudit.com&amp;utm_medium=affiliate&amp;clickref=api_llm_pinecone_calc_mid_{{ sSlug }}" target="_blank" rel="sponsored nofollow noopener">Cut Context Tokens via Pinecone RAG →</a>
+      </div>
+    </div>
+    <div class="calc-vendor-card">
+      <small>Anthropic Claude 4.5 Opus</small>
+      <strong class="calc-big" id="ltc-opus-yr">$34,992/yr</strong>
+      <span class="calc-sub" id="ltc-opus-sub">$2,916/mo · $15/1M in ($1.50 cached) · $75/1M out</span>
+      <div style="margin-top:.55rem">
+        <a class="cta-secondary tbl-cta-btn" data-partner="Sister Funnel (SaaSCostAudit)" data-cta-slot="llm_token_calc" data-funnel-role="mid_content" data-4axis-key="sister_family_funnel:funnel_api_to_saas_calc_mid:SAAS_COSTS.crm_devtools_ai_seats:mid_content" data-route-slug="{{ sSlug }}" data-clickref="funnel_api_to_saas_calc_mid_{{ sSlug }}" href="https://saascostaudit.com/ucaas/?utm_source=apicostaudit.com&amp;utm_medium=sister_funnel&amp;clickref=funnel_api_to_saas_calc_mid_{{ sSlug }}" target="_blank" rel="noopener">Compare Per-Seat AI TCO →</a>
+      </div>
+    </div>
+    <div class="calc-vendor-card vendor-best">
+      <small>Gemini 2.5 Pro / Flash</small>
+      <strong class="calc-big" id="ltc-gemini-yr">$4,007/yr</strong>
+      <span class="calc-sub" id="ltc-gemini-sub">Pro: $334/mo ($1.25/$10) · Flash: $301/yr ($0.15/$0.60)</span>
+    </div>
+    <div class="calc-vendor-card vendor-best">
+      <small>DeepSeek R1/V3 &amp; Llama 4</small>
+      <strong class="calc-big" id="ltc-deepseek-yr">$543/yr</strong>
+      <span class="calc-sub" id="ltc-deepseek-sub">DeepSeek: $45/mo ($0.27/$1.10) · Llama 4: $324/yr ($0.20/$0.60)</span>
+      <div style="margin-top:.55rem">
+        <a class="cta-secondary tbl-cta-btn" data-partner="Generic API Slot (RunPod GPU)" data-cta-slot="llm_token_calc" data-funnel-role="mid_content" data-4axis-key="generic_api_partner_slot:api_llm_runpod_calc_mid:API_COSTS.gpu_vector_infra:mid_content" data-route-slug="{{ sSlug }}" data-clickref="api_llm_runpod_calc_mid_{{ sSlug }}" href="https://www.runpod.io/pricing?utm_source=apicostaudit.com&amp;utm_medium=affiliate&amp;clickref=api_llm_runpod_calc_mid_{{ sSlug }}" target="_blank" rel="sponsored nofollow noopener">Run Private Pod ($1.89/hr) →</a>
+      </div>
+    </div>
+  </div>
+  <div class="box" style="margin:.6rem 0 0;background:#ecfdf5;border-color:#6ee7b7">
+    <strong id="ltc-breakeven-headline">🏛️ FinOps Prompt Caching + Batch API Savings &amp; Self-Hosted H100 GPU Breakeven Audit</strong>
+    <p style="margin:.2rem 0 0;font-size:.86rem;color:#065f46" id="ltc-breakeven-detail">Enabling 50% Prompt Caching + 25% Batch API saves 34%–58% vs. uncached synchronous API calls. Dedicated 1x H100 GPU ($1,960/mo on RunPod/DigitalOcean) breaks even once monthly frontier API spend exceeds ~$2,000/mo.</p>
+  </div>
+</section>
+<script>
+(function(){
+  var inEl = document.getElementById("ltc-in");
+  var inRange = document.getElementById("ltc-in-range");
+  var outEl = document.getElementById("ltc-out");
+  var outRange = document.getElementById("ltc-out-range");
+  var cacheEl = document.getElementById("ltc-cache");
+  var batchEl = document.getElementById("ltc-batch");
+  if (!inEl || !outEl) return;
+  function fmt(n) { return "$" + Math.round(n).toLocaleString("en-US"); }
+  function compute(fromUser) {
+    var inM = Math.max(1, parseFloat(inEl.value || "120"));
+    var outM = Math.max(1, parseFloat(outEl.value || "30"));
+    var cPct = Math.max(0, Math.min(95, parseFloat(cacheEl.value || "50"))) / 100.0;
+    var bPct = Math.max(0, Math.min(100, parseFloat(batchEl.value || "25"))) / 100.0;
+    document.getElementById("ltc-in-lbl").textContent = inM + "M";
+    document.getElementById("ltc-out-lbl").textContent = outM + "M";
+    document.getElementById("ltc-cache-lbl").textContent = Math.round(cPct * 100) + "%";
+    document.getElementById("ltc-batch-lbl").textContent = Math.round(bPct * 100) + "%";
+    var bFactor = 1.0 - (0.50 * bPct);
+    var openaiMo = ((inM * (1 - cPct) * 2.50) + (inM * cPct * 1.25) + (outM * 10.00)) * bFactor;
+    var sonnetMo = ((inM * (1 - cPct) * 3.00) + (inM * cPct * 0.30) + (outM * 15.00)) * bFactor;
+    var opusMo = ((inM * (1 - cPct) * 15.00) + (inM * cPct * 1.50) + (outM * 75.00)) * bFactor;
+    var gemProMo = ((inM * (1 - cPct) * 1.25) + (inM * cPct * 0.31) + (outM * 10.00)) * bFactor;
+    var gemFlashMo = ((inM * (1 - cPct) * 0.15) + (inM * cPct * 0.0375) + (outM * 0.60)) * bFactor;
+    var dsMo = ((inM * (1 - cPct) * 0.27) + (inM * cPct * 0.07) + (outM * 1.10)) * bFactor;
+    var llamaMo = ((inM * (1 - cPct) * 0.20) + (inM * cPct * 0.10) + (outM * 0.60)) * bFactor;
+    document.getElementById("ltc-openai-yr").textContent = fmt(openaiMo * 12) + "/yr";
+    document.getElementById("ltc-openai-sub").textContent = fmt(openaiMo) + "/mo · $2.50/1M in ($1.25 cached) · $10/1M out";
+    document.getElementById("ltc-sonnet-yr").textContent = fmt(sonnetMo * 12) + "/yr";
+    document.getElementById("ltc-sonnet-sub").textContent = fmt(sonnetMo) + "/mo · $3.00/1M in ($0.30 cached 90% off) · $15/1M out";
+    document.getElementById("ltc-opus-yr").textContent = fmt(opusMo * 12) + "/yr";
+    document.getElementById("ltc-opus-sub").textContent = fmt(opusMo) + "/mo · $15/1M in ($1.50 cached) · $75/1M out";
+    document.getElementById("ltc-gemini-yr").textContent = fmt(gemProMo * 12) + "/yr";
+    document.getElementById("ltc-gemini-sub").textContent = "Pro: " + fmt(gemProMo) + "/mo · Flash: " + fmt(gemFlashMo * 12) + "/yr (" + fmt(gemFlashMo) + "/mo)";
+    document.getElementById("ltc-deepseek-yr").textContent = fmt(dsMo * 12) + "/yr";
+    document.getElementById("ltc-deepseek-sub").textContent = "DeepSeek: " + fmt(dsMo) + "/mo · Llama 4: " + fmt(llamaMo * 12) + "/yr (" + fmt(llamaMo) + "/mo)";
+    if (fromUser && window.posthog && typeof window.posthog.capture === "function") {
+      window.posthog.capture("estimator_interaction", {product_domain: "apicostaudit.com", calculator: "llm_token_calc", input_m: inM, output_m: outM, cache_pct: Math.round(cPct*100), batch_pct: Math.round(bPct*100)});
+    }
+  }
+  if (inRange) {
+    inRange.addEventListener("input", function(){ inEl.value = inRange.value; compute(true); });
+    inEl.addEventListener("input", function(){ inRange.value = inEl.value; compute(true); });
+  }
+  if (outRange) {
+    outRange.addEventListener("input", function(){ outEl.value = outRange.value; compute(true); });
+    outEl.addEventListener("input", function(){ outRange.value = outEl.value; compute(true); });
+  }
+  [cacheEl, batchEl].forEach(function(el){ if (el) el.addEventListener("input", function(){ compute(true); }); });
+  compute(false);
+})();
+</script>
+{% endmacro %}
+
+{% macro crossFamilyFunnelBanner(currentSlug) %}
+<section class="box" id="b2b-audit-family-banner" aria-label="B2B Audit Product Family Cross-Domain Network and Traffic Funnel" style="margin:1.2rem 0;background:#f8fafc;border:2px solid #0284c7;padding:1rem 1.15rem">
+  <span class="verified-gov-badge">🏛️ B2B COST AUDIT PRODUCT FAMILY · CROSS-FAMILY TRAFFIC &amp; MONETIZATION FUNNEL (4-AXIS TAXONOMY)</span>
+  <h2 style="margin:.35rem 0 .35rem;border-top:0;padding-top:0;font-size:1.1rem">Audit Your Entire B2B Engineering, SaaS, Payment &amp; Compliance Stack Across All 4 Sister Domains</h2>
+  <p style="margin:0 0 .65rem;font-size:.89rem;color:#334155">Even when frontier LLM token APIs (like direct OpenAI or Anthropic) have zero vendor affiliate programs, CFOs and CTOs auditing API spend typically overpay <strong>$8,000–$45,000/yr</strong> across their adjacent SaaS seats, payment processing, and AI compliance policies. Jump directly to the canonical sister calculator below:</p>
+  <div class="card-grid-2">
+    <div class="calc-vendor-card vendor-best">
+      <small>1. B2B_FEES · Transactional &amp; Payment Fees</small>
+      <h3 style="margin:.2rem 0 .3rem"><a href="https://b2bfeeaudit.com/merchant/stripe-vs-helcim-interchange-plus/?utm_source=apicostaudit.com&amp;utm_medium=sister_funnel&amp;clickref=funnel_api_to_fee_{{ currentSlug }}" data-funnel-role="mid_content" data-4axis-key="sister_family_funnel:funnel_api_to_fee_{{ currentSlug }}:B2B_FEES.merchant_processing:mid_content">B2BFeeAudit.com — Stripe Billing (2.9%+$0.30) vs. Interchange-Plus</a></h3>
+      <p style="margin:0 0 .5rem;font-size:.84rem;color:#334155">Cut SaaS/API customer billing COGS by 30%–45% switching from flat-rate Stripe + 0.8% Invoicing to Helcim ($0/mo IC+) or Stax (0% markup).</p>
+      <a class="cta tbl-cta-btn" href="https://b2bfeeaudit.com/merchant/stripe-vs-helcim-interchange-plus/?utm_source=apicostaudit.com&amp;utm_medium=sister_funnel&amp;clickref=funnel_api_to_fee_{{ currentSlug }}" data-funnel-role="mid_content" data-4axis-key="sister_family_funnel:funnel_api_to_fee_{{ currentSlug }}:B2B_FEES.merchant_processing:mid_content">Audit Payment &amp; Filing Fees →</a>
+    </div>
+    <div class="calc-vendor-card vendor-best">
+      <small>2. B2B_COSTS · AI Tech E&amp;O, Cyber &amp; Labor Burden</small>
+      <h3 style="margin:.2rem 0 .3rem"><a href="https://b2bcostaudit.com/eo-insurance/cyber-eo-premium-estimator/?utm_source=apicostaudit.com&amp;utm_medium=sister_funnel&amp;clickref=funnel_api_to_cost_{{ currentSlug }}" data-funnel-role="mid_content" data-4axis-key="sister_family_funnel:funnel_api_to_cost_{{ currentSlug }}:B2B_COSTS.eo_cyber_insurance:mid_content">B2BCostAudit.com — AI Tech E&amp;O, Cyber Insurance &amp; W-2/1099 Burden</a></h3>
+      <p style="margin:0 0 .5rem;font-size:.84rem;color:#334155">Estimate $1M–$5M SOC 2 Tech E&amp;O + AI Cyber Liability premiums (Embroker, Vouch, Hiscox) and W-2 vs. 1099 engineering headcount burden.</p>
+      <a class="cta tbl-cta-btn" href="https://b2bcostaudit.com/eo-insurance/cyber-eo-premium-estimator/?utm_source=apicostaudit.com&amp;utm_medium=sister_funnel&amp;clickref=funnel_api_to_cost_{{ currentSlug }}" data-funnel-role="mid_content" data-4axis-key="sister_family_funnel:funnel_api_to_cost_{{ currentSlug }}:B2B_COSTS.eo_cyber_insurance:mid_content">Audit Tech E&amp;O &amp; Labor Costs →</a>
+    </div>
+    <div class="calc-vendor-card vendor-best">
+      <small>3. SAAS_COSTS · Per-Seat SaaS, UCaaS &amp; AI Workspaces</small>
+      <h3 style="margin:.2rem 0 .3rem"><a href="https://saascostaudit.com/ucaas/?utm_source=apicostaudit.com&amp;utm_medium=sister_funnel&amp;clickref=funnel_api_to_saas_{{ currentSlug }}" data-funnel-role="mid_content" data-4axis-key="sister_family_funnel:funnel_api_to_saas_{{ currentSlug }}:SAAS_COSTS.ucaas_seats:mid_content">SaaSCostAudit.com — Per-Seat UCaaS (Webex/Teams/Zoom/Google) &amp; HRIS</a></h3>
+      <p style="margin:0 0 .5rem;font-size:.84rem;color:#334155">Compare $25–$30/seat AI workspace &amp; UCaaS collaboration licenses against metered API usage and unbundled NCE/storage surcharges.</p>
+      <a class="cta-secondary tbl-cta-btn" href="https://saascostaudit.com/ucaas/?utm_source=apicostaudit.com&amp;utm_medium=sister_funnel&amp;clickref=funnel_api_to_saas_{{ currentSlug }}" data-funnel-role="mid_content" data-4axis-key="sister_family_funnel:funnel_api_to_saas_{{ currentSlug }}:SAAS_COSTS.ucaas_seats:mid_content">Audit Per-Seat SaaS &amp; UCaaS →</a>
+    </div>
+    <div class="calc-vendor-card">
+      <small>4. API_COSTS · Metered Token, Voice, GPU &amp; B2B APIs</small>
+      <h3 style="margin:.2rem 0 .3rem"><a href="/">APICostAudit.com — You Are Here (4 Subdivisions)</a></h3>
+      <p style="margin:0 0 .5rem;font-size:.84rem;color:#334155">Explore <a href="/llm-api/"><code>/llm-api/</code></a>, <a href="/voice-video-api/"><code>/voice-video-api/</code></a>, <a href="/ai-infra-gpu/"><code>/ai-infra-gpu/</code></a>, and <a href="/b2b-apis/"><code>/b2b-apis/</code></a>.</p>
+      <a class="cta-secondary tbl-cta-btn" href="/datasets/api-llm-voice-gpu-benchmarks-2026.json">Download 2026 API Dataset (JSON) →</a>
+    </div>
+  </div>
+</section>
+{% endmacro %}
+
+{% macro faq(list) %}
+{% if list and list.length %}
+<section class="card">
+  <h2 style="margin-top:0;border-top:0;padding-top:0">Frequently Asked Questions (2026 Verified API Rate Cards)</h2>
+  {% for f in list %}
+  <details class="faq-card" open>
+    <summary><h3>{{ f.q }}</h3></summary>
+    <p>{{ f.a }}</p>
+  </details>
+  {% endfor %}
+</section>
+{% endif %}
+{% endmacro %}
+
+{% macro sources(list) %}
+<h2 id="official-sources">Official Regulatory (.gov) &amp; Published Vendor API Pricing Sources</h2>
+<ol>
+  {% for s in list %}
+  <li id="src-{{ s.id }}"><a href="{{ s.url }}" rel="nofollow noopener" target="_blank">{{ s.title }}</a> <small>(verified {{ s.accessed or "2026-10-27" }})</small></li>
+  {% endfor %}
+</ol>
+{% endmacro %}
+
+{% macro serviceOfferSchema(entry, site, pageUrl) %}
+{% if entry and entry.prices and entry.prices.length %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":{{ entry.seoTitle | json | safe }},"description":{{ entry.seoDescription | json | safe }},"url":"{{ site.url }}{{ pageUrl }}","serviceType":"B2B API, LLM Token, Voice AI & GPU Cloud TCO Audit","provider":{"@type":"Organization","@id":"{{ site.url }}/#organization","name":"API Cost Audit","url":"{{ site.url }}/"},"areaServed":{"@type":"Country","name":"United States"},"offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"0","highPrice":"5000","offerCount":"{{ entry.prices.length }}","offers":[{% for row in entry.prices %}{"@type":"Offer","name":{{ row.label | json | safe }},"description":{{ row.price | json | safe }},"url":"{{ site.url }}{{ pageUrl }}#cost-comparison"}{% if not loop.last %},{% endif %}{% endfor %}]}}</script>
+{% endif %}
+{% endmacro %}

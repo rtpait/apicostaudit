@@ -1,0 +1,16 @@
+{
+  "name": "api-llm-voice-gpu-benchmarks-2026",
+  "title": "2026 B2B LLM Token, Voice AI Per-Minute, Serverless GPU, Vector DB & B2B API Pricing Benchmarks",
+  "license": "CC-BY-4.0",
+  "homepage": "https://apicostaudit.com/",
+  "resources": [
+    {
+      "path": "api-llm-voice-gpu-benchmarks-2026.json",
+      "format": "json"
+    },
+    {
+      "path": "api-llm-voice-gpu-benchmarks-2026.csv",
+      "format": "csv"
+    }
+  ]
+}

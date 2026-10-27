@@ -1,0 +1,18 @@
+{
+  "name": "apicostaudit",
+  "version": "1.0.0",
+  "description": "API Cost Audit (apicostaudit.com) \u2014 Independent LLM Token, Prompt Caching, Batch API, Voice AI Per-Minute, Serverless GPU, Vector DB & B2B API TCO Auditor (2026 Verified Rate Cards)",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve --port 8084",
+    "validate": "node scripts/validate.js",
+    "test": "node scripts/validate.js"
+  },
+  "author": "Research Triangle Park AI Transformation LLC",
+  "license": "CC-BY-4.0",
+  "type": "commonjs",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.7"
+  }
+}
