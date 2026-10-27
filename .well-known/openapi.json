@@ -1,0 +1,26 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "API Cost Audit (apicostaudit.com) Benchmark API",
+    "version": "1.0.0",
+    "description": "Deterministic 2026 LLM Token, Voice AI Per-Minute, Serverless GPU, Vector DB & B2B API Cost Benchmark Feeds."
+  },
+  "servers": [
+    {
+      "url": "https://apicostaudit.com"
+    }
+  ],
+  "paths": {
+    "/datasets/api-llm-voice-gpu-benchmarks-2026.json": {
+      "get": {
+        "operationId": "getApiCostBenchmarks2026",
+        "summary": "Return 2026 verified LLM token, Voice AI, GPU cloud, Vector DB, and B2B API pricing benchmarks.",
+        "responses": {
+          "200": {
+            "description": "JSON benchmark dataset"
+          }
+        }
+      }
+    }
+  }
+}

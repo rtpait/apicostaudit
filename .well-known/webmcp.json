@@ -1,0 +1,194 @@
+{
+  "schema_version": "2026-03-01",
+  "protocol": "webmcp/1.0",
+  "site": {
+    "name": "API Cost Audit",
+    "legal_entity": "Research Triangle Park AI Transformation LLC",
+    "url": "https://apicostaudit.com/",
+    "description": "Deterministic B2B API Total Cost of Ownership (TCO) auditor for Metered LLM Token APIs (OpenAI GPT-5/GPT-4o, Anthropic Claude 4.5 Sonnet & Opus, Google Gemini 2.5 Pro & Flash, DeepSeek V3/R1, Llama 4), Voice AI Per-Minute Stacks (ElevenLabs, Deepgram Nova-3, Retell AI, Vapi, OpenAI Realtime), Serverless GPU & Vector DB Read/Write Units (Pinecone, Qdrant, RunPod, DigitalOcean GPU), and B2B APIs (Twilio SMS/Verify, Auth0/Clerk/WorkOS).",
+    "license": "CC-BY-4.0",
+    "llms_txt": "https://apicostaudit.com/llms.txt",
+    "llms_full_txt": "https://apicostaudit.com/llms-full.txt",
+    "openapi_spec": "https://apicostaudit.com/.well-known/openapi.json",
+    "datasets": [
+      {
+        "id": "api-llm-voice-gpu-benchmarks-2026-csv",
+        "format": "csv",
+        "url": "https://apicostaudit.com/datasets/api-llm-voice-gpu-benchmarks-2026.csv"
+      },
+      {
+        "id": "api-llm-voice-gpu-benchmarks-2026-json",
+        "format": "json",
+        "url": "https://apicostaudit.com/datasets/api-llm-voice-gpu-benchmarks-2026.json"
+      }
+    ],
+    "stage2_gate_status_url": "https://apicostaudit.com/api/v1/benchmarks/gate-status.json"
+  },
+  "tools": [
+    {
+      "name": "calculate_llm_token_api_tco",
+      "title": "LLM Token, Prompt Caching & Batch API 12-Month TCO Calculator",
+      "description": "Calculates deterministic monthly and 12-month API token spend across OpenAI GPT-5/GPT-4o, Anthropic Claude 4.5 Sonnet & Opus, Google Gemini 2.5 Pro & Flash, DeepSeek V3/R1, and Meta Llama 4 including prompt cache read discounts (50%-90% off) and 24-hour Batch API 50% discounts.",
+      "canonical_route": "https://apicostaudit.com/llm-api/openai-vs-anthropic-claude-token-calculator/",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "monthly_input_tokens_millions",
+          "monthly_output_tokens_millions"
+        ],
+        "properties": {
+          "monthly_input_tokens_millions": {
+            "type": "number",
+            "default": 100
+          },
+          "monthly_output_tokens_millions": {
+            "type": "number",
+            "default": 25
+          },
+          "cached_input_share_pct": {
+            "type": "number",
+            "default": 50
+          },
+          "batch_api_share_pct": {
+            "type": "number",
+            "default": 20
+          }
+        }
+      },
+      "access_tier": "STAGE_1_FREE_SINGLE_LOOKUP",
+      "output_partner_actions": [
+        {
+          "vendor": "DigitalOcean GPU Droplets (H100 Self-Hosted LLM Breakeven)",
+          "subid": "webmcp-api-do-gpu",
+          "cpa_tier": "$200 Cloud Infrastructure CPA (CJ 8108003)",
+          "referral_action_url": "https://www.digitalocean.com/pricing/gpu-droplets?utm_source=apicostaudit.com&utm_medium=affiliate&sid=8108003&clickref=webmcp-api-do-gpu"
+        },
+        {
+          "vendor": "Pinecone Serverless Vector DB (RAG Context Optimization)",
+          "subid": "webmcp-api-pinecone",
+          "cpa_tier": "$100-$250 Cloud Partner CPA",
+          "referral_action_url": "https://www.pinecone.io/pricing/?utm_source=apicostaudit.com&utm_medium=affiliate&clickref=webmcp-api-pinecone"
+        }
+      ]
+    },
+    {
+      "name": "calculate_voice_ai_per_minute_tco",
+      "title": "Voice AI Agent Per-Minute Stacked Cost Calculator (ElevenLabs, Deepgram, Retell, Vapi, OpenAI Realtime)",
+      "description": "Calculates all-in per-minute and 12-month Voice AI agent costs across managed orchestrators (Retell AI, Vapi), native speech-to-speech (OpenAI Realtime API), and direct cascaded pipelines (Deepgram Nova-3 STT + LLM + ElevenLabs Flash TTS + Twilio SIP).",
+      "canonical_route": "https://apicostaudit.com/voice-video-api/elevenlabs-vs-openai-realtime-voice-tco/",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "monthly_voice_minutes"
+        ],
+        "properties": {
+          "monthly_voice_minutes": {
+            "type": "integer",
+            "default": 50000
+          },
+          "peak_concurrent_calls": {
+            "type": "integer",
+            "default": 25
+          }
+        }
+      },
+      "access_tier": "STAGE_1_FREE_SINGLE_LOOKUP",
+      "output_partner_actions": [
+        {
+          "vendor": "ElevenLabs Conversational Voice AI & Flash TTS API",
+          "subid": "webmcp-api-elevenlabs",
+          "cpa_tier": "22% Recurring Affiliate Commission",
+          "referral_action_url": "https://elevenlabs.io/pricing?utm_source=apicostaudit.com&utm_medium=affiliate&clickref=webmcp-api-elevenlabs"
+        },
+        {
+          "vendor": "Retell AI Voice Agent Platform ($0.07+/min)",
+          "subid": "webmcp-api-retell",
+          "cpa_tier": "20% Recurring Partner RevShare",
+          "referral_action_url": "https://www.retellai.com/pricing?utm_source=apicostaudit.com&utm_medium=affiliate&clickref=webmcp-api-retell"
+        }
+      ]
+    },
+    {
+      "name": "calculate_vector_db_and_gpu_tco",
+      "title": "Pinecone vs Qdrant Vector DB & H100 Serverless GPU Cost Calculator",
+      "description": "Audits monthly vector storage (GB), read units (RU), write units (WU), and H100/A100/L40S GPU instance hours across Pinecone Serverless, Qdrant Cloud, RunPod, Vast.ai, Modal, and DigitalOcean GPU.",
+      "canonical_route": "https://apicostaudit.com/ai-infra-gpu/pinecone-vs-qdrant-vector-db-tco/",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "vector_storage_gb",
+          "monthly_read_units_millions"
+        ],
+        "properties": {
+          "vector_storage_gb": {
+            "type": "number",
+            "default": 50
+          },
+          "monthly_read_units_millions": {
+            "type": "number",
+            "default": 25
+          },
+          "monthly_gpu_hours": {
+            "type": "number",
+            "default": 160
+          }
+        }
+      },
+      "access_tier": "STAGE_1_FREE_SINGLE_LOOKUP",
+      "output_partner_actions": [
+        {
+          "vendor": "Pinecone Serverless Vector Database",
+          "subid": "webmcp-api-pinecone-vec",
+          "cpa_tier": "$100-$250 Cloud Partner CPA",
+          "referral_action_url": "https://www.pinecone.io/pricing/?utm_source=apicostaudit.com&utm_medium=affiliate&clickref=webmcp-api-pinecone-vec"
+        },
+        {
+          "vendor": "RunPod Serverless & On-Demand H100 GPUs",
+          "subid": "webmcp-api-runpod-gpu",
+          "cpa_tier": "5%-10% Compute Referral RevShare",
+          "referral_action_url": "https://www.runpod.io/pricing?utm_source=apicostaudit.com&utm_medium=affiliate&clickref=webmcp-api-runpod-gpu"
+        }
+      ]
+    },
+    {
+      "name": "calculate_b2b_api_overage_tco",
+      "title": "Twilio SMS/Verify, Auth0/Clerk/WorkOS MAU & Webhook API Overage Calculator",
+      "description": "Calculates B2B API costs across Twilio SMS segments (including 10DLC carrier fees and FCC USF surcharges), Verify OTPs, Auth0/Clerk/WorkOS B2B MAU & Enterprise SAML SSO connections, and Make/n8n webhook operations.",
+      "canonical_route": "https://apicostaudit.com/b2b-apis/twilio-sms-voice-verify-per-call-fee-calculator/",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "monthly_sms_segments",
+          "monthly_active_users"
+        ],
+        "properties": {
+          "monthly_sms_segments": {
+            "type": "integer",
+            "default": 100000
+          },
+          "monthly_otp_verifications": {
+            "type": "integer",
+            "default": 15000
+          },
+          "monthly_active_users": {
+            "type": "integer",
+            "default": 25000
+          },
+          "enterprise_sso_connections": {
+            "type": "integer",
+            "default": 5
+          }
+        }
+      },
+      "access_tier": "STAGE_1_FREE_SINGLE_LOOKUP",
+      "output_partner_actions": [
+        {
+          "vendor": "Make.com API & Webhook Automation",
+          "subid": "webmcp-api-make",
+          "cpa_tier": "20%-35% B2B Partner RevShare",
+          "referral_action_url": "https://www.make.com/en/pricing?utm_source=apicostaudit.com&utm_medium=affiliate&clickref=webmcp-api-make"
+        }
+      ]
+    }
+  ]
+}
