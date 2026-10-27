@@ -12,7 +12,7 @@
 
 {% macro verdictCard(v, site, rSlug) %}
 {% set topKey1 = v.topKey1 or ("generic_api_partner_slot:api_llm_token_top_placeholder:API_COSTS.llm_token_api:top_of_page") %}
-{% set topKey2 = v.topKey2 or ("sister_family_funnel:funnel_api_to_saas_seats_top:API_COSTS.llm_token_api:top_of_page") %}
+{% set topKey2 = v.topKey2 or ("generic_api_partner_slot:api_voice_elevenlabs_top_placeholder:API_COSTS.voice_video_api:top_of_page") %}
 <section class="verdict-card" aria-label="30-Second FinOps API Audit Verdict">
   <div class="verdict-header">
     <strong>⏱️ 30-Second FinOps &amp; CTO Audit Verdict: {{ v.title }}</strong>
@@ -34,7 +34,7 @@
   </ul>
   <div class="verdict-actions">
     <a class="cta verdict-btn" data-partner="{{ v.cta1Partner or 'Generic API Slot (GPU/Infra)' }}" data-cta-slot="verdict_card" data-funnel-role="top_of_page" data-4axis-key="{{ topKey1 }}" data-route-slug="{{ rSlug }}" data-calc-inputs='{"slot":"verdict_top_1"}' data-clickref="api_verdict_top_1_{{ rSlug }}" href="{{ v.cta1Url or 'https://www.digitalocean.com/pricing/gpu-droplets?utm_source=apicostaudit.com&utm_medium=affiliate&sid=8108003&clickref=api_llm_token_top_placeholder' }}" target="_blank" rel="sponsored nofollow noopener">{{ v.cta1Label or "Compare Dedicated H100 GPU vs. API Token TCO →" }}</a>
-    <a class="cta-secondary verdict-btn" data-partner="{{ v.cta2Partner or 'Sister Family Funnel' }}" data-cta-slot="verdict_card" data-funnel-role="top_of_page" data-4axis-key="{{ topKey2 }}" data-route-slug="{{ rSlug }}" data-calc-inputs='{"slot":"verdict_top_2"}' data-clickref="api_verdict_top_2_{{ rSlug }}" href="{{ v.cta2Url or 'https://saascostaudit.com/ucaas/?utm_source=apicostaudit.com&utm_medium=sister_funnel&clickref=funnel_api_to_saas_seats_top' }}" target="_blank" rel="noopener">{{ v.cta2Label or "Audit Per-Seat SaaS vs. Metered API Breakeven (SaaSCostAudit.com) →" }}</a>
+    <a class="cta-secondary verdict-btn" data-partner="{{ v.cta2Partner or 'Generic API Slot (Voice/Vector)' }}" data-cta-slot="verdict_card" data-funnel-role="top_of_page" data-4axis-key="{{ topKey2 }}" data-route-slug="{{ rSlug }}" data-calc-inputs='{"slot":"verdict_top_2"}' data-clickref="api_verdict_top_2_{{ rSlug }}" href="{{ v.cta2Url or 'https://elevenlabs.io/pricing?utm_source=apicostaudit.com&utm_medium=affiliate&clickref=api_voice_elevenlabs_top_placeholder' }}" target="_blank" rel="sponsored nofollow noopener">{{ v.cta2Label or "Audit ElevenLabs & Voice AI Per-Minute API Rates →" }}</a>
   </div>
 </section>
 {% endmacro %}
@@ -54,7 +54,7 @@
     <tbody>
     {% for p in list %}
       {% set rowSubId = "api_mid_r" + loop.index + "_" + slug %}
-      {% set netKey = p.network or "generic_api_partner_slot" %}
+      {% set netKey = "generic_api_partner_slot" %}
       {% set compKey = netKey + ":" + rowSubId + ":" + vKey + ":mid_content" %}
       <tr>
         <td class="sticky-col">
@@ -71,8 +71,10 @@
         <td>
           {% if p.ctaType == "gov" %}
             <a class="tbl-gov-link" href="#src-{{ p.source or 1 }}">🏛️ Verify .gov Rule [{{ p.source or 1 }}]</a>
+          {% elif p.ctaType == "sister" %}
+            <a class="tbl-cta-btn" data-sister-referral="true" data-route-slug="{{ slug }}" href="{{ p.ctaUrl }}" target="_blank" rel="noopener">{{ p.ctaLabel }}</a>
           {% else %}
-            <a class="tbl-cta-btn" data-partner="{{ p.partner or 'API_Partner_Slot' }}" data-cta-slot="price_table_row" data-funnel-role="mid_content" data-4axis-key="{{ compKey }}" data-route-slug="{{ slug }}" data-calc-inputs='{"row":{{ loop.index }}}' data-clickref="{{ rowSubId }}" href="{{ p.ctaUrl or 'https://www.pinecone.io/pricing/?utm_source=apicostaudit.com&utm_medium=affiliate' }}{% if '?' in (p.ctaUrl or '') %}&amp;{% else %}?{% endif %}clickref={{ rowSubId }}" target="_blank" {% if p.ctaType == "sister" %}rel="noopener"{% else %}rel="sponsored nofollow noopener"{% endif %}>{{ p.ctaLabel or ("Verify " + (p.partner or "API") + " Rate →") }}</a>
+            <a class="tbl-cta-btn" data-partner="{{ p.partner or 'API_Partner_Slot' }}" data-cta-slot="price_table_row" data-funnel-role="mid_content" data-4axis-key="{{ compKey }}" data-route-slug="{{ slug }}" data-calc-inputs='{"row":{{ loop.index }}}' data-clickref="{{ rowSubId }}" href="{{ p.ctaUrl or 'https://www.pinecone.io/pricing/?utm_source=apicostaudit.com&utm_medium=affiliate' }}{% if '?' in (p.ctaUrl or '') %}&amp;{% else %}?{% endif %}clickref={{ rowSubId }}" target="_blank" rel="sponsored nofollow noopener">{{ p.ctaLabel or ("Verify " + (p.partner or "API") + " Rate →") }}</a>
           {% endif %}
         </td>
       </tr>
@@ -89,7 +91,7 @@
 {% set outM = defOutM or 30 %}
 {% set cachePct = defCachePct if defCachePct is defined else 50 %}
 {% set batchPct = defBatchPct if defBatchPct is defined else 25 %}
-<section class="tco-calc-box" id="payroll-tco-calc" data-calc-type="llm_token_calc" data-route-slug="{{ sSlug }}" aria-label="Interactive LLM Token, Prompt Caching and Batch API Cost Calculator">
+<section class="tco-calc-box" id="llm-token-calc" data-calc-type="llm_token_calc" data-route-slug="{{ sSlug }}" aria-label="Interactive LLM Token, Prompt Caching and Batch API Cost Calculator">
   <div>
     <span class="badge-agent">🧮 DETERMINISTIC 2026 LLM TOKEN, PROMPT CACHING (90% OFF) &amp; BATCH API (50% OFF) CALCULATOR</span>
     <h2 style="margin:.35rem 0 .2rem;border-top:0;padding-top:0">Compare OpenAI GPT-5/GPT-4o, Claude 4.5 Sonnet &amp; Opus, Gemini 2.5 Pro &amp; Flash, DeepSeek R1/V3 &amp; Llama 4</h2>
@@ -139,7 +141,7 @@
       <strong class="calc-big" id="ltc-opus-yr">$34,992/yr</strong>
       <span class="calc-sub" id="ltc-opus-sub">$2,916/mo · $15/1M in ($1.50 cached) · $75/1M out</span>
       <div style="margin-top:.55rem">
-        <a class="cta-secondary tbl-cta-btn" data-partner="Sister Funnel (SaaSCostAudit)" data-cta-slot="llm_token_calc" data-funnel-role="mid_content" data-4axis-key="sister_family_funnel:funnel_api_to_saas_calc_mid:SAAS_COSTS.crm_devtools_ai_seats:mid_content" data-route-slug="{{ sSlug }}" data-clickref="funnel_api_to_saas_calc_mid_{{ sSlug }}" href="https://saascostaudit.com/ucaas/?utm_source=apicostaudit.com&amp;utm_medium=sister_funnel&amp;clickref=funnel_api_to_saas_calc_mid_{{ sSlug }}" target="_blank" rel="noopener">Compare Per-Seat AI TCO →</a>
+        <a class="cta-secondary tbl-cta-btn" data-partner="Generic API Slot (ElevenLabs Voice)" data-cta-slot="llm_token_calc" data-funnel-role="mid_content" data-4axis-key="generic_api_partner_slot:api_voice_retell_mid_placeholder:API_COSTS.voice_video_api:mid_content" data-route-slug="{{ sSlug }}" data-clickref="api_voice_retell_mid_{{ sSlug }}" href="https://elevenlabs.io/pricing?utm_source=apicostaudit.com&amp;utm_medium=affiliate&amp;clickref=api_voice_retell_mid_{{ sSlug }}" target="_blank" rel="sponsored nofollow noopener">Audit Voice AI API Stack →</a>
       </div>
     </div>
     <div class="calc-vendor-card vendor-best">
@@ -224,21 +226,21 @@
   <div class="card-grid-2">
     <div class="calc-vendor-card vendor-best">
       <small>1. B2B_FEES · Transactional &amp; Payment Fees</small>
-      <h3 style="margin:.2rem 0 .3rem"><a href="https://b2bfeeaudit.com/merchant/stripe-vs-helcim-interchange-plus/?utm_source=apicostaudit.com&amp;utm_medium=sister_funnel&amp;clickref=funnel_api_to_fee_{{ currentSlug }}" data-funnel-role="mid_content" data-4axis-key="sister_family_funnel:funnel_api_to_fee_{{ currentSlug }}:B2B_FEES.merchant_processing:mid_content">B2BFeeAudit.com — Stripe Billing (2.9%+$0.30) vs. Interchange-Plus</a></h3>
+      <h3 style="margin:.2rem 0 .3rem"><a href="https://b2bfeeaudit.com/merchant/stripe-vs-helcim-interchange-plus/?utm_source=apicostaudit.com&amp;utm_medium=sister_funnel&amp;clickref=funnel_api_to_fee_{{ currentSlug }}" data-funnel-role="mid_content" data-sister-referral="true">B2BFeeAudit.com — Stripe Billing (2.9%+$0.30) vs. Interchange-Plus</a></h3>
       <p style="margin:0 0 .5rem;font-size:.84rem;color:#334155">Cut SaaS/API customer billing COGS by 30%–45% switching from flat-rate Stripe + 0.8% Invoicing to Helcim ($0/mo IC+) or Stax (0% markup).</p>
-      <a class="cta tbl-cta-btn" href="https://b2bfeeaudit.com/merchant/stripe-vs-helcim-interchange-plus/?utm_source=apicostaudit.com&amp;utm_medium=sister_funnel&amp;clickref=funnel_api_to_fee_{{ currentSlug }}" data-funnel-role="mid_content" data-4axis-key="sister_family_funnel:funnel_api_to_fee_{{ currentSlug }}:B2B_FEES.merchant_processing:mid_content">Audit Payment &amp; Filing Fees →</a>
+      <a class="cta tbl-cta-btn" href="https://b2bfeeaudit.com/merchant/stripe-vs-helcim-interchange-plus/?utm_source=apicostaudit.com&amp;utm_medium=sister_funnel&amp;clickref=funnel_api_to_fee_{{ currentSlug }}" data-funnel-role="mid_content" data-sister-referral="true">Audit Payment &amp; Filing Fees →</a>
     </div>
     <div class="calc-vendor-card vendor-best">
       <small>2. B2B_COSTS · AI Tech E&amp;O, Cyber &amp; Labor Burden</small>
-      <h3 style="margin:.2rem 0 .3rem"><a href="https://b2bcostaudit.com/eo-insurance/cyber-eo-premium-estimator/?utm_source=apicostaudit.com&amp;utm_medium=sister_funnel&amp;clickref=funnel_api_to_cost_{{ currentSlug }}" data-funnel-role="mid_content" data-4axis-key="sister_family_funnel:funnel_api_to_cost_{{ currentSlug }}:B2B_COSTS.eo_cyber_insurance:mid_content">B2BCostAudit.com — AI Tech E&amp;O, Cyber Insurance &amp; W-2/1099 Burden</a></h3>
+      <h3 style="margin:.2rem 0 .3rem"><a href="https://b2bcostaudit.com/eo-insurance/cyber-eo-premium-estimator/?utm_source=apicostaudit.com&amp;utm_medium=sister_funnel&amp;clickref=funnel_api_to_cost_{{ currentSlug }}" data-funnel-role="mid_content" data-sister-referral="true">B2BCostAudit.com — AI Tech E&amp;O, Cyber Insurance &amp; W-2/1099 Burden</a></h3>
       <p style="margin:0 0 .5rem;font-size:.84rem;color:#334155">Estimate $1M–$5M SOC 2 Tech E&amp;O + AI Cyber Liability premiums (Embroker, Vouch, Hiscox) and W-2 vs. 1099 engineering headcount burden.</p>
-      <a class="cta tbl-cta-btn" href="https://b2bcostaudit.com/eo-insurance/cyber-eo-premium-estimator/?utm_source=apicostaudit.com&amp;utm_medium=sister_funnel&amp;clickref=funnel_api_to_cost_{{ currentSlug }}" data-funnel-role="mid_content" data-4axis-key="sister_family_funnel:funnel_api_to_cost_{{ currentSlug }}:B2B_COSTS.eo_cyber_insurance:mid_content">Audit Tech E&amp;O &amp; Labor Costs →</a>
+      <a class="cta tbl-cta-btn" href="https://b2bcostaudit.com/eo-insurance/cyber-eo-premium-estimator/?utm_source=apicostaudit.com&amp;utm_medium=sister_funnel&amp;clickref=funnel_api_to_cost_{{ currentSlug }}" data-funnel-role="mid_content" data-sister-referral="true">Audit Tech E&amp;O &amp; Labor Costs →</a>
     </div>
     <div class="calc-vendor-card vendor-best">
       <small>3. SAAS_COSTS · Per-Seat SaaS, UCaaS &amp; AI Workspaces</small>
-      <h3 style="margin:.2rem 0 .3rem"><a href="https://saascostaudit.com/ucaas/?utm_source=apicostaudit.com&amp;utm_medium=sister_funnel&amp;clickref=funnel_api_to_saas_{{ currentSlug }}" data-funnel-role="mid_content" data-4axis-key="sister_family_funnel:funnel_api_to_saas_{{ currentSlug }}:SAAS_COSTS.ucaas_seats:mid_content">SaaSCostAudit.com — Per-Seat UCaaS (Webex/Teams/Zoom/Google) &amp; HRIS</a></h3>
+      <h3 style="margin:.2rem 0 .3rem"><a href="https://saascostaudit.com/ucaas/?utm_source=apicostaudit.com&amp;utm_medium=sister_funnel&amp;clickref=funnel_api_to_saas_{{ currentSlug }}" data-funnel-role="mid_content" data-sister-referral="true">SaaSCostAudit.com — Per-Seat UCaaS (Webex/Teams/Zoom/Google) &amp; HRIS</a></h3>
       <p style="margin:0 0 .5rem;font-size:.84rem;color:#334155">Compare $25–$30/seat AI workspace &amp; UCaaS collaboration licenses against metered API usage and unbundled NCE/storage surcharges.</p>
-      <a class="cta-secondary tbl-cta-btn" href="https://saascostaudit.com/ucaas/?utm_source=apicostaudit.com&amp;utm_medium=sister_funnel&amp;clickref=funnel_api_to_saas_{{ currentSlug }}" data-funnel-role="mid_content" data-4axis-key="sister_family_funnel:funnel_api_to_saas_{{ currentSlug }}:SAAS_COSTS.ucaas_seats:mid_content">Audit Per-Seat SaaS &amp; UCaaS →</a>
+      <a class="cta-secondary tbl-cta-btn" href="https://saascostaudit.com/ucaas/?utm_source=apicostaudit.com&amp;utm_medium=sister_funnel&amp;clickref=funnel_api_to_saas_{{ currentSlug }}" data-funnel-role="mid_content" data-sister-referral="true">Audit Per-Seat SaaS &amp; UCaaS →</a>
     </div>
     <div class="calc-vendor-card">
       <small>4. API_COSTS · Metered Token, Voice, GPU &amp; B2B APIs</small>

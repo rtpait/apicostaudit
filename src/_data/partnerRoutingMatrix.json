@@ -1,179 +1,57 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.1.0-4-axis-exclusive-vertical-isolation",
   "domain": "apicostaudit.com",
-  "updated": "2026-10-27",
-  "networks": {
-    "cj_cid": "8108003",
-    "awin_id": "3133124",
-    "rakuten_sid": "4767884",
-    "impact_account": "714f5d78-7e2a-43b7-8971-27919db894fa"
-  },
-  "partners": [
+  "product_vertical_macro": "API_COSTS",
+  "allowed_4axis_vertical_prefix": "API_COSTS.",
+  "canonical_calculator_ids": [
+    "llm-token-calc",
+    "voice-ai-calc",
+    "gpu-vector-calc",
+    "b2b-api-calc"
+  ],
+  "exclusive_vertical_isolation_enforced": true,
+  "components": [
     {
-      "id": "elevenlabs",
-      "name": "ElevenLabs Voice AI API",
-      "category": "voice_video_api",
-      "cpa_Model": "22% Recurring Affiliate Commission (12 Months)",
-      "url": "https://elevenlabs.io/pricing?utm_source=apicostaudit.com&utm_medium=affiliate"
+      "composite_key": "generic_api_partner_slot:api_llm_token_top_placeholder:API_COSTS.llm_token_api:top_of_page",
+      "partner_network": "generic_api_partner_slot",
+      "tracking_sub_id": "api_llm_token_top_placeholder",
+      "product_vertical": "API_COSTS.llm_token_api",
+      "funnel_role": "top_of_page",
+      "dom_cta_slot": "verdict_card",
+      "partner_name": "API Infrastructure & GPU Breakeven Slot (DigitalOcean H100 / RunPod Placeholder)",
+      "destination_url": "https://www.digitalocean.com/pricing/gpu-droplets?utm_source=apicostaudit.com&utm_medium=affiliate&sid=8108003&clickref=api_llm_token_top_placeholder",
+      "sister_funnel_fallback_url": "https://saascostaudit.com/ucaas/?utm_source=apicostaudit.com&utm_medium=sister_funnel&clickref=funnel_api_to_saas_seats_top",
+      "modeled_cpa_usd": "Generic API Slot Placeholder ($100-$200 Cloud/GPU CPA + Sister Funnel to saascostaudit.com)"
     },
     {
-      "id": "retell",
-      "name": "Retell AI Voice Agents",
-      "category": "voice_video_api",
-      "cpa_Model": "20% Recurring Revenue Share",
-      "url": "https://www.retellai.com/pricing?utm_source=apicostaudit.com&utm_medium=affiliate"
+      "composite_key": "generic_api_partner_slot:api_voice_vector_mid_placeholder:API_COSTS.voice_video_api:mid_content",
+      "partner_network": "generic_api_partner_slot",
+      "tracking_sub_id": "api_voice_vector_mid_placeholder",
+      "product_vertical": "API_COSTS.voice_video_api",
+      "funnel_role": "mid_content",
+      "dom_cta_slot": "price_table_row",
+      "partner_name": "Voice & Vector API Partner Slot (ElevenLabs 22% / Retell 20% / Pinecone Placeholder)",
+      "destination_url": "https://elevenlabs.io/pricing?utm_source=apicostaudit.com&utm_medium=affiliate&clickref=api_voice_vector_mid_placeholder",
+      "sister_funnel_fallback_url": "https://b2bfeeaudit.com/merchant/stripe-vs-helcim-interchange-plus/?utm_source=apicostaudit.com&utm_medium=sister_funnel&clickref=funnel_api_to_fee_icplus_mid",
+      "modeled_cpa_usd": "Generic API Slot Placeholder (20%-22% RevShare + Sister Funnel to b2bfeeaudit.com)"
     },
     {
-      "id": "deepgram",
-      "name": "Deepgram Nova-3 STT & Aura TTS",
-      "category": "voice_video_api",
-      "cpa_Model": "$100-$250 B2B API Signup Credit/CPA",
-      "url": "https://deepgram.com/pricing?utm_source=apicostaudit.com&utm_medium=affiliate"
-    },
-    {
-      "id": "pinecone",
-      "name": "Pinecone Serverless Vector DB",
-      "category": "ai_infra_gpu",
-      "cpa_Model": "$100-$250 Cloud Marketplace / Partner CPA",
-      "url": "https://www.pinecone.io/pricing/?utm_source=apicostaudit.com&utm_medium=affiliate"
-    },
-    {
-      "id": "runpod",
-      "name": "RunPod Serverless GPU & Pods",
-      "category": "ai_infra_gpu",
-      "cpa_Model": "5%-10% GPU Compute Referral Credit/RevShare",
-      "url": "https://www.runpod.io/pricing?utm_source=apicostaudit.com&utm_medium=affiliate"
-    },
-    {
-      "id": "digitalocean-gpu",
-      "name": "DigitalOcean GPU Droplets (H100)",
-      "category": "ai_infra_gpu",
-      "cpa_Model": "CJ 8108003 $200 Cloud Infrastructure CPA",
-      "url": "https://www.digitalocean.com/pricing/gpu-droplets?utm_source=apicostaudit.com&utm_medium=affiliate&sid=8108003"
-    },
-    {
-      "id": "make",
-      "name": "Make.com API & Webhook Automation",
-      "category": "b2b_apis",
-      "cpa_Model": "20%-35% B2B Revenue Share",
-      "url": "https://www.make.com/en/pricing?utm_source=apicostaudit.com&utm_medium=affiliate"
-    },
-    {
-      "id": "twilio",
-      "name": "Twilio Programmable Messaging & Verify API",
-      "category": "b2b_apis",
-      "cpa_Model": "Stage 1 Direct / Partner Attribution",
-      "url": "https://www.twilio.com/en-us/pricing?utm_source=apicostaudit.com&utm_medium=affiliate"
+      "composite_key": "generic_api_partner_slot:api_b2b_overage_footer_placeholder:API_COSTS.b2b_metered_apis:footer",
+      "partner_network": "generic_api_partner_slot",
+      "tracking_sub_id": "api_b2b_overage_footer_placeholder",
+      "product_vertical": "API_COSTS.b2b_metered_apis",
+      "funnel_role": "footer",
+      "dom_cta_slot": "sticky_mobile_bar",
+      "partner_name": "B2B Webhook & API Orchestration Slot (Make.com 35% / n8n Cloud 30% Placeholder)",
+      "destination_url": "https://www.make.com/en/pricing?utm_source=apicostaudit.com&utm_medium=affiliate&clickref=api_b2b_overage_footer_placeholder",
+      "sister_funnel_canonical_url": "https://b2bcostaudit.com/eo-insurance/cyber-eo-premium-estimator/",
+      "modeled_cpa_usd": "Generic API Slot Placeholder (20%-35% RevShare)"
     }
   ],
-  "four_axis_affiliate_taxonomy_version": "2.0.0",
-  "four_axis_composite_key_format": "<partner_network>:<tracking_sub_id>:<product_vertical>:<funnel_role>",
-  "pm_affiliate_segment_routing_priority": "P0_TOP_PRIORITY",
-  "cross_family_traffic_funnel": {
-    "rule_id": "CROSS_FAMILY_TRAFFIC_FUNNEL",
-    "status": "ACTIVE_ENFORCED",
-    "description": "Where an API category (such as direct OpenAI GPT-5/GPT-4o or Anthropic Claude token APIs) has no direct vendor affiliate program, apicostaudit.com's calculators and 4-axis slots (top_of_page, mid_content, footer) combine generic_api_partner_slot placeholders with high-intent Cross-Family Traffic Funnel CTAs that route engineering/CFO visitors directly to sister B2B Cost Audit Family calculators where $100-$350 CPA programs are active.",
-    "funnel_routes": [
-      {
-        "source_domain": "apicostaudit.com",
-        "source_vertical": "API_COSTS.llm_token_api",
-        "target_domain": "saascostaudit.com",
-        "target_vertical": "SAAS_COSTS.crm_devtools_ai_seats",
-        "funnel_trigger": "Team seat vs. metered API token breakeven (>15 seats spending >$30/mo on tokens -> compare per-seat AI workspace & UCaaS bundles on saascostaudit.com)",
-        "target_url": "https://saascostaudit.com/ucaas/?utm_source=apicostaudit.com&utm_medium=sister_funnel&clickref=funnel_api_to_saas_seats",
-        "composite_key": "sister_family_funnel:funnel_api_to_saas_seats_top:API_COSTS.llm_token_api:top_of_page"
-      },
-      {
-        "source_domain": "apicostaudit.com",
-        "source_vertical": "API_COSTS.b2b_metered_apis",
-        "target_domain": "b2bfeeaudit.com",
-        "target_vertical": "B2B_FEES.merchant_processing",
-        "funnel_trigger": "SaaS & API companies billing customers via Stripe Billing (+0.5%-0.8%) + 2.9%+$0.30 flat rate -> audit Interchange-Plus (Helcim/Stax) savings on b2bfeeaudit.com",
-        "target_url": "https://b2bfeeaudit.com/merchant/stripe-vs-helcim-interchange-plus/?utm_source=apicostaudit.com&utm_medium=sister_funnel&clickref=funnel_api_to_fee_icplus",
-        "composite_key": "sister_family_funnel:funnel_api_to_fee_icplus_mid:API_COSTS.b2b_metered_apis:mid_content"
-      },
-      {
-        "source_domain": "apicostaudit.com",
-        "source_vertical": "API_COSTS.gpu_vector_infra",
-        "target_domain": "b2bcostaudit.com",
-        "target_vertical": "B2B_COSTS.eo_cyber_insurance",
-        "funnel_trigger": "Enterprise AI & API vendors signing MSAs require $2M-$5M Tech E&O + AI Cyber Liability & ACORD 25 COI verification -> audit policy premiums on b2bcostaudit.com",
-        "target_url": "https://b2bcostaudit.com/eo-insurance/cyber-eo-premium-estimator/?utm_source=apicostaudit.com&utm_medium=sister_funnel&clickref=funnel_api_to_cost_eo",
-        "composite_key": "sister_family_funnel:funnel_api_to_cost_eo_footer:API_COSTS.gpu_vector_infra:footer"
-      }
-    ]
-  },
-  "domain_4_axis_segment": {
-    "product_vertical_macro": "API_COSTS",
-    "canonical_domain": "apicostaudit.com",
-    "slot_policy": "GENERIC_API_PARTNER_SLOTS_PLUS_CROSS_FAMILY_TRAFFIC_FUNNEL",
-    "components": [
-      {
-        "composite_key": "generic_api_partner_slot:api_llm_token_top_placeholder:API_COSTS.llm_token_api:top_of_page",
-        "partner_network": "generic_api_partner_slot",
-        "tracking_sub_id": "api_llm_token_top_placeholder",
-        "product_vertical": "API_COSTS.llm_token_api",
-        "funnel_role": "top_of_page",
-        "dom_cta_slot": "verdict_card",
-        "partner_name": "API Infrastructure & GPU Breakeven Slot (DigitalOcean H100 / RunPod Placeholder)",
-        "destination_url": "https://www.digitalocean.com/pricing/gpu-droplets?utm_source=apicostaudit.com&utm_medium=affiliate&sid=8108003&clickref=api_llm_token_top_placeholder",
-        "sister_funnel_fallback_url": "https://saascostaudit.com/ucaas/?utm_source=apicostaudit.com&utm_medium=sister_funnel&clickref=funnel_api_to_saas_seats_top",
-        "modeled_cpa_usd": "Generic API Slot Placeholder ($100-$200 Cloud/GPU CPA + Sister Funnel to saascostaudit.com)"
-      },
-      {
-        "composite_key": "generic_api_partner_slot:api_voice_vector_mid_placeholder:API_COSTS.voice_video_api:mid_content",
-        "partner_network": "generic_api_partner_slot",
-        "tracking_sub_id": "api_voice_vector_mid_placeholder",
-        "product_vertical": "API_COSTS.voice_video_api",
-        "funnel_role": "mid_content",
-        "dom_cta_slot": "price_table_row",
-        "partner_name": "Voice & Vector API Partner Slot (ElevenLabs 22% / Retell 20% / Pinecone Placeholder)",
-        "destination_url": "https://elevenlabs.io/pricing?utm_source=apicostaudit.com&utm_medium=affiliate&clickref=api_voice_vector_mid_placeholder",
-        "sister_funnel_fallback_url": "https://b2bfeeaudit.com/merchant/stripe-vs-helcim-interchange-plus/?utm_source=apicostaudit.com&utm_medium=sister_funnel&clickref=funnel_api_to_fee_icplus_mid",
-        "modeled_cpa_usd": "Generic API Slot Placeholder (20%-22% RevShare + Sister Funnel to b2bfeeaudit.com)"
-      },
-      {
-        "composite_key": "generic_api_partner_slot:api_b2b_overage_footer_placeholder:API_COSTS.b2b_metered_apis:footer",
-        "partner_network": "generic_api_partner_slot",
-        "tracking_sub_id": "api_b2b_overage_footer_placeholder",
-        "product_vertical": "API_COSTS.b2b_metered_apis",
-        "funnel_role": "footer",
-        "dom_cta_slot": "sticky_mobile_bar",
-        "partner_name": "B2B API & Compliance Slot (Make.com 35% / n8n 30% + AI Tech E&O Sister Funnel)",
-        "destination_url": "https://b2bcostaudit.com/eo-insurance/cyber-eo-premium-estimator/?utm_source=apicostaudit.com&utm_medium=sister_funnel&clickref=api_b2b_overage_footer_placeholder",
-        "sister_funnel_fallback_url": "https://b2bcostaudit.com/eo-insurance/cyber-eo-premium-estimator/?utm_source=apicostaudit.com&utm_medium=sister_funnel&clickref=funnel_api_to_cost_eo_footer",
-        "modeled_cpa_usd": "Generic API Slot Placeholder + Sister Funnel to b2bcostaudit.com ($125-$225 Tech E&O CPA)"
-      }
-    ]
-  },
-  "first_pm_segment_routing_decisions": [
-    {
-      "decision_id": "PM-ROUTE-DECISION-001",
-      "decided_by": "B2B Audit Family PM (9c1c413e-5df2-4d17-a576-11713450fceb)",
-      "priority": "P0_TOP_PRIORITY",
-      "segment": "B2B_FEES (b2bfeeaudit.com)",
-      "action": "Retain strictly transactional fee offers (Helcim IC+, Stax 0% Markup, Square, CDG/Dharma, Deel/Remote FX spreads, ADP/Rippling per-run & W-2 filing fees) across top_of_page, mid_content, and footer slots on b2bfeeaudit.com; strip commercial E&O insurance and per-seat UCaaS offers into cross-domain referral summary cards."
-    },
-    {
-      "decision_id": "PM-ROUTE-DECISION-002",
-      "decided_by": "B2B Audit Family PM (9c1c413e-5df2-4d17-a576-11713450fceb)",
-      "priority": "P0_TOP_PRIORITY",
-      "segment": "B2B_COSTS (b2bcostaudit.com)",
-      "action": "Route all commercial insurance (Embroker, Vouch, Hiscox, Next Insurance, Coalition), ACORD 25 COI compliance, W-2 vs 1099 statutory employer burden, and PEO workers' comp/benefits (Justworks, TriNet) offers to b2bcostaudit.com with 4-axis keys (`*:cost_*_top|mid|footer:B2B_COSTS.*:*`)."
-    },
-    {
-      "decision_id": "PM-ROUTE-DECISION-003",
-      "decided_by": "B2B Audit Family PM (9c1c413e-5df2-4d17-a576-11713450fceb)",
-      "priority": "P0_TOP_PRIORITY",
-      "segment": "SAAS_COSTS (saascostaudit.com)",
-      "action": "Route all per-seat UCaaS (Cisco Webex, Microsoft Teams, Zoom Workplace, Google Workspace + Merit-Only VoIP Dialpad/Nextiva/RingCentral) and pure per-seat HRIS PEPM tiers (Gusto, OnPay, Rippling, BambooHR) to saascostaudit.com with 4-axis keys (`*:saas_*_top|mid|footer:SAAS_COSTS.*:*`)."
-    },
-    {
-      "decision_id": "PM-ROUTE-DECISION-004",
-      "decided_by": "B2B Audit Family PM (9c1c413e-5df2-4d17-a576-11713450fceb)",
-      "priority": "P0_TOP_PRIORITY",
-      "segment": "API_COSTS (apicostaudit.com)",
-      "action": "Deploy generic_api_partner_slot 4-axis placeholders across top_of_page, mid_content, and footer on apicostaudit.com paired with the Cross-Family Traffic Funnel (`CROSS_FAMILY_TRAFFIC_FUNNEL`) so zero-affiliate LLM token calculators funnel high-intent B2B buyers directly into saascostaudit.com (seat vs token breakeven), b2bfeeaudit.com (Stripe Billing vs IC+ COGS), and b2bcostaudit.com (AI Tech E&O & SOC 2)."
-    }
-  ]
+  "sister_canonical_referral_urls": {
+    "B2B_FEES": "https://b2bfeeaudit.com/merchant/stripe-vs-helcim-interchange-plus/",
+    "B2B_COSTS": "https://b2bcostaudit.com/eo-insurance/cyber-eo-premium-estimator/",
+    "SAAS_COSTS": "https://saascostaudit.com/ucaas/",
+    "API_COSTS": "https://apicostaudit.com/llm-api/"
+  }
 }

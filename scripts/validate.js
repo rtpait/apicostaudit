@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Deterministic Build, Schema, AEO/WebMCP, 4-Axis Affiliate Taxonomy & Governance Validator for apicostaudit.com
+ * Deterministic Build, Schema, AEO/WebMCP, Single-Canonical-Home & Exclusive-Vertical Affiliate Validator for apicostaudit.com
  */
 const fs = require("fs");
 const path = require("path");
@@ -14,6 +14,16 @@ function fail(msg) {
 }
 
 const forbidden = [/wally/i, /\/workspace\//i, /\/cursor\/stores/i, /&amp;amp;/];
+const forbiddenCalcIds = [
+  'id="merchant-fee-calc"',
+  'id="payroll-fee-calc"',
+  'id="payroll-tco-calc"',
+  'id="eo-premium-estimator"',
+  'id="coi-compliance-checker"',
+  'id="labor-burden-calc"',
+  'id="ucaas-tco-calculator"',
+  'id="saas-seat-calc"'
+];
 
 for (const govFile of [
   "CHARTER.md",
@@ -71,6 +81,11 @@ for (const file of htmlFiles) {
   for (const rx of forbidden) {
     if (rx.test(html)) fail(`${rel}: leaked forbidden pattern ${rx}`);
   }
+  for (const fCalc of forbiddenCalcIds) {
+    if (html.includes(fCalc)) {
+      fail(`${rel}: SINGLE_CANONICAL_HOME_VIOLATION — duplicate sibling calculator ${fCalc} found on apicostaudit.com`);
+    }
+  }
   const titleMatch = html.match(/<title>([\s\S]*?)<\/title>/);
   const rawTitle = titleMatch ? titleMatch[1].replace(/&amp;/g, "&").trim() : "";
   if (!rawTitle || rawTitle.length > 60) {
@@ -81,10 +96,17 @@ for (const file of htmlFiles) {
   if (rawDesc.length < 130 || rawDesc.length > 160) {
     fail(`${rel}: <meta name="description"> length ${rawDesc.length} outside 130-160 chars ("${rawDesc}")`);
   }
-  if (!html.includes('data-4axis-key=')) {
+  const axisMatches = [...html.matchAll(/data-4axis-key="([^"]+)"/g)];
+  if (axisMatches.length === 0) {
     fail(`${rel}: missing 4-Axis Affiliate Component Taxonomy attribute data-4axis-key`);
   } else {
     fourAxisCount++;
+    for (const am of axisMatches) {
+      const k = am[1];
+      if (!k.includes(":API_COSTS.") || !k.startsWith("generic_api_partner_slot:")) {
+        fail(`${rel}: EXCLUSIVE_VERTICAL_AFFILIATE_VIOLATION — foreign 4-axis key "${k}" on apicostaudit.com (must be generic_api_partner_slot:*:API_COSTS.*:*)`);
+      }
+    }
   }
   const scripts = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
   for (const m of scripts) {
@@ -97,5 +119,5 @@ for (const file of htmlFiles) {
   }
 }
 
-console.log(`Validated apicostaudit.com Sprint 1: 9/9 governance artifacts, ${htmlFiles.length}/17 built public HTML routes, ${validJsonLdCount} valid JSON-LD schemas, ${fourAxisCount}/17 pages with 4-Axis Affiliate Taxonomy + Cross-Family Traffic Funnel, and 0 errors.`);
+console.log(`Validated apicostaudit.com Sprint 1: 9/9 governance artifacts, ${htmlFiles.length}/17 built public HTML routes, ${validJsonLdCount} valid JSON-LD schemas, ${fourAxisCount}/17 pages with exclusive API_COSTS 4-Axis Affiliate Taxonomy (0 foreign affiliate links, 0 sibling calculators), and 0 errors.`);
 if (bad) process.exit(1);
