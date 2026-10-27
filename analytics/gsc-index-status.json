@@ -2,12 +2,16 @@
   "schema_version": "1.0.0",
   "domain": "apicostaudit.com",
   "property": "sc-domain:apicostaudit.com",
-  "source_mode": "AWAITING_PORKBUN_GSC_DNS_TXT",
-  "dns_txt_verified": false,
+  "source_mode": "LIVE_ZERO_TRAFFIC",
+  "dns_txt_verified": true,
   "drip_gate_passed": false,
   "live_measured_actuals": {
     "indexed_html_routes": 0,
     "total_html_routes": 17,
     "drip_gate_passed": false
-  }
+  },
+  "gsc_txt_records": [
+    "google-site-verification=8bv8HrX9CN2abQgy04fXq83zxKYqhMzOMA-LZnRSSmM"
+  ],
+  "external_verification_blocker": null
 }
