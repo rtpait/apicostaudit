@@ -5,7 +5,7 @@
 
 {% macro verifiedGovBadge(verifyDate, govTitle) %}
 <div class="verified-gov-bar" role="region" aria-label="Regulatory and Rate Card Verification Status">
-  <span class="verified-gov-badge">✓ Verified 2026 API Rate Cards &amp; .gov Benchmarks · {{ verifyDate or "2026-10-27" }}</span>
+  <span class="verified-gov-badge">✓ Verified 2026 API Rate Cards &amp; .gov Benchmarks · {{ verifyDate or "2026-10-28" }}</span>
   <a class="gov-seal-pill" href="#official-sources" title="Jump to primary .gov and vendor rate card citations">🏛️ {{ govTitle or "NIST AI RMF (AI 600-1) · FCC USF Telecom Rules · FTC 16 CFR Part 255 (.gov)" }}</a>
 </div>
 {% endmacro %}
@@ -82,7 +82,7 @@
     </tbody>
   </table>
 </div>
-<p><small>All per-1M token rates, prompt caching discounts, per-minute Voice AI stacks, and GPU/Vector DB unit prices verified October 27, 2026. Commercial slots use the 4-Axis Affiliate Taxonomy (<code>&lt;partner_network&gt;:&lt;tracking_sub_id&gt;:&lt;product_vertical&gt;:&lt;funnel_role&gt;</code>) and route non-affiliate API categories into the B2B Audit Family conversion funnel (<a href="/methodology/">methodology &amp; FTC disclosure</a>).</small></p>
+<p><small>All per-1M token rates, prompt caching discounts, per-minute Voice AI stacks, and GPU/Vector DB unit prices verified October 28, 2026. Commercial slots use the 4-Axis Affiliate Taxonomy (<code>&lt;partner_network&gt;:&lt;tracking_sub_id&gt;:&lt;product_vertical&gt;:&lt;funnel_role&gt;</code>) and route non-affiliate API categories into the B2B Audit Family conversion funnel (<a href="/methodology/">methodology &amp; FTC disclosure</a>).</small></p>
 {% endmacro %}
 
 {% macro llmTokenCalc(rSlug, defInM, defOutM, defCachePct, defBatchPct) %}
@@ -270,7 +270,7 @@
 <h2 id="official-sources">Official Regulatory (.gov) &amp; Published Vendor API Pricing Sources</h2>
 <ol>
   {% for s in list %}
-  <li id="src-{{ s.id }}"><a href="{{ s.url }}" rel="nofollow noopener" target="_blank">{{ s.title }}</a> <small>(verified {{ s.accessed or "2026-10-27" }})</small></li>
+  <li id="src-{{ s.id }}"><a href="{{ s.url }}" rel="nofollow noopener" target="_blank">{{ s.title }}</a> <small>(verified {{ s.accessed or "2026-10-28" }})</small></li>
   {% endfor %}
 </ol>
 {% endmacro %}

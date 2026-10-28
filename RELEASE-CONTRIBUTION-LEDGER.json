@@ -1,15 +1,48 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
+  "project": "apicostaudit.com",
   "domain": "apicostaudit.com",
-  "release_version": "v1.0.0",
-  "released_at_utc": "2026-10-27T13:40:00Z",
-  "owning_po": "SaaS Cost Audit PO (bc09e0d9-5fae-487c-b526-020d9aac1bd1)",
+  "domain_order_id": "12296644",
+  "entity": "Research Triangle Park AI Transformation LLC (EIN 42-3641177)",
+  "repository": "https://github.com/rtpait/apicostaudit",
+  "branch": "main",
+  "release_version": "v1.2.0",
+  "currentVersion": "v1.2.0",
+  "released_at_utc": "2026-10-28T12:35:00Z",
+  "owning_po": "SaaS Cost Audit PO \u2014 API_COSTS (bc09e0d9-5fae-487c-b526-020d9aac1bd1)",
   "hub_pm": "B2B Audit Family PM (9c1c413e-5df2-4d17-a576-11713450fceb)",
-  "active_html_routes": 16,
+  "web_pm": "Project Manager (167b2bea-99c8-4e89-99e3-182227974962)",
+  "active_html_routes": 17,
+  "total_built_html_routes_including_admin": 18,
   "subdivisions": [
     "/llm-api/",
     "/voice-video-api/",
     "/ai-infra-gpu/",
     "/b2b-apis/"
+  ],
+  "releases": [
+    {
+      "releaseId": "release-001-v1.1.0-day0-and-17-route-launch",
+      "version": "v1.1.0",
+      "prior_version": "v1.0.0",
+      "timestamp": "2026-10-27T13:42:00-04:00",
+      "htmlPageCount": 17,
+      "po_verdict": "ACCEPT"
+    },
+    {
+      "releaseId": "release-002-v1.2.0-rapid-build-sprint-20261028",
+      "version": "v1.2.0",
+      "prior_version": "v1.1.0",
+      "sprint": "24/7 Rapid-Build Sprint (RAPID-BUILD-AUTO-ROTATE-20261028-0830) \u2014 Live GSC Indexation & 17/17 Sitemap Parity Verification (18 Built HTML Routes incl. /admin/), 100% (187/187) 4-Axis API_COSTS Affiliate CTA Attribution Audit, and Q4 2026 OpenAI Prefix Cache + Claude 4.5 90% Cache Read / TTLs + 4-Layer Voice AI Stack + H100 vLLM Breakeven Benchmarks",
+      "timestamp": "2026-10-28T07:35:00-05:00",
+      "htmlPageCount": 17,
+      "totalBuiltHtmlRoutes": 18,
+      "status": "DEPLOYED_PRODUCTION_PO_ACCEPTED",
+      "po_verdict": "ACCEPT",
+      "mergedContributionsCount": 5,
+      "uniqueSpecialistsRepresented": 5,
+      "validateJsPassed": true,
+      "day0GatePassed": true
+    }
   ]
 }

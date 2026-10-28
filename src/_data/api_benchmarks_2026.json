@@ -1,5 +1,5 @@
 {
-  "schema_version": "2026.10.27",
+  "schema_version": "2026.10.28",
   "domain": "apicostaudit.com",
   "license": "CC-BY-4.0",
   "llm_models": [
@@ -11,7 +11,8 @@
       "output_1m_usd": 10.0,
       "cached_input_1m_usd": 1.25,
       "batch_discount_pct": 50,
-      "context_window": "128k-400k"
+      "context_window": "128k-400k",
+      "cache_write_policy": "Automatic prefix cache write ($0 surcharge; 50% off cached read at $1.25/1M)"
     },
     {
       "id": "claude-4-5-sonnet",
@@ -21,7 +22,8 @@
       "output_1m_usd": 15.0,
       "cached_input_1m_usd": 0.3,
       "batch_discount_pct": 50,
-      "context_window": "200k"
+      "context_window": "200k",
+      "cache_write_policy": "5-min TTL write $3.75/1M (1.25x) \u00b7 1-hr TTL write $6.00/1M (2.0x) \u00b7 Read $0.30/1M (90% off)"
     },
     {
       "id": "claude-4-5-opus",
@@ -31,7 +33,8 @@
       "output_1m_usd": 75.0,
       "cached_input_1m_usd": 1.5,
       "batch_discount_pct": 50,
-      "context_window": "200k"
+      "context_window": "200k",
+      "cache_write_policy": "5-min TTL write $18.75/1M (1.25x) \u00b7 1-hr TTL write $30.00/1M (2.0x) \u00b7 Read $1.50/1M (90% off)"
     },
     {
       "id": "gemini-2-5-pro",
@@ -41,7 +44,8 @@
       "output_1m_usd": 10.0,
       "cached_input_1m_usd": 0.31,
       "batch_discount_pct": 50,
-      "context_window": "2M"
+      "context_window": "2M",
+      "cache_write_policy": "75% context cache read discount + $1.00-$4.50/1M/hr context storage TTL"
     },
     {
       "id": "gemini-2-5-flash",
@@ -51,7 +55,8 @@
       "output_1m_usd": 0.6,
       "cached_input_1m_usd": 0.0375,
       "batch_discount_pct": 50,
-      "context_window": "1M"
+      "context_window": "1M",
+      "cache_write_policy": "75% context cache read discount + $1.00-$4.50/1M/hr context storage TTL"
     },
     {
       "id": "deepseek-v3-r1",
@@ -131,7 +136,9 @@
       "category": "GPU Cloud",
       "h100_hr_usd": 2.69,
       "a100_hr_usd": 1.39,
-      "l40s_hr_usd": 1.14
+      "l40s_hr_usd": 1.14,
+      "vllm_breakeven_monthly_usd": 1963.7,
+      "vllm_sustained_tok_per_sec": 2200
     },
     {
       "id": "digitalocean-h100",
@@ -139,7 +146,9 @@
       "category": "GPU Cloud",
       "h100_hr_usd": 2.99,
       "a100_hr_usd": 1.59,
-      "l40s_hr_usd": 1.29
+      "l40s_hr_usd": 1.29,
+      "vllm_breakeven_monthly_usd": 2182.7,
+      "vllm_sustained_tok_per_sec": 2200
     },
     {
       "id": "vast-ai-h100",
@@ -147,7 +156,9 @@
       "category": "GPU Cloud",
       "h100_hr_usd": 1.89,
       "a100_hr_usd": 0.99,
-      "l40s_hr_usd": 0.79
+      "l40s_hr_usd": 0.79,
+      "vllm_breakeven_monthly_usd": 1379.7,
+      "vllm_sustained_tok_per_sec": 2200
     }
   ],
   "b2b_api_providers": [
@@ -166,5 +177,7 @@
       "provider": "Plaid Auth/Balance & Stripe Identity",
       "base_unit": "Plaid Auth $1.50/link + Balance $0.10/call \u00b7 Stripe Identity $1.50/verification"
     }
-  ]
+  ],
+  "verified_at_utc": "2026-10-28T12:35:00Z",
+  "methodology_note": "Verified October 28, 2026 against published Q4 2026 OpenAI (GPT-5/GPT-4o 50% cached read + 50% 24h Batch API), Anthropic (Claude 4.5 Sonnet & Opus 90% prompt cache read discount + 1.25x 5-min / 2.0x 1-hr cache write TTLs + 50% Batch API), Google Vertex AI (Gemini 2.5 Pro/Flash 75% context caching), DeepSeek V3/R1, ElevenLabs Flash v2.5 + Deepgram Nova-3 + Retell AI + Vapi 4-layer Voice AI per-minute stacks, and RunPod/Vast.ai/DigitalOcean H100 80GB vLLM token breakeven rate cards."
 }

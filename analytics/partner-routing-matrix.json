@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.1.0-4-axis-exclusive-vertical-isolation",
+  "schema_version": "2.2.0-4-axis-exclusive-vertical-isolation-2026-10-28",
   "domain": "apicostaudit.com",
   "product_vertical_macro": "API_COSTS",
   "allowed_4axis_vertical_prefix": "API_COSTS.",
@@ -53,5 +53,15 @@
     "B2B_COSTS": "https://b2bcostaudit.com/eo-insurance/cyber-eo-premium-estimator/",
     "SAAS_COSTS": "https://saascostaudit.com/ucaas/",
     "API_COSTS": "https://apicostaudit.com/llm-api/"
+  },
+  "verified_at_utc": "2026-10-28T12:35:00Z",
+  "live_4axis_audit_2026_10_28": {
+    "canonical_html_routes_audited": 17,
+    "total_built_html_routes_including_admin": 18,
+    "total_sponsored_ctas_audited": 187,
+    "valid_api_costs_4axis_keys": 187,
+    "foreign_vertical_keys_detected": 0,
+    "leaked_sibling_calculators_detected": 0,
+    "compliance_rate_pct": 100.0
   }
 }

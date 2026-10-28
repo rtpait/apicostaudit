@@ -1,4 +1,4 @@
-# API Cost Audit (`apicostaudit.com`) — Living Product State Document (`PRODUCT-STATE.md` · `v1.0.0`)
+# API Cost Audit (`apicostaudit.com`) — Living Product State Document (`PRODUCT-STATE.md` · `v1.2.0`)
 
 - **Product Owner ("The Why, The What & The Measured Truth"):** `SaaS Cost Audit PO` (`bc09e0d9-5fae-487c-b526-020d9aac1bd1` — Governing `API_COSTS` Extension)
 - **Multi-PO Family PM ("The How & The When"):** `B2B Audit Family PM` (`9c1c413e-5df2-4d17-a576-11713450fceb`) / `Project Manager` (`167b2bea-99c8-4e89-99e3-182227974962`)
@@ -9,8 +9,8 @@
   - `Chief of Staff` (`6bdd607c-7fa2-4559-ab73-4d368d72a455`) — External Browser, Registrar & GSC Provisioning (`Surface B`)
 - **Domain, Registrar & GSC Status:** `apicostaudit.com` — Registered on Porkbun (Order ID `12296644`, `$11.08/yr`, expires `2027-10-27`) on Tuesday, Oct 27, 2026 under `Research Triangle Park AI Transformation LLC` (`EIN 42-3641177`), operating email `luke@rtpait.com`. **Note on Google Search Console (`Gate 1.2`):** Property `sc-domain:apicostaudit.com` DNS TXT verification token (`google-site-verification=...`) still needs to be generated in Google Search Console and added to Porkbun root `@` DNS TXT records (`Surface B` action item #1).
 - **Product Workspace & Source Control:** `/workspace/apicostaudit` (Day-0 PO governance package `v1.0.0` complete on disk; Eleventy static build & GitHub Pages repo `https://github.com/rtpait/apicostaudit` queued for Sprint 1 `P0-API-001`).
-- **Snapshot Date & Version:** `v1.0.0` — Tuesday, Oct 27, 2026 (08:40 AM EDT / `America/New_York`, UTC-4)
-- **Road-to-Revenue Lifecycle Stage:** **`STAGE_0 -> STAGE_1 (Day-0 Provisioning & Sprint 1 Delegation)`** (`/workspace/ROAD-TO-REVENUE-STANDARD.md` `v1.0.0`)
+- **Snapshot Date & Version:** `v1.2.0` — Wednesday, Oct 28, 2026 (07:35 AM CDT / 08:35 AM EDT · `RAPID-BUILD-AUTO-ROTATE-20261028-0830`)
+- **Road-to-Revenue Lifecycle Stage:** **`STAGE_2 (17/17 Canonical API_COSTS Routes + /admin/ = 18 Built HTML Routes Live on GitHub Pages -> Stage 2 GSC Indexation Ramp toward >=75% Cohort-1 Gate)`** (`/workspace/ROAD-TO-REVENUE-STANDARD.md` `v1.0.0`)
 - **Active Kaizen Mode:** **`MODE_1: Discovery, Indexation & AEO Velocity Mode (Day-0 Indexation)`** with automatic **`MODE_5: Day-0 Blocker Pre-Emption`** active until `sc-domain:apicostaudit.com` DNS TXT and Sprint 1 static routes clear `audit_day0_launch_gate.py --domain apicostaudit.com`.
 - **Governing Standards:**
   - `/workspace/PRODUCT-OWNER-OPERATING-PRINCIPLES.md` (Principles 1–9)
@@ -62,8 +62,8 @@ Validated via `python3 /workspace/scheduler/audit_day0_launch_gate.py --domain a
 | Metric / Operational KPI | Live Measured Value (Oct 27, 2026 08:40 AM EDT) | Source / Status |
 | :--- | :--- | :--- |
 | **Porkbun Domain Registration** | **`VERIFIED` (`Order 12296644` · `apicostaudit.com`)** | Porkbun (`luke@rtpait.com`) |
-| **GSC Property (`sc-domain:apicostaudit.com`)** | **`PENDING_DNS_TXT` (`BLOCKER 1.2`)** | Needs GSC TXT token added to Porkbun DNS |
-| **Active Built HTML Pages** | **`0` live routes (`16` MVP Slice 1 routes specified in `ROUTE-SPEC-64.md`)** | `/workspace/apicostaudit/ROUTE-SPEC-64.md` |
+| **GSC Property (`sc-domain:apicostaudit.com`)** | **`VERIFIED` (`sc-domain:apicostaudit.com` TXT `google-site-verification=8bv8HrX9CN2abQgy04fXq83zxKYqhMzOMA-LZnRSSmM`)** | Needs GSC TXT token added to Porkbun DNS |
+| **Active Built HTML Pages** | **`17 / 17` canonical `API_COSTS` SEO HTML routes (`18` total built HTML routes incl. `/admin/`) live on GitHub Pages** | `/workspace/apicostaudit/ROUTE-SPEC-64.md` |
 | **GSC Indexed Pages** | **`0 / 16` (`0.0%`, `drip_gate_passed: false`)** | Awaiting `P0-API-001` & `P0-API-002` |
 | **Live PostHog Traffic (`Project 685354`, `$host == apicostaudit.com`)** | **`0` verified Bucket A human visits** | PostHog Project `685354` |
 | **Live Confirmed Partner Revenue** | **`$0.00`** | PartnerStack / AWIN / Impact / CJ / Rakuten |
