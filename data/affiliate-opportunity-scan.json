@@ -1,8 +1,8 @@
 {
-  "schema_version": "2026-10-28-v1.7.0",
-  "scanned_at_utc": "2026-10-28T18:11:10Z",
+  "schema_version": "2026-10-28-v1.8.0",
+  "scanned_at_utc": "2026-10-28T18:47:08Z",
   "source_domain": "apicostaudit.com",
-  "sprint_id": "RAPID-BUILD-AUTO-ROTATE-20261028-1406",
+  "sprint_id": "RAPID-BUILD-AUTO-ROTATE-20261028-1441",
   "shared_priority": "PRIORITY_1B_CONTINUOUS_AFFILIATE_SOFTWARE_OPPORTUNITY_SCANNING",
   "affiliate_portal_ops_agent_id": "09b4bb79",
   "saas_growth_target_domain": "saascostaudit.com",
@@ -132,6 +132,32 @@
       "partner_network": "PartnerStack / Direct Developer API Referral",
       "estimated_commission": "15%-25% recurring rev-share or $75-$250 B2B developer CPA",
       "in_page_trigger": "Directly triggered in observability-cost-calc Preset 2-4 when engineering teams replace $0.05 Twilio Verify SMS OTPs + $0.0035 10DLC fees with Passkeys and $0.40-$0.80/1,000 transactional email OTPs via Resend/Postmark."
+    },
+    {
+      "opportunity_id": "API-OPP-011",
+      "vendor": "LiveKit Cloud / Daily.co / Agora WebRTC (Sub-100ms Real-Time Voice & Video AI Agent WebRTC Media Transport APIs)",
+      "target_domain": "apicostaudit.com",
+      "target_routes": [
+        "/voice-video-api/retell-vs-vapi-voice-agent-per-minute-cost-calculator/",
+        "/voice-video-api/elevenlabs-vs-openai-realtime-voice-tco/",
+        "/voice-video-api/"
+      ],
+      "partner_network": "Direct Real-Time Infrastructure Referral / PartnerStack",
+      "estimated_commission": "$100-$350 CPA per production Voice/Video AI engineering team signup",
+      "in_page_trigger": "Directly triggered on the Retell vs. Vapi and OpenAI Realtime calculators when engineering teams replace $0.05-$0.07/min orchestration wrappers with direct LiveKit Agents / Daily WebRTC transport ($0.0005-$0.004/min)."
+    },
+    {
+      "opportunity_id": "API-OPP-012",
+      "vendor": "Modal Labs / Replicate / Fal.ai / Anyscale (Serverless Cold-Start-Optimized Per-Second GPU Inference & Media Generation APIs)",
+      "target_domain": "apicostaudit.com",
+      "target_routes": [
+        "/ai-infra-gpu/runpod-vs-vast-ai-gpu-inference-cost-calculator/",
+        "/ai-infra-gpu/",
+        "/"
+      ],
+      "partner_network": "Direct AI Infrastructure Partner / PartnerStack",
+      "estimated_commission": "10%-20% first-year metered GPU compute spend ($150-$500 CPA)",
+      "in_page_trigger": "Triggered in gpu-cloud-tco-calc Preset 1 ('gpu_1x_l40s_dev') when spiky inference workloads (<12 active hours/day) save 45%-65% using per-second serverless GPU containers on Modal/Fal.ai vs. 24/7 idle dedicated pods."
     }
   ],
   "cross_routed_saas_opportunities_for_saascostaudit": [
@@ -224,6 +250,26 @@
       "partner_network": "Direct B2B FinOps Referral / PartnerStack",
       "estimated_commission": "$250-$600 per qualified mid-market CTO/FinOps evaluation",
       "rationale": "Companies spending $50k-$500k+/yr across AWS P5, RunPod, Snowflake, and OpenAI APIs subscribe to cloud FinOps SaaS platforms ($150-$2,500+/mo tiered by managed cloud spend) that belong on saascostaudit.com."
+    },
+    {
+      "opportunity_id": "SAAS-CROSS-010",
+      "vendor": "Snowflake Enterprise vs. Databricks Unity Catalog vs. ClickHouse Cloud (Data Warehouse Compute Credits & BI Per-Seat Governance SaaS)",
+      "discovered_on_route": "https://apicostaudit.com/llm-api/gemini-vs-deepseek-batch-api-audit/",
+      "routed_to_domain": "saascostaudit.com",
+      "target_saascostaudit_cluster": "Data Platform, BI Seat Licensing & Enterprise Governance Tier Audit",
+      "partner_network": "PartnerStack / Impact (8038782) / Direct B2B",
+      "estimated_commission": "$250-$600 per qualified enterprise data/AI team trial or evaluation",
+      "rationale": "Data teams running high-throughput 24h Batch ETL pipelines (Preset 3: 1.5B input tokens) pipe outputs into Snowflake/Databricks + Tableau/Looker/Sigma per-seat BI tools ($15-$75/user/mo) audited on saascostaudit.com."
+    },
+    {
+      "opportunity_id": "SAAS-CROSS-011",
+      "vendor": " Kong Konnect Enterprise vs. Apigee vs. Tyk vs. Zuplo (Managed API Gateway, Developer Monetization & Per-Workspace Seat SaaS)",
+      "discovered_on_route": "https://apicostaudit.com/b2b-apis/",
+      "routed_to_domain": "saascostaudit.com",
+      "target_saascostaudit_cluster": "API Management, Gateway Governance & Developer Portal SaaS Subscription Audit",
+      "partner_network": "PartnerStack / Direct Enterprise B2B Referral",
+      "estimated_commission": "$200-$500 per qualified B2B platform engineering demo",
+      "rationale": "Organizations auditing external B2B API consumption also license enterprise API management control planes ($250-$2,500+/mo on Kong/Zuplo/Tyk) that belong on saascostaudit.com."
     }
   ]
 }

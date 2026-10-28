@@ -421,7 +421,7 @@
   </div>
   <div class="box" style="margin:.55rem 0;background:#fdf4ff;border-color:#e879f9">
     <strong style="color:#701a75">🏛️ Verified Oct 28 Serverless Vector DB vs. Dedicated Cluster Rate-Drift Benchmark</strong>
-    <p style="margin:.2rem 0 0;font-size:.83rem;color:#86198f"><strong>Pinecone Serverless</strong> ($0.33/GB storage + $8.25/1M Read Units + $2.00/1M Write Units) wins on spiky workloads under ~30M RUs/mo, whereas <strong>Qdrant Cloud</strong>, <strong>Weaviate Cloud</strong>, <strong>Milvus / Zilliz Cloud</strong>, and dedicated <strong>Supabase / Neon pgvector HNSW</strong> clusters eliminate per-query RU/WU metering above 30M–50M RUs/mo.</p>
+    <p style="margin:.2rem 0 0;font-size:.83rem;color:#86198f"><strong>Pinecone Serverless</strong> ($0.33/GB storage + $8.25/1M Read Units + $2.00/1M Write Units) wins on spiky workloads under ~30M RUs/mo, whereas <strong>Qdrant Cloud</strong>, <strong>Weaviate Cloud</strong>, <strong>Milvus / Zilliz Cloud</strong>, and dedicated <strong>Supabase / Neon pgvector HNSW</strong> clusters (with scalar/binary quantization cutting RAM footprint by 75%–96%) eliminate per-query RU/WU metering above 30M–50M RUs/mo.</p>
   </div>
   <div class="calc-output-grid" style="margin-top:.75rem">
     <div class="calc-vendor-card vendor-best">
