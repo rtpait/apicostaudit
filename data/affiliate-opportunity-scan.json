@@ -1,8 +1,8 @@
 {
-  "schema_version": "2026-10-28-v1.6.0",
-  "scanned_at_utc": "2026-10-28T17:37:52Z",
+  "schema_version": "2026-10-28-v1.7.0",
+  "scanned_at_utc": "2026-10-28T18:11:10Z",
   "source_domain": "apicostaudit.com",
-  "sprint_id": "RAPID-BUILD-AUTO-ROTATE-20261028-1331",
+  "sprint_id": "RAPID-BUILD-AUTO-ROTATE-20261028-1406",
   "shared_priority": "PRIORITY_1B_CONTINUOUS_AFFILIATE_SOFTWARE_OPPORTUNITY_SCANNING",
   "affiliate_portal_ops_agent_id": "09b4bb79",
   "saas_growth_target_domain": "saascostaudit.com",
@@ -106,6 +106,32 @@
       "partner_network": "Direct AI Cloud Partner / PartnerStack",
       "estimated_commission": "10%-20% metered API & dedicated endpoint spend ($150-$500 CPA)",
       "in_page_trigger": "Directly triggered in llm-token-calc and gpu-cloud-tco-calc when engineering teams compare hosted DeepSeek R1/V3 ($0.27/$1.10 per 1M) and Llama-4 serverless endpoints against self-hosted H100 vLLM pods."
+    },
+    {
+      "opportunity_id": "API-OPP-009",
+      "vendor": "Cloudflare Workers AI / R2 Zero-Egress Object Storage / AI Gateway (Zero-$0.09/GB-Egress Model Weights, Vectorize & Edge Caching APIs)",
+      "target_domain": "apicostaudit.com",
+      "target_routes": [
+        "/ai-infra-gpu/runpod-vs-vast-ai-gpu-inference-cost-calculator/",
+        "/ai-infra-gpu/",
+        "/llm-api/prompt-caching-vs-batch-api-savings-calculator/"
+      ],
+      "partner_network": "Impact (8038782) / CJ Affiliate (8108003) / Direct Cloud Partner",
+      "estimated_commission": "$100-$400 CPA per commercial Cloudflare Workers Paid / R2 enterprise signup",
+      "in_page_trigger": "Directly triggered in gpu-cloud-tco-calc when monthly egress bandwidth (500 GB to 25 TB) incurs $0.08-$0.12/GB hyperscaler egress + $0.045/GB NAT Gateway fees vs. $0.00/GB egress on Cloudflare R2."
+    },
+    {
+      "opportunity_id": "API-OPP-010",
+      "vendor": "Resend / Postmark / Amazon SES / SendGrid API (Transactional Email, OTP Delivery & Webhook Event Streaming APIs \u2014 Replacing $0.05 Twilio Verify SMS)",
+      "target_domain": "apicostaudit.com",
+      "target_routes": [
+        "/b2b-apis/twilio-sms-voice-verify-per-call-fee-calculator/",
+        "/b2b-apis/",
+        "/"
+      ],
+      "partner_network": "PartnerStack / Direct Developer API Referral",
+      "estimated_commission": "15%-25% recurring rev-share or $75-$250 B2B developer CPA",
+      "in_page_trigger": "Directly triggered in observability-cost-calc Preset 2-4 when engineering teams replace $0.05 Twilio Verify SMS OTPs + $0.0035 10DLC fees with Passkeys and $0.40-$0.80/1,000 transactional email OTPs via Resend/Postmark."
     }
   ],
   "cross_routed_saas_opportunities_for_saascostaudit": [
@@ -178,6 +204,26 @@
       "partner_network": "PartnerStack / Impact (8038782)",
       "estimated_commission": "$150-$450 B2B SaaS demo/subscription CPA",
       "rationale": "Engineering teams dynamically routing prompts between GPT-4o, Claude 3.7/4.5 Sonnet, and Gemini Flash use feature-flagging SaaS ($20-$75/seat/mo) audited on saascostaudit.com."
+    },
+    {
+      "opportunity_id": "SAAS-CROSS-008",
+      "vendor": "Snyk Enterprise vs. Wiz vs. Socket.dev vs. Semgrep (AI-Generated Code SAST/SCA, Container Vulnerability & Cloud Security Per-Developer Seat SaaS)",
+      "discovered_on_route": "https://apicostaudit.com/llm-api/openai-vs-anthropic-claude-token-calculator/",
+      "routed_to_domain": "saascostaudit.com",
+      "target_saascostaudit_cluster": "AppSec, DevSecOps & Per-Contributing-Developer Seat Licensing Audit",
+      "partner_network": "PartnerStack / Impact (8038782) / Direct B2B",
+      "estimated_commission": "$200-$500 per qualified engineering security team demo/signup",
+      "rationale": "Engineering teams running agentic coding loops (Preset 2: 450M input / 90M output tokens) must scan AI-generated PRs and containers using per-developer AppSec SaaS ($25-$98/contributing developer/mo on Snyk/Semgrep) audited on saascostaudit.com."
+    },
+    {
+      "opportunity_id": "SAAS-CROSS-009",
+      "vendor": "Vantage.sh vs. CloudZero vs. Finout vs. Cast AI (Kubernetes, GPU Cluster & Multi-Cloud FinOps Cost Allocation SaaS Subscriptions)",
+      "discovered_on_route": "https://apicostaudit.com/ai-infra-gpu/runpod-vs-vast-ai-gpu-inference-cost-calculator/",
+      "routed_to_domain": "saascostaudit.com",
+      "target_saascostaudit_cluster": "Cloud FinOps, Kubernetes/GPU Rightsizing & Percentage-of-Cloud-Spend SaaS Tier Audit",
+      "partner_network": "Direct B2B FinOps Referral / PartnerStack",
+      "estimated_commission": "$250-$600 per qualified mid-market CTO/FinOps evaluation",
+      "rationale": "Companies spending $50k-$500k+/yr across AWS P5, RunPod, Snowflake, and OpenAI APIs subscribe to cloud FinOps SaaS platforms ($150-$2,500+/mo tiered by managed cloud spend) that belong on saascostaudit.com."
     }
   ]
 }

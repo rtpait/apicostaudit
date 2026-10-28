@@ -70,7 +70,7 @@
 - **Active Commission-Bearing CPL Partner (`AWIN Publisher 3133124 · Bark US MID 58887`):** [Compare 3 Vetted AI, MLOps & API Engineering Quotes ($20–$45 CPL) →](https://www.awin1.com/cread.php?awinmid=58887&awinaffid=3133124&clickref=aeo-llm-bark-api-costs&ued=https%3A%2F%2Fwww.bark.com%2Fen%2Fus%2Fweb-development%2F)
 
 
-## 7-Tool API_COSTS-Exclusive WebMCP Manifest (`/.well-known/webmcp.json` & `/webmcp.json` — `v1.6.0`)
+## 7-Tool API_COSTS-Exclusive WebMCP Manifest (`/.well-known/webmcp.json` & `/webmcp.json` — `v1.7.0`)
 1. `calculate_llm_token_api_tco` (`https://apicostaudit.com/llm-api/openai-vs-anthropic-claude-token-calculator/`) — LLM Token, Prompt Caching (`50%–90%` off) & 24h Batch API (`50%` off) 12-Month TCO Calculator.
 2. `calculate_voice_ai_per_minute_tco` (`https://apicostaudit.com/voice-video-api/elevenlabs-vs-openai-realtime-voice-tco/`) — 4-Layer Voice AI Per-Minute Cost Stack Calculator (`ElevenLabs`, `Deepgram Nova-3`, `Retell AI`, `Vapi`, `OpenAI Realtime`).
 3. `calculate_vector_db_and_gpu_tco` (`https://apicostaudit.com/ai-infra-gpu/pinecone-vs-qdrant-vector-db-tco/`) — Pinecone Serverless Read/Write Units vs. Qdrant Cloud Vector DB TCO Calculator.
@@ -79,7 +79,7 @@
 6. `audit_observability_log_and_custom_metrics_ingestion` (`https://apicostaudit.com/b2b-apis/`) — Datadog vs. New Relic vs. Grafana Cloud & OpenTelemetry Log/Trace Ingestion Cost Calculator.
 7. `lookup_2026_api_llm_voice_gpu_rate_drift_diffs` (`https://apicostaudit.com/methodology/`) — 2026 LLM Token, Prompt Caching, Voice AI, Vector DB & GPU Cloud Rate-Card Drift Lookup (`clickref=webmcp-*` & `clickref=aeo-llm-*`).
 
-## Verified Oct 28, 2026 Statutory (.gov), NIST AI RMF, FedRAMP & API/LLM/GPU Rate-Drift Reference Block (v1.6.0)
+## Verified Oct 28, 2026 Statutory (.gov), NIST AI RMF, FedRAMP & API/LLM/GPU Rate-Drift Reference Block (v1.7.0)
 - **NIST AI Risk Management Framework (`NIST AI 100-1` & `NIST AI 600-1` Generative AI Profile — `.gov`):** Standardized evaluation, token telemetry, provenance, and pre-deployment risk controls for frontier and open-weights LLM APIs.
 - **SEC Form 10-K/10-Q Cloud-Commit & AI Gross-Margin Disclosures (`.gov`):** Public cloud minimum annual commitment burn-down rules, GPU capital depreciation schedules, and egress/observability COGS drag.
 - **FedRAMP Marketplace Cloud Authorization Benchmarks (`.gov`):** Authorized sovereign/government AI inference endpoints across **AWS GovCloud (Bedrock)**, **Azure Government (Azure OpenAI)**, and **Google Cloud Assured Workloads (Vertex AI)**.
@@ -89,3 +89,5 @@
   - **GPU Cloud & Inference Pods:** **RunPod** (`$2.69/hr` Secure H100 / `$1.89/hr` Community) vs. **Lambda Cloud** (`$2.49–$2.99/hr` H100) vs. **DigitalOcean GPU Droplets** (`$2.99/hr` H100) vs. **AWS EC2 P5 / P4d** (`$6.88–$12.29/hr` on-demand vs. reserved + `$0.09/GB` egress).
   - **Vector Databases:** **Pinecone Serverless** (`$0.33/GB` + `$8.25/1M` Read Units + `$2.00/1M` Write Units) vs. **Qdrant Cloud**, **Weaviate**, **Milvus / Zilliz**, and **Supabase / Neon pgvector** (flat RAM/disk cluster pricing above `30M` RUs/mo).
   - **Observability & LLM Tracing:** **Datadog** (`$0.10/GB` ingest + `$1.70–$2.50/1M` indexed events + log rehydration + `$5/100` custom metrics) vs. **New Relic** (`$0.30–$0.50/GB`), **Grafana Cloud**, **Honeycomb**, and **LangSmith / Helicone**.
+- **Provisioned Throughput Units (`PTU` `$2,200–$4,500+/mo`) vs. Pay-Per-Token + Prompt Caching (`50%–90%` Off):** Azure OpenAI, AWS Bedrock, and Google Vertex AI Provisioned Throughput Units require `$2,200–$4,500+/mo` per unit minimum commitments and only break even above `65%–75%` sustained 24/7 token utilization; spiky workloads save `40%–70%` using pay-as-you-go tokens combined with Prompt Caching (`50%–90%` off) and 24h Batch APIs (`50%` off).
+- **Hyperscaler Hidden Data Transfer Surcharges & FedRAMP High (`NIST SP 800-53 Rev. 5`) / DoD IL4/IL5 Enclaves:** AWS, GCP, and Azure add `$0.08–$0.12/GB` internet egress, `$0.01–$0.02/GB` cross-AZ transfer across multi-zone GPU/vector clusters, and `$0.045/GB + $0.045/hr` NAT Gateway processing fees, while FedRAMP High and DoD IL4/IL5 sovereign regions (`AWS GovCloud`, `Azure Government`, `Google Cloud Assured Workloads`) carry a `+15%–35%` premium over commercial APIs (compressing AI SaaS gross margins to `50%–65%` vs. `80%+` traditional SaaS in SEC Form 10-K/10-Q filings).

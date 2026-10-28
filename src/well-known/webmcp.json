@@ -1,5 +1,5 @@
 {
-  "schema_version": "2026-10-28-v1.6.0",
+  "schema_version": "2026-10-28-v1.7.0",
   "protocol": "webmcp/1.0",
   "site": {
     "name": "API Cost Audit",
@@ -23,7 +23,7 @@
       }
     ],
     "stage2_gate_status_url": "https://apicostaudit.com/api/v1/benchmarks/gate-status.json",
-    "version": "v1.6.0",
+    "version": "v1.7.0",
     "updated_at": "2026-10-28"
   },
   "tools": [
