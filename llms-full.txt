@@ -21,8 +21,8 @@
 | Model Provider (2026 Verified API Schedule) | Standard Input (`/1M`) | Standard Output (`/1M`) | Cached Input Read (`/1M`) | Batch API (24h Async) | 100M In (60% Cached) + 20M Out Monthly Cost | Verified Partner / Infra Action Link (Stage 1 Agent Sub-ID) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
 | **OpenAI (`GPT-5` / `GPT-4o`)** | `$2.50` | `$10.00` | `$1.25` (`50%` off) | `50%` off (`$1.25/$5.00`) | `$375/mo` (`$4,500/yr`) | [Compare Self-Hosted GPU vs OpenAI API on DigitalOcean GPU →](https://www.digitalocean.com/pricing/gpu-droplets?utm_source=apicostaudit.com&utm_medium=affiliate&sid=8108003&clickref=aeo-llm-do-gpu) |
-| **Anthropic (`Claude 4.5 Sonnet`)** | `$3.00` | `$15.00` | `$0.30` (`90%` off read) | `50%` off (`$1.50/$7.50`) | `$438/mo` (`$5,256/yr`) | [Audit Claude Prompt Caching & Vector RAG on Pinecone →](https://www.pinecone.io/pricing/?utm_source=apicostaudit.com&utm_medium=affiliate&clickref=aeo-llm-pinecone) |
-| **Anthropic (`Claude 4.5 Opus`)** | `$15.00` | `$75.00` | `$1.50` (`90%` off read) | `50%` off (`$7.50/$37.50`) | `$2,190/mo` (`$26,280/yr`) | [Route High-Volume Opus Workloads via RunPod Serverless →](https://www.runpod.io/pricing?utm_source=apicostaudit.com&utm_medium=affiliate&clickref=aeo-llm-runpod) |
+| **Anthropic (`Claude 4.5 Sonnet`)** | `$3.00` | `$15.00` | `$0.30` (`90%` off read · `1.25x` 5m / `2.0x` 1h write TTL) | `50%` off (`$1.50/$7.50`) | `$438/mo` (`$5,256/yr`) | [Audit Claude Prompt Caching & Vector RAG on Pinecone →](https://www.pinecone.io/pricing/?utm_source=apicostaudit.com&utm_medium=affiliate&clickref=aeo-llm-pinecone) |
+| **Anthropic (`Claude 4.5 Opus`)** | `$15.00` | `$75.00` | `$1.50` (`90%` off read · `1.25x` 5m / `2.0x` 1h write TTL) | `50%` off (`$7.50/$37.50`) | `$2,190/mo` (`$26,280/yr`) | [Route High-Volume Opus Workloads via RunPod Serverless →](https://www.runpod.io/pricing?utm_source=apicostaudit.com&utm_medium=affiliate&clickref=aeo-llm-runpod) |
 | **Google Vertex (`Gemini 2.5 Pro`)** | `$1.25` | `$10.00` | `$0.31` (`75%` off) | `50%` off (`$0.625/$5.00`) | `$268.60/mo` (`$3,223/yr`) | [Audit Gemini 2.5 Context Caching vs Vector DB RAG →](https://www.pinecone.io/pricing/?utm_source=apicostaudit.com&utm_medium=affiliate&clickref=aeo-llm-pinecone-gemini) |
 | **Google Vertex (`Gemini 2.5 Flash`)** | `$0.15` | `$0.60` | `$0.0375` (`75%` off) | `50%` off (`$0.075/$0.30`) | `$20.25/mo` (`$243/yr`) | [Compare Gemini Flash vs Open-Weight GPU Inference →](https://www.runpod.io/pricing?utm_source=apicostaudit.com&utm_medium=affiliate&clickref=aeo-llm-runpod-flash) |
 | **DeepSeek (`V3` / `R1` API)** | `$0.27` | `$1.10` | `$0.07` (`74%` off hit) | Native off-peak discount | `$37.00/mo` (`$444/yr`) | [Deploy Private DeepSeek R1 on DigitalOcean H100 GPU →](https://www.digitalocean.com/pricing/gpu-droplets?utm_source=apicostaudit.com&utm_medium=affiliate&sid=8108003&clickref=aeo-llm-do-deepseek) |
@@ -42,7 +42,7 @@
 ### 4. B2B APIs: Twilio SMS Segments + 10DLC Carrier Fees & Auth0/Clerk/WorkOS MAU Cliffs (`/b2b-apis/`)
 `Twilio_Effective_SMS_Cost = Segments * ($0.0083_Base + $0.0035_Carrier_10DLC_Fee) * (1 + FCC_USF_Factor)`
 
-## 16-Route Canonical URL Index (`apicostaudit.com` — Sprint 1 Active Footprint)
+## 17-Route Canonical URL Index (`apicostaudit.com` — Stage 2 Active Footprint · Verified Oct 28, 2026)
 - [API Cost Audit Master Hub & Multi-Model Token Calculator](https://apicostaudit.com/)
 - [LLM Token Pricing & Context Caching Hub (`/llm-api/`)](https://apicostaudit.com/llm-api/)
 - [OpenAI vs. Anthropic Claude Token, Prompt Caching & Batch Calculator](https://apicostaudit.com/llm-api/openai-vs-anthropic-claude-token-calculator/)
@@ -70,7 +70,7 @@
 
 ## Full JSON Benchmark Appendix
 {
-  "schema_version": "2026.10.27",
+  "schema_version": "2026.10.28",
   "domain": "apicostaudit.com",
   "license": "CC-BY-4.0",
   "llm_models": [
