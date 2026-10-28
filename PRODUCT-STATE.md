@@ -1,4 +1,4 @@
-# API Cost Audit (`apicostaudit.com`) — Living Product State Document (`PRODUCT-STATE.md` · `v1.3.0`)
+# API Cost Audit (`apicostaudit.com`) — Living Product State Document (`PRODUCT-STATE.md` · `v1.4.0`)
 
 - **Product Owner ("The Why, The What & The Measured Truth"):** `SaaS Cost Audit PO` (`bc09e0d9-5fae-487c-b526-020d9aac1bd1` — Governing `API_COSTS` Extension)
 - **Multi-PO Family PM ("The How & The When"):** `B2B Audit Family PM` (`9c1c413e-5df2-4d17-a576-11713450fceb`) / `Project Manager` (`167b2bea-99c8-4e89-99e3-182227974962`)
@@ -9,12 +9,12 @@
   - `Chief of Staff` (`6bdd607c-7fa2-4559-ab73-4d368d72a455`) — External Browser, Registrar & GSC Provisioning (`Surface B`)
 - **Domain, Registrar & GSC Status:** `apicostaudit.com` — Registered on Porkbun (Order ID `12296644`, `$11.08/yr`, expires `2027-10-27`) on Tuesday, Oct 27, 2026 under `Research Triangle Park AI Transformation LLC` (`EIN 42-3641177`), operating email `luke@rtpait.com`. **Note on Google Search Console (`Gate 1.2`):** Property `sc-domain:apicostaudit.com` DNS TXT verification token (`google-site-verification=...`) still needs to be generated in Google Search Console and added to Porkbun root `@` DNS TXT records (`Surface B` action item #1).
 - **Product Workspace & Source Control:** `/workspace/apicostaudit` (Day-0 PO governance package `v1.0.0` complete on disk; Eleventy static build & GitHub Pages repo `https://github.com/rtpait/apicostaudit` queued for Sprint 1 `P0-API-001`).
-- **Snapshot Date & Version:** `v1.3.0` — Wednesday, Oct 28, 2026 (07:35 AM CDT / 08:35 AM EDT · `RAPID-BUILD-AUTO-ROTATE-20261028-0918`)
+- **Snapshot Date & Version:** `v1.4.0` — Wednesday, Oct 28, 2026 (07:35 AM CDT / 08:35 AM EDT · `RAPID-BUILD-AUTO-ROTATE-20261028-1012`)
 - **Road-to-Revenue Lifecycle Stage:** **`STAGE_2 (17/17 Canonical API_COSTS Routes + /admin/ = 18 Built HTML Routes Live on GitHub Pages -> Stage 2 GSC Indexation Ramp toward >=75% Cohort-1 Gate)`** (`/workspace/ROAD-TO-REVENUE-STANDARD.md` `v1.0.0`)
 - **Active Kaizen Mode:** **`MODE_1: Discovery, Indexation & AEO Velocity Mode (Day-0 Indexation)`** with automatic **`MODE_5: Day-0 Blocker Pre-Emption`** active until `sc-domain:apicostaudit.com` DNS TXT and Sprint 1 static routes clear `audit_day0_launch_gate.py --domain apicostaudit.com`.
 - **Governing Standards:**
   - `/workspace/PRODUCT-OWNER-OPERATING-PRINCIPLES.md` (Principles 1–9)
-  - `/workspace/B2B-FAMILY-TAXONOMY-REGISTRY.json` (`v1.3.0`)
+  - `/workspace/B2B-FAMILY-TAXONOMY-REGISTRY.json` (`v1.4.0`)
   - `/workspace/apicostaudit/CHARTER.md` (`v1.0.0`)
   - `/workspace/apicostaudit/ROAD-TO-REVENUE-SPRINT-PLAN.md` (`v1.0.0`)
   - `/workspace/apicostaudit/PO-SPOKE-DAY0-CHECKLIST.md` (`v1.0.0`)
@@ -49,7 +49,7 @@ Validated via `python3 /workspace/scheduler/audit_day0_launch_gate.py --domain a
 
 1. **Registrar & Taxonomy Wiring (`LIVE`):**
    - Registered on Porkbun (Order ID `12296644`, `2026-10-27`) under `Research Triangle Park AI Transformation LLC`.
-   - Wired into `/workspace/B2B-FAMILY-TAXONOMY-REGISTRY.json` (`v1.3.0`, active slot `4 of 5` in `b2b-audit-family`), `/workspace/TAXONOMY-REGISTRY.md` (`v1.3.0`), `/workspace/scheduler/lockctl.py` (`v2.3.0`), `/workspace/scheduler/PRODUCT-LOCK.json` (`v2.4.0`), and `/workspace/scheduler/audit_day0_launch_gate.py`.
+   - Wired into `/workspace/B2B-FAMILY-TAXONOMY-REGISTRY.json` (`v1.4.0`, active slot `4 of 5` in `b2b-audit-family`), `/workspace/TAXONOMY-REGISTRY.md` (`v1.4.0`), `/workspace/scheduler/lockctl.py` (`v2.3.0`), `/workspace/scheduler/PRODUCT-LOCK.json` (`v2.4.0`), and `/workspace/scheduler/audit_day0_launch_gate.py`.
 2. **Complete Day-0 PO Package (`LIVE` in `/workspace/apicostaudit/`):**
    - `CHARTER.md` (`v1.0.0`), `PRODUCT-STATE.md` (`v1.0.0`), `ROAD-TO-REVENUE-SPRINT-PLAN.md` (`v1.0.0`), `PO-SPOKE-DAY0-CHECKLIST.md` (`v1.0.0`), `ROUTE-SPEC-64.md` (`v1.0.0` — 64 domain-specific API cost routes across `/llm-api/*`, `/voice-video-api/*`, `/ai-infra-gpu/*`, `/b2b-apis/*`), `AFFILIATE-OPPORTUNITY-BACKLOG.md` (`v1.0.0`), and `VERSION-LOG.md` (`v1.0.0`).
 

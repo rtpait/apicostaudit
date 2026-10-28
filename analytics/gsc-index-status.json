@@ -1,6 +1,6 @@
 {
-  "schema_version": "2026.10.28-v1.3.0-principle-8-loud-failure",
-  "generated_at_utc": "2026-10-28T13:24:00Z",
+  "schema_version": "2026.10.28-v1.4.0-principle-8-loud-failure",
+  "generated_at_utc": "2026-10-28T14:18:14Z",
   "domain": "apicostaudit.com",
   "property": "sc-domain:apicostaudit.com",
   "source_mode": "LIVE_ZERO_TRAFFIC",
@@ -56,5 +56,6 @@
     "https://apicostaudit.com/about/",
     "https://apicostaudit.com/privacy/",
     "https://apicostaudit.com/terms/"
-  ]
+  ],
+  "gsc_url_inspection_status": "INSPECTION_QUEUED_TODAY"
 }

@@ -1,0 +1,91 @@
+{
+  "schema_version": "2026-10-28-v1.4.0",
+  "scanned_at_utc": "2026-10-28T14:18:14Z",
+  "source_domain": "apicostaudit.com",
+  "sprint_id": "RAPID-BUILD-AUTO-ROTATE-20261028-1012",
+  "shared_priority": "PRIORITY_1B_CONTINUOUS_AFFILIATE_SOFTWARE_OPPORTUNITY_SCANNING",
+  "affiliate_portal_ops_agent_id": "09b4bb79",
+  "saas_growth_target_domain": "saascostaudit.com",
+  "direct_api_costs_opportunities_logged": [
+    {
+      "opportunity_id": "API-OPP-001",
+      "vendor": "Telnyx (Programmable SMS, 10DLC, SIP Trunking & Voice AI WebRTC API)",
+      "target_domain": "apicostaudit.com",
+      "target_routes": [
+        "/b2b-apis/twilio-sms-voice-verify-per-call-fee-calculator/",
+        "/voice-video-api/"
+      ],
+      "partner_network": "PartnerStack / Direct B2B Referral",
+      "estimated_commission": "15%-20% recurring rev-share or $100-$250 B2B CPA",
+      "in_page_trigger": "Appears in observability-cost-calc as the $0.0075/seg SMS winner saving 36% vs Twilio ($0.0118/seg)."
+    },
+    {
+      "opportunity_id": "API-OPP-002",
+      "vendor": "Qdrant Cloud & Supabase pgvector (Managed Vector DB Clusters)",
+      "target_domain": "apicostaudit.com",
+      "target_routes": [
+        "/ai-infra-gpu/pinecone-vs-qdrant-vector-db-tco/",
+        "/ai-infra-gpu/"
+      ],
+      "partner_network": "PartnerStack / Direct Cloud Partner",
+      "estimated_commission": "10%-20% first-year cloud spend ($100-$500 CPA)",
+      "in_page_trigger": "Appears in vector-db-cost-calc as the flat-rate RAM/disk winner above 30M Read Units/mo."
+    },
+    {
+      "opportunity_id": "API-OPP-003",
+      "vendor": "Deepgram (Nova-3 Streaming & Batch Speech-to-Text API)",
+      "target_domain": "apicostaudit.com",
+      "target_routes": [
+        "/voice-video-api/elevenlabs-vs-openai-realtime-voice-tco/",
+        "/voice-video-api/retell-vs-vapi-voice-agent-per-minute-cost-calculator/"
+      ],
+      "partner_network": "PartnerStack / Direct",
+      "estimated_commission": "$100-$200 qualified developer signup CPA",
+      "in_page_trigger": "Core STT layer ($0.0043-$0.0077/min) in all 3 Voice AI per-minute stack calculators."
+    },
+    {
+      "opportunity_id": "API-OPP-004",
+      "vendor": "Grafana Cloud & Better Stack (OpenTelemetry Log & Trace Observability)",
+      "target_domain": "apicostaudit.com",
+      "target_routes": [
+        "/b2b-apis/",
+        "/b2b-apis/twilio-sms-voice-verify-per-call-fee-calculator/"
+      ],
+      "partner_network": "PartnerStack / CJ",
+      "estimated_commission": "20%-25% recurring rev-share ($150-$400 B2B CPA)",
+      "in_page_trigger": "Appears in observability-cost-calc as the $0.50/GB OpenTelemetry alternative to Datadog ($2.50/GB)."
+    }
+  ],
+  "cross_routed_saas_opportunities_for_saascostaudit": [
+    {
+      "opportunity_id": "SAAS-CROSS-001",
+      "vendor": "WorkOS & Clerk / Okta (Enterprise SAML SSO, SCIM Directory Sync & B2B Auth Seat Tiers)",
+      "discovered_on_route": "https://apicostaudit.com/b2b-apis/",
+      "routed_to_domain": "saascostaudit.com",
+      "target_saascostaudit_cluster": "SSO/IAM & SCIM Seat-Tax Audit (/ucaas/slack-pro-business-plus-vs-teams-pricing-calculator/ & Cohort 1 SSO Tax routes)",
+      "partner_network": "PartnerStack / Direct B2B",
+      "estimated_commission": "$150-$400 B2B SaaS CPA",
+      "rationale": "Per-connection Enterprise SAML SSO ($125/mo/connection) and SCIM seat provisioning directly intersect saascostaudit.com's SSO Tax and zombie-seat reclamation calculators."
+    },
+    {
+      "opportunity_id": "SAAS-CROSS-002",
+      "vendor": "Datadog Pro/Enterprise Per-Host & DevOps Seat Licenses (vs. Grafana / New Relic Per-User Tiers)",
+      "discovered_on_route": "https://apicostaudit.com/b2b-apis/twilio-sms-voice-verify-per-call-fee-calculator/",
+      "routed_to_domain": "saascostaudit.com",
+      "target_saascostaudit_cluster": "FinOps & DevOps Per-User Seat Licensing (New Relic $49-$349/user vs Datadog Per-Host)",
+      "partner_network": "PartnerStack / Impact (8038782)",
+      "estimated_commission": "$150-$350 B2B SaaS trial/conversion CPA",
+      "rationale": "While per-GB log ingestion belongs on apicostaudit.com, per-user observability seat licensing ($99-$349/full-platform user) routes directly to saascostaudit.com."
+    },
+    {
+      "opportunity_id": "SAAS-CROSS-003",
+      "vendor": "Cursor Business / GitHub Copilot Enterprise / Claude Team ($20-$39/seat/mo AI Workspace Licenses)",
+      "discovered_on_route": "https://apicostaudit.com/llm-api/openai-vs-anthropic-claude-token-calculator/",
+      "routed_to_domain": "saascostaudit.com",
+      "target_saascostaudit_cluster": "Per-Seat AI Workspace Licenses (/ucaas/microsoft-365-copilot-and-teams-premium-roi-calculator/)",
+      "partner_network": "PartnerStack / Impact / CJ",
+      "estimated_commission": "$50-$150 B2B SaaS CPA",
+      "rationale": "Engineering teams comparing per-1M API tokens vs flat $30-$39/seat AI coding/workspace licenses are high-intent buyers for saascostaudit.com's AI seat calculators."
+    }
+  ]
+}

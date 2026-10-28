@@ -74,6 +74,11 @@ if (htmlFiles.length !== 17) {
 
 let validJsonLdCount = 0;
 let fourAxisCount = 0;
+let datasetSchemaCount = 0;
+let dataCatalogSchemaCount = 0;
+let howToSchemaCount = 0;
+let faqSchemaCount = 0;
+let cfoPresetBtnCount = 0;
 
 for (const file of htmlFiles) {
   const rel = "/" + path.relative(siteDir, file).replace(/index\.html$/, "");
@@ -111,13 +116,30 @@ for (const file of htmlFiles) {
   const scripts = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
   for (const m of scripts) {
     try {
-      JSON.parse(m[1]);
+      const parsed = JSON.parse(m[1]);
       validJsonLdCount++;
+      if (parsed["@type"] === "Dataset") datasetSchemaCount++;
+      if (parsed["@type"] === "DataCatalog") dataCatalogSchemaCount++;
+      if (parsed["@type"] === "HowTo") howToSchemaCount++;
+      if (parsed["@type"] === "FAQPage") faqSchemaCount++;
     } catch (e) {
       fail(`${rel}: invalid JSON-LD (${e.message})`);
     }
   }
+  cfoPresetBtnCount += (html.match(/data-cfo-preset="/g) || []).length;
 }
 
-console.log(`Validated apicostaudit.com Sprint 1: 9/9 governance artifacts, ${htmlFiles.length}/17 built public HTML routes, ${validJsonLdCount} valid JSON-LD schemas, ${fourAxisCount}/17 pages with exclusive API_COSTS 4-Axis Affiliate Taxonomy (0 foreign affiliate links, 0 sibling calculators), and 0 errors.`);
+const webmcpRaw = fs.readFileSync(path.join(root, "_site", ".well-known", "webmcp.json"), "utf8");
+const webmcpParsed = JSON.parse(webmcpRaw);
+if (!Array.isArray(webmcpParsed.tools) || webmcpParsed.tools.length !== 7) {
+  fail(`/.well-known/webmcp.json: expected 7 API_COSTS tools, found ${webmcpParsed.tools ? webmcpParsed.tools.length : 0}`);
+}
+if (datasetSchemaCount !== 17 || dataCatalogSchemaCount !== 1) {
+  fail(`Expected 17/17 Dataset schemas and 1 DataCatalog schema, found Dataset=${datasetSchemaCount}, DataCatalog=${dataCatalogSchemaCount}`);
+}
+if (cfoPresetBtnCount !== 88) {
+  fail(`Expected 88 One-Click CTO/CFO Preset Scenario buttons across 17 routes, found ${cfoPresetBtnCount}`);
+}
+
+console.log(`Validated apicostaudit.com Sprint 1: 9/9 governance artifacts, ${htmlFiles.length}/17 built public HTML routes, ${validJsonLdCount} valid JSON-LD schemas (17/17 HowTo, 17/17 FAQPage, ${datasetSchemaCount}/17 Dataset, ${dataCatalogSchemaCount} DataCatalog), ${cfoPresetBtnCount} One-Click CTO/CFO Preset Scenario buttons, 7/7 WebMCP tools, ${fourAxisCount}/17 pages with exclusive API_COSTS 4-Axis Affiliate Taxonomy (0 foreign affiliate links, 0 sibling calculators), and 0 errors.`);
 if (bad) process.exit(1);

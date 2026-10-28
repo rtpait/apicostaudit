@@ -1,5 +1,5 @@
 {
-  "schema_version": "2026-03-01",
+  "schema_version": "2026-10-28-v1.4.0",
   "protocol": "webmcp/1.0",
   "site": {
     "name": "API Cost Audit",
@@ -22,7 +22,9 @@
         "url": "https://apicostaudit.com/datasets/api-llm-voice-gpu-benchmarks-2026.json"
       }
     ],
-    "stage2_gate_status_url": "https://apicostaudit.com/api/v1/benchmarks/gate-status.json"
+    "stage2_gate_status_url": "https://apicostaudit.com/api/v1/benchmarks/gate-status.json",
+    "version": "v1.4.0",
+    "updated_at": "2026-10-28"
   },
   "tools": [
     {
@@ -211,6 +213,148 @@
           "subid": "webmcp-bark-api-costs",
           "cpa_tier": "$20\u2013$45 Verified CPL (AWIN Publisher 3133124 / MID 58887)",
           "referral_action_url": "https://www.awin1.com/cread.php?awinmid=58887&awinaffid=3133124&clickref=webmcp-bark-api-costs&ued=https%3A%2F%2Fwww.bark.com%2Fen%2Fus%2Fweb-development%2F"
+        }
+      ]
+    },
+    {
+      "name": "calculate_gpu_cloud_vllm_breakeven",
+      "title": "H100 / H200 / L40S GPU Cloud vs. Managed LLM Token API Breakeven Calculator",
+      "description": "Calculates the exact monthly token throughput and utilization threshold where self-hosted vLLM on dedicated H100/H200/L40S GPU pods (DigitalOcean GPU $2.99/hr, RunPod $2.69/hr, Vast.ai $1.89/hr) beats managed per-1M token APIs and AWS EC2 P5 ($6.88/hr + $0.09/GB egress).",
+      "canonical_route": "https://apicostaudit.com/ai-infra-gpu/runpod-vs-vast-ai-gpu-inference-cost-calculator/",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "gpu_count",
+          "active_hours_per_day"
+        ],
+        "properties": {
+          "gpu_count": {
+            "type": "integer",
+            "default": 2,
+            "description": "Number of H100 80GB GPUs"
+          },
+          "active_hours_per_day": {
+            "type": "number",
+            "default": 24,
+            "description": "Active utilization hours per day (1-24)"
+          },
+          "monthly_egress_gb": {
+            "type": "number",
+            "default": 2000,
+            "description": "Monthly egress bandwidth in GB"
+          }
+        }
+      },
+      "access_tier": "STAGE_1_FREE_SINGLE_LOOKUP",
+      "output_partner_actions": [
+        {
+          "vendor": "DigitalOcean H100 GPU Droplets ($2.99/hr, SOC 2 Managed Cloud)",
+          "subid": "webmcp-api-do-h100-breakeven",
+          "cpa_tier": "$200 Cloud Infrastructure CPA (CJ 8108003)",
+          "referral_action_url": "https://www.digitalocean.com/pricing/gpu-droplets?utm_source=apicostaudit.com&utm_medium=affiliate&sid=8108003&clickref=webmcp-api-do-h100-breakeven"
+        },
+        {
+          "vendor": "RunPod On-Demand & Serverless H100 GPUs ($2.69/hr)",
+          "subid": "webmcp-api-runpod-h100",
+          "cpa_tier": "5%-10% Compute Referral RevShare",
+          "referral_action_url": "https://www.runpod.io/pricing?utm_source=apicostaudit.com&utm_medium=affiliate&clickref=webmcp-api-runpod-h100"
+        },
+        {
+          "vendor": "Bark US (Compare 3 Vetted MLOps & GPU Cloud Quotes \u2014 AWIN MID 58887)",
+          "subid": "webmcp-bark-gpu-58887",
+          "cpa_tier": "$20\u2013$45 Verified CPL",
+          "referral_action_url": "https://www.awin1.com/cread.php?awinmid=58887&awinaffid=3133124&clickref=webmcp-bark-gpu-58887&ued=https%3A%2F%2Fwww.bark.com%2Fen%2Fus%2Fweb-development%2F"
+        }
+      ]
+    },
+    {
+      "name": "audit_observability_log_and_custom_metrics_ingestion",
+      "title": "Datadog vs. New Relic vs. Grafana Cloud & OpenTelemetry Log/Trace Ingestion Cost Calculator",
+      "description": "Audits API log ingestion ($2.50/GB indexed vs $0.50/GB OpenTelemetry sampled), APM trace spans, and custom metrics cardinality traps alongside webhook automation (Make.com / n8n Cloud).",
+      "canonical_route": "https://apicostaudit.com/b2b-apis/",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "monthly_log_ingestion_gb"
+        ],
+        "properties": {
+          "monthly_log_ingestion_gb": {
+            "type": "number",
+            "default": 1000,
+            "description": "Monthly indexed log & trace volume in GB"
+          },
+          "custom_metrics_count": {
+            "type": "integer",
+            "default": 5000,
+            "description": "Active custom metrics time-series count"
+          },
+          "monthly_webhook_ops": {
+            "type": "integer",
+            "default": 250000,
+            "description": "Monthly API webhook & orchestration operations"
+          }
+        }
+      },
+      "access_tier": "STAGE_1_FREE_SINGLE_LOOKUP",
+      "output_partner_actions": [
+        {
+          "vendor": "Make.com & n8n Cloud API Webhook Orchestration",
+          "subid": "webmcp-api-make-obs",
+          "cpa_tier": "20%-35% B2B Partner RevShare",
+          "referral_action_url": "https://www.make.com/en/pricing?utm_source=apicostaudit.com&utm_medium=affiliate&clickref=webmcp-api-make-obs"
+        },
+        {
+          "vendor": "Bark US (Compare 3 Vetted Cloud FinOps & Observability Quotes \u2014 AWIN MID 58887)",
+          "subid": "webmcp-bark-obs-58887",
+          "cpa_tier": "$20\u2013$45 Verified CPL",
+          "referral_action_url": "https://www.awin1.com/cread.php?awinmid=58887&awinaffid=3133124&clickref=webmcp-bark-obs-58887&ued=https%3A%2F%2Fwww.bark.com%2Fen%2Fus%2Fweb-development%2F"
+        }
+      ]
+    },
+    {
+      "name": "lookup_2026_api_llm_voice_gpu_rate_drift_diffs",
+      "title": "2026 LLM Token, Prompt Caching, Voice AI, Vector DB & GPU Cloud Rate-Card Drift Lookup",
+      "description": "Queries verified October 2026 API rate-card diffs across OpenAI (50% prefix cache), Anthropic Claude 4.5 (90% cache read + 5m/1h write TTLs), Google Gemini 2.5 (75% cache read + 50% Batch), DeepSeek V3/R1, ElevenLabs Flash v2.5, Deepgram Nova-3, Retell AI, Vapi, Pinecone Serverless, Qdrant, DigitalOcean H100, RunPod, and Twilio 10DLC/Verify.",
+      "canonical_route": "https://apicostaudit.com/methodology/",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "provider_slug"
+        ],
+        "properties": {
+          "provider_slug": {
+            "type": "string",
+            "enum": [
+              "openai",
+              "anthropic",
+              "google_gemini",
+              "deepseek",
+              "elevenlabs",
+              "deepgram",
+              "retell_vapi",
+              "pinecone",
+              "qdrant",
+              "digitalocean_gpu",
+              "runpod",
+              "twilio"
+            ],
+            "default": "anthropic"
+          }
+        }
+      },
+      "access_tier": "STAGE_1_FREE_SINGLE_LOOKUP",
+      "output_partner_actions": [
+        {
+          "vendor": "ElevenLabs Flash v2.5 & Conversational Voice AI API",
+          "subid": "webmcp-api-elevenlabs-drift",
+          "cpa_tier": "22% Recurring Affiliate Commission",
+          "referral_action_url": "https://elevenlabs.io/pricing?utm_source=apicostaudit.com&utm_medium=affiliate&clickref=webmcp-api-elevenlabs-drift"
+        },
+        {
+          "vendor": "Bark US (Compare 3 Vetted AI & API Engineering Quotes \u2014 AWIN MID 58887)",
+          "subid": "webmcp-bark-drift-58887",
+          "cpa_tier": "$20\u2013$45 Verified CPL",
+          "referral_action_url": "https://www.awin1.com/cread.php?awinmid=58887&awinaffid=3133124&clickref=webmcp-bark-drift-58887&ued=https%3A%2F%2Fwww.bark.com%2Fen%2Fus%2Fweb-development%2F"
         }
       ]
     }

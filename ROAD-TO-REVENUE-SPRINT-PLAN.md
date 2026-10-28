@@ -8,6 +8,18 @@
 
 ---
 
+## 00. Mandatory Product Category Context Filter (`product_category: "AFFILIATE_FUNNELS"` — Effective Wednesday, Oct 28, 2026)
+
+- **Assigned Product Category:** **`AFFILIATE_FUNNELS`** *(Single-category assignment today; no cross-categorization · Canonical Standard: `/workspace/PRODUCT-CATEGORY-CONTEXT-FILTERS.md` `v1.0.0`)*
+- **What the Tag Says (The Context Layer & Outright Override Rule):**
+  > **`[CATEGORY_CONTEXT: AFFILIATE_FUNNELS — OVERRIDES ALL DEFAULT SPOKE BEHAVIORS]`**  
+  > *"You are entering a Commercial Organic-Search & Affiliate Monetization Funnel governed by two shared top priorities: **(Priority 1A — Organic Platform Optimization)** earning natural and organic search/AEO visibility on high-intent buyer queries by whatever appropriate means are necessary, and **(Priority 1B — Continuous Affiliate Software Opportunity Scanning)** actively scanning every affiliate landing page, calculator output, and comparison table for additional commission-bearing software and partner opportunities—with specific emphasis on expanding the SaaS vendor and partner surface on `saascostaudit.com`. Every action on this hub must advance organic search capture, uncover and wire high-fit affiliate software programs, and convert buyer intent into verified partner commissions (CPL/CPA/rev-share)."*
+- **Two Shared Top Priorities on `apicostaudit.com`:**
+  - **Shared Priority 1A — Broad Natural & Organic Platform Optimization:** Advance crawlability, GSC indexation toward `>=75%`, `HowTo`/`FAQPage`/`SoftwareApplication`/`Dataset` schemas, `/llms.txt` & `/.well-known/webmcp.json`, statutory/vendor benchmark depth, internal/sister-family link equity, and price-anchored title/meta CTR hooks.
+  - **Shared Priority 1B — Continuous In-Page Affiliate Software Opportunity Scanning (with Growth Emphasis on `saascostaudit.com`):** Treat partner discovery as a standing task on every pass—scanning landing pages, calculators, and comparison tables for unmonetized vendor mentions or adjacent software tools, wiring vertical-native offers via `@Affiliate & Portal Ops` (`09b4bb79`), and routing any discovered SaaS software opportunities directly to `saascostaudit.com`.
+
+---
+
 ## 0A. Top-Line Short-Term Goal (#1 Priority — Updated Wednesday, Oct 28, 2026): Improve Natural & Organic SEO Results Broadly
 
 - **#1 Leading Short-Term Goal (Listed First Before Conversion/CRO & Downstream Monetization):** Improve `apicostaudit.com`'s **natural SEO and organic SEO results broadly** across the 17 canonical `API_COSTS` routes (currently `0/17` indexed) by whatever appropriate means are necessary—with **no single tactic mandated as the sole top line**.

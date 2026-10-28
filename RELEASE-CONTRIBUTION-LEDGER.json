@@ -6,8 +6,8 @@
   "entity": "Research Triangle Park AI Transformation LLC (EIN 42-3641177)",
   "repository": "https://github.com/rtpait/apicostaudit",
   "branch": "main",
-  "release_version": "v1.2.0",
-  "currentVersion": "v1.3.0",
+  "release_version": "v1.4.0",
+  "currentVersion": "v1.4.0",
   "released_at_utc": "2026-10-28T12:35:00Z",
   "owning_po": "SaaS Cost Audit PO \u2014 API_COSTS (bc09e0d9-5fae-487c-b526-020d9aac1bd1)",
   "hub_pm": "B2B Audit Family PM (9c1c413e-5df2-4d17-a576-11713450fceb)",
@@ -90,6 +90,72 @@
           "specialist": "QA Tester",
           "specialistId": "dc6489e7-fdca-44d4-bf7a-1674bbe6607e",
           "summary": "Verified 214/214 (100%) commercial rel='sponsored' CTAs carry valid *:API_COSTS.*:* 4-axis keys with 0 foreign keys, 0 leaked sibling calculators, 120 valid JSON-LD schemas across 17/17 HTML pages, and 0 blockers on audit_day0_launch_gate.py --domain apicostaudit.com.",
+          "artifactPath": "/workspace/apicostaudit/scripts/validate.js",
+          "mergedIntoStagedBuild": true
+        }
+      ],
+      "gateEvaluation": {
+        "mergedContributionsCount": 5,
+        "uniqueSpecialistsRepresented": 5,
+        "contributionFloorMet": true,
+        "validateJsPassed": true,
+        "headlessQaPassed": true,
+        "zeroSeoRegressions": true,
+        "zeroMonetizationRegressions": true,
+        "pmSignedOff": true,
+        "signedOffBy": "Project Manager (167b2bea-99c8-4e89-99e3-182227974962) & B2B Audit Family PM (9c1c413e-5df2-4d17-a576-11713450fceb)",
+        "autoPushAuthorized": true,
+        "productOwnerApprovedBy": "SaaS Cost Audit PO (API_COSTS) (bc09e0d9-5fae-487c-b526-020d9aac1bd1)"
+      }
+    },
+    {
+      "releaseId": "release-004-cycle4-rapid-build-20261028-1012-v1.4.0",
+      "version": "v1.4.0",
+      "versionTag": "v1.4.0",
+      "prior_version": "v1.3.0",
+      "sprint": "Cycle 4 Rapid-Build Sprint (RAPID-BUILD-AUTO-ROTATE-20261028-1012) \u2014 17/17 Canonical API_COSTS URLs Queued for GSC Priority Inspection, 137 Valid JSON-LD Schemas (17/17 Dataset + 17/17 HowTo + 17/17 FAQPage + 17/17 Service+AggregateOffer + 17/17 SoftwareApplication + 17/17 Organization + 17/17 WebSite + 17/17 BreadcrumbList + 1 DataCatalog), 7-Tool API_COSTS-Exclusive WebMCP v1.4.0 Manifest, 88 One-Click CTO/CFO Preset Scenario Buttons (data-cfo-preset), Continuous In-Page Affiliate Software Opportunity Scan (4 Direct API_COSTS + 3 Cross-Routed SaaSCostAudit.com Opportunities), and 214/214 (100%) API_COSTS 4-Axis CTAs (incl. 22 Live Awin Bark US MID 58887 CPL Links)",
+      "timestamp": "2026-10-28T09:20:00-05:00",
+      "artifactZip": "/workspace/apicostaudit/apicostaudit-mvp.zip",
+      "zipBytes": 3638017,
+      "routeCount": 19,
+      "htmlPageCount": 17,
+      "quarantinedDripCohortCount": 4,
+      "routeSpecCount": 64,
+      "status": "DEPLOYED_PRODUCTION_PO_ACCEPTED",
+      "po_verdict": "ACCEPT",
+      "mergedContributions": [
+        {
+          "specialist": "Platform Optimization",
+          "specialistId": "3baf81a9-493f-491f-997a-6263af37023e",
+          "summary": "Upgraded JSON-LD schema depth across all 17/17 HTML pages from 120 to 137 valid JSON-LD blocks (17/17 Dataset, 17/17 HowTo, 17/17 FAQPage, 17/17 Service+AggregateOffer, 17/17 SoftwareApplication, 17/17 Organization, 17/17 WebSite, 17/17 BreadcrumbList, 1 DataCatalog) and expanded /.well-known/webmcp.json & /webmcp.json to 7 API_COSTS tools (v1.4.0).",
+          "artifactPath": "/workspace/apicostaudit/src/well-known/webmcp.json",
+          "mergedIntoStagedBuild": true
+        },
+        {
+          "specialist": "UX/UI Research & Design Expert",
+          "specialistId": "32a547b4-ece0-47aa-8763-8137899a0599",
+          "summary": "Expanded One-Click Engineering/CTO Preset Scenario buttons (data-cfo-preset & data-cto-preset) from 3 to 4 presets per calculator across llm-token-calc, gpu-cloud-tco-calc, vector-db-cost-calc, and observability-cost-calc (66 -> 88 total data-cfo-preset buttons across all 17/17 canonical routes).",
+          "artifactPath": "/workspace/apicostaudit/src/_includes/macros.njk",
+          "mergedIntoStagedBuild": true
+        },
+        {
+          "specialist": "Data Analyst",
+          "specialistId": "762fcc5f-c863-4c92-9c08-560d46ff4808",
+          "summary": "Executed Shared Priority 1B in-page affiliate opportunity scan (data/affiliate-opportunity-scan.json & /workspace/scheduler/AFFILIATE-SOFTWARE-OPPORTUNITY-BACKLOG.json) logging 4 direct API_COSTS partner opportunities (Telnyx, Qdrant/Supabase, Deepgram, Grafana/Better Stack) to Affiliate & Portal Ops (09b4bb79) and routing 3 SaaS seat opportunities (WorkOS/Clerk/Okta SSO, Datadog/New Relic Per-User Seats, Cursor/Copilot AI Seats) to saascostaudit.com; verified 214/214 (100%) API_COSTS.* 4-axis CTAs including 22 live Awin Bark US MID 58887 CPL links.",
+          "artifactPath": "/workspace/apicostaudit/data/affiliate-opportunity-scan.json",
+          "mergedIntoStagedBuild": true
+        },
+        {
+          "specialist": "Content Writer",
+          "specialistId": "4a9dcf1b-e8ab-444d-a13a-de4ae8e73943",
+          "summary": "Updated /llms.txt and /llms-full.txt with the 7-tool API_COSTS-exclusive WebMCP v1.4.0 manifest and updated PRODUCT-STATE.md, PRODUCT-STATE.json, NEXT-SPRINT-BRIEF.json, and SPRINT-REVIEW-2026-10-28.md for Cycle 4 v1.4.0.",
+          "artifactPath": "/workspace/apicostaudit/SPRINT-REVIEW-2026-10-28.md",
+          "mergedIntoStagedBuild": true
+        },
+        {
+          "specialist": "QA Tester",
+          "specialistId": "dc6489e7-fdca-44d4-bf7a-1674bbe6607e",
+          "summary": "Upgraded scripts/validate.js to enforce 7-tool webmcp.json, 137 JSON-LD blocks (17/17 Dataset, 17/17 HowTo, 17/17 FAQPage, 1 DataCatalog), and 88 One-Click CTO/CFO Preset Scenario buttons; verified check-release-gate.js and audit_day0_launch_gate.py with 0 blockers.",
           "artifactPath": "/workspace/apicostaudit/scripts/validate.js",
           "mergedIntoStagedBuild": true
         }
