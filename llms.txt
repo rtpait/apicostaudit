@@ -68,3 +68,13 @@
 - **APICostAudit.com (`API_COSTS`):** https://apicostaudit.com/ — Metered LLM tokens, Voice AI minutes, Vector DB read/write units & GPU cloud inference.
 
 - **Active Commission-Bearing CPL Partner (`AWIN Publisher 3133124 · Bark US MID 58887`):** [Compare 3 Vetted AI, MLOps & API Engineering Quotes ($20–$45 CPL) →](https://www.awin1.com/cread.php?awinmid=58887&awinaffid=3133124&clickref=aeo-llm-bark-api-costs&ued=https%3A%2F%2Fwww.bark.com%2Fen%2Fus%2Fweb-development%2F)
+
+
+## 7-Tool API_COSTS-Exclusive WebMCP Manifest (`/.well-known/webmcp.json` & `/webmcp.json` — `v1.4.0`)
+1. `calculate_llm_token_api_tco` (`https://apicostaudit.com/llm-api/openai-vs-anthropic-claude-token-calculator/`) — LLM Token, Prompt Caching (`50%–90%` off) & 24h Batch API (`50%` off) 12-Month TCO Calculator.
+2. `calculate_voice_ai_per_minute_tco` (`https://apicostaudit.com/voice-video-api/elevenlabs-vs-openai-realtime-voice-tco/`) — 4-Layer Voice AI Per-Minute Cost Stack Calculator (`ElevenLabs`, `Deepgram Nova-3`, `Retell AI`, `Vapi`, `OpenAI Realtime`).
+3. `calculate_vector_db_and_gpu_tco` (`https://apicostaudit.com/ai-infra-gpu/pinecone-vs-qdrant-vector-db-tco/`) — Pinecone Serverless Read/Write Units vs. Qdrant Cloud Vector DB TCO Calculator.
+4. `calculate_b2b_api_overage_tco` (`https://apicostaudit.com/b2b-apis/twilio-sms-voice-verify-per-call-fee-calculator/`) — Twilio SMS Segments + 10DLC Carrier Fees, Verify OTPs (`$0.05`) & B2B Auth MAU Cliff Calculator.
+5. `calculate_gpu_cloud_vllm_breakeven` (`https://apicostaudit.com/ai-infra-gpu/runpod-vs-vast-ai-gpu-inference-cost-calculator/`) — H100 / H200 / L40S GPU Cloud vs. Managed LLM Token API Breakeven Calculator (`DigitalOcean GPU`, `RunPod`, `Vast.ai`).
+6. `audit_observability_log_and_custom_metrics_ingestion` (`https://apicostaudit.com/b2b-apis/`) — Datadog vs. New Relic vs. Grafana Cloud & OpenTelemetry Log/Trace Ingestion Cost Calculator.
+7. `lookup_2026_api_llm_voice_gpu_rate_drift_diffs` (`https://apicostaudit.com/methodology/`) — 2026 LLM Token, Prompt Caching, Voice AI, Vector DB & GPU Cloud Rate-Card Drift Lookup (`clickref=webmcp-*` & `clickref=aeo-llm-*`).
