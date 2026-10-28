@@ -1,8 +1,8 @@
 {
-  "schema_version": "2026-10-28-v1.4.0",
-  "scanned_at_utc": "2026-10-28T14:18:14Z",
+  "schema_version": "2026-10-28-v1.5.0",
+  "scanned_at_utc": "2026-10-28T15:17:40Z",
   "source_domain": "apicostaudit.com",
-  "sprint_id": "RAPID-BUILD-AUTO-ROTATE-20261028-1012",
+  "sprint_id": "RAPID-BUILD-AUTO-ROTATE-20261028-1112",
   "shared_priority": "PRIORITY_1B_CONTINUOUS_AFFILIATE_SOFTWARE_OPPORTUNITY_SCANNING",
   "affiliate_portal_ops_agent_id": "09b4bb79",
   "saas_growth_target_domain": "saascostaudit.com",
@@ -54,6 +54,32 @@
       "partner_network": "PartnerStack / CJ",
       "estimated_commission": "20%-25% recurring rev-share ($150-$400 B2B CPA)",
       "in_page_trigger": "Appears in observability-cost-calc as the $0.50/GB OpenTelemetry alternative to Datadog ($2.50/GB)."
+    },
+    {
+      "opportunity_id": "API-OPP-005",
+      "vendor": "Helicone / Langfuse Cloud / Portkey / Braintrust (LLM Gateway, Semantic Caching Proxy, Token Observability & Evals APIs)",
+      "target_domain": "apicostaudit.com",
+      "target_routes": [
+        "/llm-api/prompt-caching-vs-batch-api-savings-calculator/",
+        "/llm-api/openai-vs-anthropic-claude-token-calculator/",
+        "/llm-api/"
+      ],
+      "partner_network": "PartnerStack / Direct B2B Referral",
+      "estimated_commission": "15%-25% recurring rev-share or $100-$300 B2B engineering team CPA",
+      "in_page_trigger": "Directly triggered by Preset 1 ('rag_support_bot') and Preset 2 ('agentic_coding_loop') in llm-token-calc where semantic caching proxies and LLM gateways boost cache hit rates from 50% to 85%+."
+    },
+    {
+      "opportunity_id": "API-OPP-006",
+      "vendor": "Supabase / Neon Serverless Postgres / Upstash Redis / Turso (Metered Serverless Database, pgvector & Edge Rate-Limiting APIs)",
+      "target_domain": "apicostaudit.com",
+      "target_routes": [
+        "/ai-infra-gpu/pinecone-vs-qdrant-vector-db-tco/",
+        "/b2b-apis/",
+        "/"
+      ],
+      "partner_network": "PartnerStack / Direct Cloud Partner",
+      "estimated_commission": "10%-20% first-year metered cloud spend ($75-$350 CPA)",
+      "in_page_trigger": "Appears alongside Pinecone and Qdrant in vector-db-cost-calc for engineering teams consolidating vector embeddings, Redis semantic cache, and serverless Postgres compute."
     }
   ],
   "cross_routed_saas_opportunities_for_saascostaudit": [
@@ -86,6 +112,26 @@
       "partner_network": "PartnerStack / Impact / CJ",
       "estimated_commission": "$50-$150 B2B SaaS CPA",
       "rationale": "Engineering teams comparing per-1M API tokens vs flat $30-$39/seat AI coding/workspace licenses are high-intent buyers for saascostaudit.com's AI seat calculators."
+    },
+    {
+      "opportunity_id": "SAAS-CROSS-004",
+      "vendor": "PagerDuty vs. Incident.io vs. Rootly vs. Squadcast (On-Call Incident Management, Alerting & SRE Response Per-User Seat Tiers)",
+      "discovered_on_route": "https://apicostaudit.com/b2b-apis/twilio-sms-voice-verify-per-call-fee-calculator/",
+      "routed_to_domain": "saascostaudit.com",
+      "target_saascostaudit_cluster": "DevOps, SRE & On-Call Incident Management Per-User Seat Licensing Audit",
+      "partner_network": "PartnerStack / Impact (8038782) / Direct B2B",
+      "estimated_commission": "$150-$400 per qualified engineering/SRE team trial or conversion",
+      "rationale": "Engineering teams auditing Datadog log ingestion and Twilio SMS alert volume also pay $21-$49+/user/mo (+ AIOps add-ons) for on-call incident management seats\u2014a high-intent per-seat SaaS vertical for saascostaudit.com."
+    },
+    {
+      "opportunity_id": "SAAS-CROSS-005",
+      "vendor": "Postman Enterprise vs. SwaggerHub (SmartBear) vs. ReadMe vs. Stoplight (API Documentation, Governance & Developer Portal Per-Seat SaaS)",
+      "discovered_on_route": "https://apicostaudit.com/b2b-apis/",
+      "routed_to_domain": "saascostaudit.com",
+      "target_saascostaudit_cluster": "Developer Tools & API Collaboration Per-Seat SaaS Licensing Audit",
+      "partner_network": "PartnerStack / CJ Affiliate (8108003) / Direct B2B",
+      "estimated_commission": "$100-$300 B2B SaaS subscription CPA",
+      "rationale": "While metered per-call API usage belongs on apicostaudit.com, per-user API design, workspace collaboration, and hosted developer portal seats ($14-$49/user/mo on Postman/SwaggerHub/ReadMe) route directly to saascostaudit.com."
     }
   ]
 }

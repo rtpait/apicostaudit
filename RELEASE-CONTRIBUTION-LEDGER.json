@@ -6,9 +6,9 @@
   "entity": "Research Triangle Park AI Transformation LLC (EIN 42-3641177)",
   "repository": "https://github.com/rtpait/apicostaudit",
   "branch": "main",
-  "release_version": "v1.4.0",
-  "currentVersion": "v1.4.0",
-  "released_at_utc": "2026-10-28T12:35:00Z",
+  "release_version": "v1.5.0",
+  "currentVersion": "v1.5.0",
+  "released_at_utc": "2026-10-28T15:19:00Z",
   "owning_po": "SaaS Cost Audit PO \u2014 API_COSTS (bc09e0d9-5fae-487c-b526-020d9aac1bd1)",
   "hub_pm": "B2B Audit Family PM (9c1c413e-5df2-4d17-a576-11713450fceb)",
   "web_pm": "Project Manager (167b2bea-99c8-4e89-99e3-182227974962)",
@@ -172,6 +172,69 @@
         "signedOffBy": "Project Manager (167b2bea-99c8-4e89-99e3-182227974962) & B2B Audit Family PM (9c1c413e-5df2-4d17-a576-11713450fceb)",
         "autoPushAuthorized": true,
         "productOwnerApprovedBy": "SaaS Cost Audit PO (API_COSTS) (bc09e0d9-5fae-487c-b526-020d9aac1bd1)"
+      }
+    },
+    {
+      "releaseId": "release-005-cycle5-rapid-build-20261028-1112-v1.5.0",
+      "version": "v1.5.0",
+      "versionTag": "v1.5.0",
+      "prior_version": "v1.4.0",
+      "sprint": "RAPID-BUILD-AUTO-ROTATE-20261028-1112 (Cycle 5)",
+      "timestamp": "2026-10-28T11:19:00-04:00",
+      "artifactZip": "/workspace/apicostaudit/apicostaudit-mvp.zip",
+      "routeCount": 19,
+      "htmlPageCount": 17,
+      "quarantinedDripCohortCount": 4,
+      "routeSpecCount": 64,
+      "status": "DEPLOYED_PRODUCTION_PO_ACCEPTED",
+      "po_verdict": "ACCEPT",
+      "mergedContributions": [
+        {
+          "specialist": "Platform Optimization",
+          "specialistId": "3baf81a9-493f-491f-997a-6263af37023e",
+          "summary": "Upgraded visible DOM trust & FAQ surfaces across all 17/17 canonical API_COSTS routes (17/17 visible <details class=\"faq-card\"> FAQ accordions + 17/17 verifiedGovBadge data-verified-gov-badge=\"true\" statutory/public trust bars citing NIST AI RMF 1.0, SEC 10-K/10-Q cloud & AI provider disclosures, FedRAMP Marketplace cloud authorization benchmarks, and published OpenAI/Anthropic/Vertex AI/AWS Bedrock/Azure OpenAI schedules) and bumped 7-tool WebMCP manifest + llms.txt to v1.5.0",
+          "artifactPath": "/workspace/apicostaudit/src/_includes/macros.njk",
+          "mergedIntoStagedBuild": true
+        },
+        {
+          "specialist": "UX/UI Research & Design Expert",
+          "specialistId": "32a547b4-ece0-47aa-8763-8137899a0599",
+          "summary": "Verified 88 One-Click CTO/CFO Preset Scenario buttons (data-cfo-preset) across all 17/17 canonical API_COSTS routes and standardized statutory/public trust bar UX",
+          "artifactPath": "/workspace/apicostaudit/src/_includes/macros.njk",
+          "mergedIntoStagedBuild": true
+        },
+        {
+          "specialist": "Content Writer",
+          "specialistId": "4a9dcf1b-e8ab-444d-a13a-de4ae8e73943",
+          "summary": "Updated PRODUCT-STATE.md, SPRINT-REVIEW-2026-10-28.md, and NEXT-SPRINT-BRIEF.json for v1.5.0 while maintaining 17/17 price-anchored <title> (<=60c) and meta descriptions (140-158c)",
+          "artifactPath": "/workspace/apicostaudit/PRODUCT-STATE.md",
+          "mergedIntoStagedBuild": true
+        },
+        {
+          "specialist": "Data Analyst",
+          "specialistId": "762fcc5f-c863-4c92-9c08-560d46ff4808",
+          "summary": "Expanded Priority 1B Continuous In-Page Affiliate Software Opportunity Scan with API-OPP-005 (Helicone/Langfuse/Portkey/Braintrust LLM gateway & evals APIs) and API-OPP-006 (Supabase/Neon/Upstash/Turso serverless data APIs) for 09b4bb79, plus SAAS-CROSS-004 (PagerDuty/Incident.io/Rootly on-call SRE seats) and SAAS-CROSS-005 (Postman/SwaggerHub/ReadMe API portal seats) routed to saascostaudit.com",
+          "artifactPath": "/workspace/apicostaudit/data/affiliate-opportunity-scan.json",
+          "mergedIntoStagedBuild": true
+        },
+        {
+          "specialist": "QA Tester",
+          "specialistId": "dc6489e7-fdca-44d4-bf7a-1674bbe6607e",
+          "summary": "Added scripts/build.js and upgraded scripts/validate.js to enforce 17/17 visible <details class=\"faq-card\"> FAQ accordions, 17/17 verifiedGovBadge statutory/public trust bars, 137 valid JSON-LD blocks (17/17 Dataset + 1 DataCatalog), 7/7 WebMCP tools, and 214/214 (100%) *:API_COSTS.*:* 4-axis exclusivity",
+          "artifactPath": "/workspace/apicostaudit/scripts/validate.js",
+          "mergedIntoStagedBuild": true
+        }
+      ],
+      "gateEvaluation": {
+        "mergedContributionsCount": 5,
+        "uniqueSpecialistsRepresented": 5,
+        "contributionFloorMet": true,
+        "validateJsPassed": true,
+        "headlessQaPassed": true,
+        "zeroSeoRegressions": true,
+        "zeroMonetizationRegressions": true,
+        "pmSignedOff": true,
+        "autoPushAuthorized": true
       }
     }
   ]

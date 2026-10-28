@@ -78,6 +78,8 @@ let datasetSchemaCount = 0;
 let dataCatalogSchemaCount = 0;
 let howToSchemaCount = 0;
 let faqSchemaCount = 0;
+let canonicalFaqAccordionCount = 0;
+let canonicalGovBadgeCount = 0;
 let cfoPresetBtnCount = 0;
 
 for (const file of htmlFiles) {
@@ -126,7 +128,23 @@ for (const file of htmlFiles) {
       fail(`${rel}: invalid JSON-LD (${e.message})`);
     }
   }
+  if (!html.includes('class="verified-gov-badge"') || !html.includes('data-verified-gov-badge="true"')) {
+    fail(`${rel}: canonical API_COSTS route missing verifiedGovBadge (data-verified-gov-badge="true")`);
+  } else {
+    canonicalGovBadgeCount++;
+  }
+  if (!html.includes('<details class="faq-card"')) {
+    fail(`${rel}: canonical API_COSTS route missing visible <details class="faq-card"> FAQ accordion`);
+  } else {
+    canonicalFaqAccordionCount++;
+  }
   cfoPresetBtnCount += (html.match(/data-cfo-preset="/g) || []).length;
+}
+if (canonicalFaqAccordionCount !== 17) {
+  fail(`Expected 17/17 canonical API_COSTS routes with visible <details class="faq-card"> FAQ accordions, found ${canonicalFaqAccordionCount}`);
+}
+if (canonicalGovBadgeCount !== 17) {
+  fail(`Expected 17/17 canonical API_COSTS routes with verifiedGovBadge trust bars, found ${canonicalGovBadgeCount}`);
 }
 
 const webmcpRaw = fs.readFileSync(path.join(root, "_site", ".well-known", "webmcp.json"), "utf8");
@@ -141,5 +159,5 @@ if (cfoPresetBtnCount !== 88) {
   fail(`Expected 88 One-Click CTO/CFO Preset Scenario buttons across 17 routes, found ${cfoPresetBtnCount}`);
 }
 
-console.log(`Validated apicostaudit.com Sprint 1: 9/9 governance artifacts, ${htmlFiles.length}/17 built public HTML routes, ${validJsonLdCount} valid JSON-LD schemas (17/17 HowTo, 17/17 FAQPage, ${datasetSchemaCount}/17 Dataset, ${dataCatalogSchemaCount} DataCatalog), ${cfoPresetBtnCount} One-Click CTO/CFO Preset Scenario buttons, 7/7 WebMCP tools, ${fourAxisCount}/17 pages with exclusive API_COSTS 4-Axis Affiliate Taxonomy (0 foreign affiliate links, 0 sibling calculators), and 0 errors.`);
+console.log(`Validated apicostaudit.com Sprint 1: 9/9 governance artifacts, ${htmlFiles.length}/17 built public HTML routes, ${validJsonLdCount} valid JSON-LD schemas (17/17 HowTo, 17/17 FAQPage, ${datasetSchemaCount}/17 Dataset + ${dataCatalogSchemaCount} DataCatalog), ${canonicalFaqAccordionCount}/17 visible <details class="faq-card"> FAQ accordions, ${canonicalGovBadgeCount}/17 verifiedGovBadge statutory/public trust bars, ${cfoPresetBtnCount} One-Click CTO/CFO Preset Scenario buttons, 7/7 WebMCP tools, ${fourAxisCount}/17 pages with exclusive API_COSTS 4-Axis Affiliate Taxonomy (0 foreign affiliate links, 0 sibling calculators), and 0 errors.`);
 if (bad) process.exit(1);

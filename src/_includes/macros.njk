@@ -4,9 +4,9 @@
 {% endmacro %}
 
 {% macro verifiedGovBadge(verifyDate, govTitle) %}
-<div class="verified-gov-bar" role="region" aria-label="Regulatory and Rate Card Verification Status">
-  <span class="verified-gov-badge">✓ Verified 2026 API Rate Cards &amp; .gov Benchmarks · {{ verifyDate or "2026-10-28" }}</span>
-  <a class="gov-seal-pill" href="#official-sources" title="Jump to primary .gov and vendor rate card citations">🏛️ {{ govTitle or "NIST AI RMF (AI 600-1) · FCC USF Telecom Rules · FTC 16 CFR Part 255 (.gov)" }}</a>
+<div class="verified-gov-bar" data-verified-gov-badge="true" role="region" aria-label="Statutory .gov, NIST AI RMF, FedRAMP & Published API Rate Card Verification Status">
+  <span class="verified-gov-badge" data-verified-gov-badge="true">✓ Verified 2026 .gov &amp; Public API Rate Benchmark (NIST AI RMF 1.0 · SEC 10-K/10-Q · FedRAMP Marketplace · OpenAI / Anthropic / Vertex AI / AWS Bedrock / Azure OpenAI Schedules) · {{ verifyDate or "2026-10-28" }}</span>
+  <a class="gov-seal-pill" href="#official-sources" title="Jump to primary .gov and vendor rate card citations">🏛️ {{ govTitle or "NIST AI RMF 1.0 (AI 600-1) · SEC 10-K/10-Q · FedRAMP Marketplace · Published Token Schedules (.gov)" }}</a>
 </div>
 {% endmacro %}
 
