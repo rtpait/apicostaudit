@@ -6,9 +6,9 @@
   "entity": "Research Triangle Park AI Transformation LLC (EIN 42-3641177)",
   "repository": "https://github.com/rtpait/apicostaudit",
   "branch": "main",
-  "release_version": "v1.5.0",
-  "currentVersion": "v1.5.0",
-  "released_at_utc": "2026-10-28T15:19:00Z",
+  "release_version": "v1.6.0",
+  "currentVersion": "v1.6.0",
+  "released_at_utc": "2026-10-28T17:38:00Z",
   "owning_po": "SaaS Cost Audit PO \u2014 API_COSTS (bc09e0d9-5fae-487c-b526-020d9aac1bd1)",
   "hub_pm": "B2B Audit Family PM (9c1c413e-5df2-4d17-a576-11713450fceb)",
   "web_pm": "Project Manager (167b2bea-99c8-4e89-99e3-182227974962)",
@@ -234,6 +234,70 @@
         "zeroSeoRegressions": true,
         "zeroMonetizationRegressions": true,
         "pmSignedOff": true,
+        "autoPushAuthorized": true
+      }
+    },
+    {
+      "releaseId": "release-006-cycle6-rapid-build-20261028-1331-v1.6.0",
+      "version": "v1.6.0",
+      "versionTag": "v1.6.0",
+      "prior_version": "v1.5.0",
+      "sprint": "RAPID-BUILD-AUTO-ROTATE-20261028-1331 (Cycle 6)",
+      "timestamp": "2026-10-28T13:38:00-04:00",
+      "artifactZip": "/workspace/apicostaudit/apicostaudit-mvp.zip",
+      "routeCount": 19,
+      "htmlPageCount": 17,
+      "quarantinedDripCohortCount": 4,
+      "routeSpecCount": 64,
+      "status": "DEPLOYED_PRODUCTION_PO_ACCEPTED",
+      "po_verdict": "ACCEPT",
+      "mergedContributions": [
+        {
+          "specialist": "Platform Optimization",
+          "specialistId": "3baf81a9-493f-491f-997a-6263af37023e",
+          "summary": "Audited all .gov statutory & vendor citations across all 17/17 canonical API_COSTS routes (0 301/404 leaks), updated Service + AggregateOffer offerHighPrice >= max(prices[]) bounds across all 17/17 canonical routes, and bumped 7-tool WebMCP manifest + llms.txt to v1.6.0",
+          "artifactPath": "/workspace/apicostaudit/src/well-known/webmcp.json",
+          "mergedIntoStagedBuild": true
+        },
+        {
+          "specialist": "Content Writer",
+          "specialistId": "4a9dcf1b-e8ab-444d-a13a-de4ae8e73943",
+          "summary": "Embedded verbatim AI-citable statutory & Oct 28 API/LLM/GPU rate-drift callouts (NIST AI RMF 1.0 AI 100-1 & AI 600-1 GenAI Profile, SEC 10-K/10-Q cloud-commit & AI gross-margin disclosures, FedRAMP High AWS GovCloud / Azure Gov / GCP Assured Workloads, OpenAI GPT-4o/o3-mini/Batch/Cache vs Claude 3.7/4.5 Sonnet vs Gemini Pro/Flash vs DeepSeek R1/V3, ElevenLabs Flash v2.5 vs OpenAI Realtime vs Deepgram Nova-3 vs Cartesia Sonic, RunPod/Lambda/DO GPU vs AWS P5/P4d, Pinecone vs Qdrant/Weaviate/Milvus/pgvector, and Datadog vs New Relic/Grafana/Honeycomb/LangSmith/Helicone) across all 4 calculators and /llms*.txt",
+          "artifactPath": "/workspace/apicostaudit/src/_includes/macros.njk",
+          "mergedIntoStagedBuild": true
+        },
+        {
+          "specialist": "UX/UI Research & Design Expert",
+          "specialistId": "32a547b4-ece0-47aa-8763-8137899a0599",
+          "summary": "Verified 17/17 visible <details class=\"faq-card\"> FAQ accordions, 17/17 verifiedGovBadge statutory/public trust bars, and 88 One-Click CTO/CFO Preset Scenario buttons (data-cfo-preset) across llm-token-calc, gpu-cloud-tco-calc, vector-db-cost-calc, and observability-cost-calc",
+          "artifactPath": "/workspace/apicostaudit/src/_includes/macros.njk",
+          "mergedIntoStagedBuild": true
+        },
+        {
+          "specialist": "Data Analyst",
+          "specialistId": "762fcc5f-c863-4c92-9c08-560d46ff4808",
+          "summary": "Expanded Priority 1B Continuous In-Page Affiliate Software Opportunity Scan with API-OPP-007 (Cartesia Sonic / PlayHT / Rime AI / Bland AI low-latency Voice AI APIs) and API-OPP-008 (Together AI / Fireworks AI / Groq Cloud / Baseten open-weights token & GPU endpoint APIs) for 09b4bb79, plus SAAS-CROSS-006 (LangSmith Plus / Arize / Weights & Biases Weave LLM evals & MLOps seats) and SAAS-CROSS-007 (LaunchDarkly / Statsig / Split.io feature-flagging & AI model routing seats) routed to saascostaudit.com",
+          "artifactPath": "/workspace/apicostaudit/data/affiliate-opportunity-scan.json",
+          "mergedIntoStagedBuild": true
+        },
+        {
+          "specialist": "QA Tester",
+          "specialistId": "dc6489e7-fdca-44d4-bf7a-1674bbe6607e",
+          "summary": "Added IN_ROOM_EXECUTION_HOW validator assertion in scripts/validate.js enforcing Number(offerHighPrice) >= max(prices[]) across all 17/17 rendered HTML AggregateOffer schemas (137 valid JSON-LD blocks, 17/17 FAQ accordions, 17/17 verifiedGovBadge bars, 214/214 *:API_COSTS.*:* CTAs, 0 errors)",
+          "artifactPath": "/workspace/apicostaudit/scripts/validate.js",
+          "mergedIntoStagedBuild": true
+        }
+      ],
+      "gateEvaluation": {
+        "mergedContributionsCount": 5,
+        "uniqueSpecialistsRepresented": 5,
+        "contributionFloorMet": true,
+        "validateJsPassed": true,
+        "headlessQaPassed": true,
+        "zeroSeoRegressions": true,
+        "zeroMonetizationRegressions": true,
+        "pmSignedOff": true,
+        "pm_signoff": true,
         "autoPushAuthorized": true
       }
     }

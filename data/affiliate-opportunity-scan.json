@@ -1,8 +1,8 @@
 {
-  "schema_version": "2026-10-28-v1.5.0",
-  "scanned_at_utc": "2026-10-28T15:17:40Z",
+  "schema_version": "2026-10-28-v1.6.0",
+  "scanned_at_utc": "2026-10-28T17:37:52Z",
   "source_domain": "apicostaudit.com",
-  "sprint_id": "RAPID-BUILD-AUTO-ROTATE-20261028-1112",
+  "sprint_id": "RAPID-BUILD-AUTO-ROTATE-20261028-1331",
   "shared_priority": "PRIORITY_1B_CONTINUOUS_AFFILIATE_SOFTWARE_OPPORTUNITY_SCANNING",
   "affiliate_portal_ops_agent_id": "09b4bb79",
   "saas_growth_target_domain": "saascostaudit.com",
@@ -80,6 +80,32 @@
       "partner_network": "PartnerStack / Direct Cloud Partner",
       "estimated_commission": "10%-20% first-year metered cloud spend ($75-$350 CPA)",
       "in_page_trigger": "Appears alongside Pinecone and Qdrant in vector-db-cost-calc for engineering teams consolidating vector embeddings, Redis semantic cache, and serverless Postgres compute."
+    },
+    {
+      "opportunity_id": "API-OPP-007",
+      "vendor": "Cartesia Sonic / PlayHT / Rime AI / Bland AI (Ultra-Low-Latency Streaming TTS & Programmable Voice AI Agent APIs)",
+      "target_domain": "apicostaudit.com",
+      "target_routes": [
+        "/voice-video-api/elevenlabs-vs-openai-realtime-voice-tco/",
+        "/voice-video-api/retell-vs-vapi-voice-agent-per-minute-cost-calculator/",
+        "/voice-video-api/"
+      ],
+      "partner_network": "PartnerStack / Direct Voice AI Referral",
+      "estimated_commission": "15%-25% recurring rev-share ($100-$350 CPA)",
+      "in_page_trigger": "Appears alongside ElevenLabs Flash v2.5 and Deepgram Aura in the 4-layer Voice AI per-minute stack calculator ($0.058-$0.18/min all-in)."
+    },
+    {
+      "opportunity_id": "API-OPP-008",
+      "vendor": "Together AI / Fireworks AI / Groq Cloud / Baseten (Serverless Open-Weights Llama-4 & DeepSeek R1/V3 Token & Dedicated GPU Endpoint APIs)",
+      "target_domain": "apicostaudit.com",
+      "target_routes": [
+        "/llm-api/gemini-vs-deepseek-batch-api-audit/",
+        "/llm-api/openai-vs-anthropic-claude-token-calculator/",
+        "/ai-infra-gpu/runpod-vs-vast-ai-gpu-inference-cost-calculator/"
+      ],
+      "partner_network": "Direct AI Cloud Partner / PartnerStack",
+      "estimated_commission": "10%-20% metered API & dedicated endpoint spend ($150-$500 CPA)",
+      "in_page_trigger": "Directly triggered in llm-token-calc and gpu-cloud-tco-calc when engineering teams compare hosted DeepSeek R1/V3 ($0.27/$1.10 per 1M) and Llama-4 serverless endpoints against self-hosted H100 vLLM pods."
     }
   ],
   "cross_routed_saas_opportunities_for_saascostaudit": [
@@ -132,6 +158,26 @@
       "partner_network": "PartnerStack / CJ Affiliate (8108003) / Direct B2B",
       "estimated_commission": "$100-$300 B2B SaaS subscription CPA",
       "rationale": "While metered per-call API usage belongs on apicostaudit.com, per-user API design, workspace collaboration, and hosted developer portal seats ($14-$49/user/mo on Postman/SwaggerHub/ReadMe) route directly to saascostaudit.com."
+    },
+    {
+      "opportunity_id": "SAAS-CROSS-006",
+      "vendor": "LangSmith Plus/Enterprise vs. Arize Phoenix vs. Weights & Biases (W&B Weave) (LLM Evaluation, Prompt Versioning & MLOps Per-Seat SaaS)",
+      "discovered_on_route": "https://apicostaudit.com/llm-api/prompt-caching-vs-batch-api-savings-calculator/",
+      "routed_to_domain": "saascostaudit.com",
+      "target_saascostaudit_cluster": "AI Engineering, LLM Evals & MLOps Experiment Tracking Per-Seat SaaS Licensing Audit",
+      "partner_network": "PartnerStack / Direct B2B SaaS Referral",
+      "estimated_commission": "$150-$400 per qualified AI engineering team conversion",
+      "rationale": "While metered trace ingestion belongs on apicostaudit.com, per-developer seat licenses ($39-$99+/seat/mo on LangSmith Plus and Weights & Biases Teams) route directly to saascostaudit.com."
+    },
+    {
+      "opportunity_id": "SAAS-CROSS-007",
+      "vendor": "LaunchDarkly vs. Statsig vs. Split.io (Feature Flagging, AI Model Routing & A/B Experimentation Per-Seat SaaS Tiers)",
+      "discovered_on_route": "https://apicostaudit.com/llm-api/openai-vs-anthropic-claude-token-calculator/",
+      "routed_to_domain": "saascostaudit.com",
+      "target_saascostaudit_cluster": "Product Engineering & Feature Management Per-Seat SaaS Licensing Audit",
+      "partner_network": "PartnerStack / Impact (8038782)",
+      "estimated_commission": "$150-$450 B2B SaaS demo/subscription CPA",
+      "rationale": "Engineering teams dynamically routing prompts between GPT-4o, Claude 3.7/4.5 Sonnet, and Gemini Flash use feature-flagging SaaS ($20-$75/seat/mo) audited on saascostaudit.com."
     }
   ]
 }
