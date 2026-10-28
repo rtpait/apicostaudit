@@ -1,0 +1,47 @@
+{
+  "schema_version": "2026.10.28-deterministic-api-vendors-v1.3.0",
+  "domain": "apicostaudit.com",
+  "corporate_entity": "Research Triangle Park AI Transformation LLC",
+  "license": "CC-BY-4.0",
+  "bySlug": {
+    "digitalocean-gpu": {
+      "id": "digitalocean_gpu",
+      "slug": "digitalocean-gpu",
+      "name": "DigitalOcean GPU Droplets (H100 80GB)",
+      "affiliate_network": "CJ",
+      "publisher_account_id": "8108003",
+      "cpa_payout_usd": 200.0,
+      "hourly_h100_usd": 2.99,
+      "affiliate_url_template": "https://www.digitalocean.com/pricing/gpu-droplets?utm_source=apicostaudit.com&utm_medium=affiliate&sid=8108003&clickref={clickref}"
+    },
+    "elevenlabs": {
+      "id": "elevenlabs",
+      "slug": "elevenlabs",
+      "name": "ElevenLabs Conversational Voice AI & Flash TTS",
+      "affiliate_network": "PartnerStack",
+      "revshare_pct": 22.0,
+      "per_min_tts_usd": 0.036,
+      "affiliate_url_template": "https://elevenlabs.io/pricing?utm_source=apicostaudit.com&utm_medium=affiliate&clickref={clickref}"
+    },
+    "pinecone": {
+      "id": "pinecone",
+      "slug": "pinecone",
+      "name": "Pinecone Serverless Vector Database",
+      "affiliate_network": "PartnerStack",
+      "storage_gb_mo_usd": 0.33,
+      "read_unit_1m_usd": 8.25,
+      "write_unit_1m_usd": 2.0,
+      "affiliate_url_template": "https://www.pinecone.io/pricing/?utm_source=apicostaudit.com&utm_medium=affiliate&clickref={clickref}"
+    },
+    "bark-us": {
+      "id": "bark_us",
+      "slug": "bark-us",
+      "name": "Bark US (AI, MLOps & API Engineering Quotes)",
+      "affiliate_network": "AWIN",
+      "publisher_account_id": "3133124",
+      "advertiser_mid": "58887",
+      "cpl_range_usd": "$20-$45 CPL",
+      "affiliate_url_template": "https://www.awin1.com/cread.php?awinmid=58887&awinaffid=3133124&clickref={clickref}&ued=https%3A%2F%2Fwww.bark.com%2Fen%2Fus%2Fweb-development%2F"
+    }
+  }
+}

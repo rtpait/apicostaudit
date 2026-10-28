@@ -1,6 +1,6 @@
 {
-  "schema_version": "2026.10.28-principle-8-loud-failure",
-  "generated_at_utc": "2026-10-28T12:35:00Z",
+  "schema_version": "2026.10.28-v1.3.0-principle-8-loud-failure",
+  "generated_at_utc": "2026-10-28T13:24:00Z",
   "domain": "apicostaudit.com",
   "property": "sc-domain:apicostaudit.com",
   "source_mode": "LIVE_ZERO_TRAFFIC",
@@ -33,5 +33,28 @@
     "day_14_target_indexed_routes": 13,
     "actual_vs_model_variance_routes": -13
   },
-  "total_sitemap_routes": 17
+  "total_sitemap_routes": 17,
+  "sitemap_parity_verified": true,
+  "live_sitemap_url_count": 17,
+  "local_sitemap_url_count": 17,
+  "gsc_url_inspection_queue_count": 17,
+  "gsc_url_inspection_queued_urls": [
+    "https://apicostaudit.com/",
+    "https://apicostaudit.com/llm-api/",
+    "https://apicostaudit.com/llm-api/openai-vs-anthropic-claude-token-calculator/",
+    "https://apicostaudit.com/llm-api/gemini-vs-deepseek-batch-api-audit/",
+    "https://apicostaudit.com/llm-api/prompt-caching-vs-batch-api-savings-calculator/",
+    "https://apicostaudit.com/voice-video-api/",
+    "https://apicostaudit.com/voice-video-api/elevenlabs-vs-openai-realtime-voice-tco/",
+    "https://apicostaudit.com/voice-video-api/retell-vs-vapi-voice-agent-per-minute-cost-calculator/",
+    "https://apicostaudit.com/ai-infra-gpu/",
+    "https://apicostaudit.com/ai-infra-gpu/pinecone-vs-qdrant-vector-db-tco/",
+    "https://apicostaudit.com/ai-infra-gpu/runpod-vs-vast-ai-gpu-inference-cost-calculator/",
+    "https://apicostaudit.com/b2b-apis/",
+    "https://apicostaudit.com/b2b-apis/twilio-sms-voice-verify-per-call-fee-calculator/",
+    "https://apicostaudit.com/methodology/",
+    "https://apicostaudit.com/about/",
+    "https://apicostaudit.com/privacy/",
+    "https://apicostaudit.com/terms/"
+  ]
 }

@@ -7,7 +7,7 @@
   "repository": "https://github.com/rtpait/apicostaudit",
   "branch": "main",
   "release_version": "v1.2.0",
-  "currentVersion": "v1.2.0",
+  "currentVersion": "v1.3.0",
   "released_at_utc": "2026-10-28T12:35:00Z",
   "owning_po": "SaaS Cost Audit PO \u2014 API_COSTS (bc09e0d9-5fae-487c-b526-020d9aac1bd1)",
   "hub_pm": "B2B Audit Family PM (9c1c413e-5df2-4d17-a576-11713450fceb)",
@@ -43,6 +43,70 @@
       "uniqueSpecialistsRepresented": 5,
       "validateJsPassed": true,
       "day0GatePassed": true
+    },
+    {
+      "releaseId": "release-003-v1.3.0-rapid-build-sprint-20261028",
+      "version": "v1.3.0",
+      "prior_version": "v1.2.0",
+      "sprint": "Cycle 3 Rapid-Build Sprint (RAPID-BUILD-AUTO-ROTATE-20261028-0918) \u2014 Natural & Organic SEO Upgrade Across All 17 Canonical API_COSTS Routes (17/17 GSC URL Inspection Queued, 17/17 HowTo + FAQPage + SoftwareApplication + Service + BreadcrumbList + Dataset JSON-LD Schemas = 120 Total Valid JSON-LD Blocks, 17/17 Strict <=60c Titles & 140-158c Meta Descriptions), One-Click CTO/CFO Preset Scenarios (66 Preset Buttons Across llm-token-calc, gpu-cloud-tco-calc, vector-db-cost-calc & observability-cost-calc), and Live Awin Bark US (MID 58887, Publisher 3133124) + CJ/PartnerStack API_COSTS.* Attribution",
+      "timestamp": "2026-10-28T08:25:00-05:00",
+      "artifactZip": "/workspace/apicostaudit/apicostaudit-mvp.zip",
+      "routeCount": 19,
+      "htmlPageCount": 17,
+      "quarantinedDripCohortCount": 4,
+      "routeSpecCount": 64,
+      "status": "DEPLOYED_PRODUCTION_PO_ACCEPTED",
+      "po_verdict": "ACCEPT",
+      "mergedContributions": [
+        {
+          "specialist": "Platform Optimization",
+          "specialistId": "3baf81a9-493f-491f-997a-6263af37023e",
+          "summary": "Queued all 17 canonical apicostaudit.com URLs in GSC-PRIORITY-INDEX-QUEUE.json and analytics/gsc-index-status.json under sc-domain:apicostaudit.com, shipped 17/17 HowTo + 17/17 FAQPage + 17/17 SoftwareApplication + 17/17 Service + 17/17 Organization + 17/17 WebSite + 17/17 BreadcrumbList + 1 Dataset JSON-LD schemas (120 total valid JSON-LD blocks), tightened all 17/17 titles (<=60c) and meta descriptions (140-158c), and expanded /.well-known/webmcp.json & /llms.txt.",
+          "artifactPath": "/workspace/apicostaudit/src/_includes/base.njk",
+          "mergedIntoStagedBuild": true
+        },
+        {
+          "specialist": "UX/UI Research & Design Expert",
+          "specialistId": "32a547b4-ece0-47aa-8763-8137899a0599",
+          "summary": "Shipped interactive One-Click Engineering/CTO Preset Scenarios (data-cfo-preset & data-cto-preset, 66 preset buttons across 17 routes) on llm-token-calc (17 routes), gpu-cloud-tco-calc (2 routes), vector-db-cost-calc (1 route), and observability-cost-calc (2 routes).",
+          "artifactPath": "/workspace/apicostaudit/src/_includes/macros.njk",
+          "mergedIntoStagedBuild": true
+        },
+        {
+          "specialist": "Data Analyst",
+          "specialistId": "762fcc5f-c863-4c92-9c08-560d46ff4808",
+          "summary": "Wired and verified AWIN (3133124, including 22 live Awin Bark US MID 58887 $20-$45 CPL links), CJ (8108003 \u2014 DigitalOcean H100 GPU), and PartnerStack (ElevenLabs 22%, Pinecone, Make/n8n) across 214/214 (100%) API_COSTS.* 4-axis slots in partner-routing-matrix.json and src/_data/vendors.json.",
+          "artifactPath": "/workspace/apicostaudit/partner-routing-matrix.json",
+          "mergedIntoStagedBuild": true
+        },
+        {
+          "specialist": "Content Writer",
+          "specialistId": "4a9dcf1b-e8ab-444d-a13a-de4ae8e73943",
+          "summary": "Updated PRODUCT-STATE.md, PRODUCT-STATE.json, NEXT-SPRINT-BRIEF.json, and SPRINT-REVIEW-2026-10-28.md (v1.3.0) with 2026 prompt-caching, H100 GPU breakeven, vector RU/WU, and Twilio 10DLC/Verify benchmarks.",
+          "artifactPath": "/workspace/apicostaudit/SPRINT-REVIEW-2026-10-28.md",
+          "mergedIntoStagedBuild": true
+        },
+        {
+          "specialist": "QA Tester",
+          "specialistId": "dc6489e7-fdca-44d4-bf7a-1674bbe6607e",
+          "summary": "Verified 214/214 (100%) commercial rel='sponsored' CTAs carry valid *:API_COSTS.*:* 4-axis keys with 0 foreign keys, 0 leaked sibling calculators, 120 valid JSON-LD schemas across 17/17 HTML pages, and 0 blockers on audit_day0_launch_gate.py --domain apicostaudit.com.",
+          "artifactPath": "/workspace/apicostaudit/scripts/validate.js",
+          "mergedIntoStagedBuild": true
+        }
+      ],
+      "gateEvaluation": {
+        "mergedContributionsCount": 5,
+        "uniqueSpecialistsRepresented": 5,
+        "contributionFloorMet": true,
+        "validateJsPassed": true,
+        "headlessQaPassed": true,
+        "zeroSeoRegressions": true,
+        "zeroMonetizationRegressions": true,
+        "pmSignedOff": true,
+        "signedOffBy": "Project Manager (167b2bea-99c8-4e89-99e3-182227974962) & B2B Audit Family PM (9c1c413e-5df2-4d17-a576-11713450fceb)",
+        "autoPushAuthorized": true,
+        "productOwnerApprovedBy": "SaaS Cost Audit PO (API_COSTS) (bc09e0d9-5fae-487c-b526-020d9aac1bd1)"
+      }
     }
   ]
 }

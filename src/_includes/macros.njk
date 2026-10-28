@@ -96,6 +96,11 @@
     <span class="badge-agent">🧮 DETERMINISTIC 2026 LLM TOKEN, PROMPT CACHING (90% OFF) &amp; BATCH API (50% OFF) CALCULATOR</span>
     <h2 style="margin:.35rem 0 .2rem;border-top:0;padding-top:0">Compare OpenAI GPT-5/GPT-4o, Claude 4.5 Sonnet &amp; Opus, Gemini 2.5 Pro &amp; Flash, DeepSeek R1/V3 &amp; Llama 4</h2>
     <p style="margin:0;font-size:.93rem;color:#334155">Adjust monthly input/output token volume (in millions), prompt cache hit rate, and asynchronous 24h Batch API share to audit exact monthly and 12-month API spend—plus your self-hosted H100 GPU breakeven point:</p>
+    <div class="calc-preset-bar" role="group" aria-label="One-Click CTO &amp; Engineering LLM Token Scenario Presets" style="display:flex;flex-wrap:wrap;gap:.45rem;margin:.55rem 0 .25rem">
+      <button type="button" class="ltc-preset-btn" data-cfo-preset="rag_support_bot" data-cto-preset="rag_support_bot" data-in="80" data-out="20" data-cache="65" data-batch="10" style="font-size:.78rem;padding:.28rem .6rem;border-radius:4px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-weight:600;color:#1e293b">⚡ Preset 1: Production RAG Support Bot (80M In / 20M Out, 65% Cache Hit)</button>
+      <button type="button" class="ltc-preset-btn" data-cfo-preset="agentic_coding_loop" data-cto-preset="agentic_coding_loop" data-in="450" data-out="90" data-cache="75" data-batch="15" style="font-size:.78rem;padding:.28rem .6rem;border-radius:4px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-weight:600;color:#1e293b">🤖 Preset 2: Agentic Coding &amp; Tool Loop (450M In / 90M Out, 75% Cache Hit)</button>
+      <button type="button" class="ltc-preset-btn" data-cfo-preset="enterprise_batch_etl" data-cto-preset="enterprise_batch_etl" data-in="1500" data-out="350" data-cache="50" data-batch="80" style="font-size:.78rem;padding:.28rem .6rem;border-radius:4px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-weight:600;color:#1e293b">🏦 Preset 3: High-Throughput Batch ETL (1.5B In / 350M Out, 80% Batch API)</button>
+    </div>
   </div>
   <div class="calc-controls-grid">
     <div class="calc-field">
@@ -148,6 +153,9 @@
       <small>Gemini 2.5 Pro / Flash</small>
       <strong class="calc-big" id="ltc-gemini-yr">$4,007/yr</strong>
       <span class="calc-sub" id="ltc-gemini-sub">Pro: $334/mo ($1.25/$10) · Flash: $301/yr ($0.15/$0.60)</span>
+      <div style="margin-top:.55rem">
+        <a class="cta-secondary tbl-cta-btn" data-partner="Bark US (AI &amp; API Dev Quotes)" data-cta-slot="llm_token_calc" data-funnel-role="mid_content" data-4axis-key="awin:awin_3133124_bark_58887_llm_calc_{{ sSlug }}:API_COSTS.llm_token_api:mid_content" data-route-slug="{{ sSlug }}" data-clickref="apicostaudit_llm_calc_{{ sSlug }}_bark_58887" href="https://www.awin1.com/cread.php?awinmid=58887&amp;awinaffid=3133124&amp;clickref=apicostaudit_llm_calc_{{ sSlug }}_bark_58887&amp;ued=https%3A%2F%2Fwww.bark.com%2Fen%2Fus%2Fweb-development%2F" target="_blank" rel="sponsored nofollow noopener">Compare 3 AI Dev Quotes (Bark US) →</a>
+      </div>
     </div>
     <div class="calc-vendor-card vendor-best">
       <small>DeepSeek R1/V3 &amp; Llama 4</small>
@@ -213,6 +221,17 @@
     outEl.addEventListener("input", function(){ outRange.value = outEl.value; compute(true); });
   }
   [cacheEl, batchEl].forEach(function(el){ if (el) el.addEventListener("input", function(){ compute(true); }); });
+  document.querySelectorAll(".ltc-preset-btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      inEl.value = btn.getAttribute("data-in") || "120";
+      if (inRange) inRange.value = inEl.value;
+      outEl.value = btn.getAttribute("data-out") || "30";
+      if (outRange) outRange.value = outEl.value;
+      cacheEl.value = btn.getAttribute("data-cache") || "50";
+      batchEl.value = btn.getAttribute("data-batch") || "25";
+      compute(true);
+    });
+  });
   compute(false);
 })();
 </script>
@@ -279,4 +298,249 @@
 {% if entry and entry.prices and entry.prices.length %}
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":{{ entry.seoTitle | json | safe }},"description":{{ entry.seoDescription | json | safe }},"url":"{{ site.url }}{{ pageUrl }}","serviceType":"B2B API, LLM Token, Voice AI & GPU Cloud TCO Audit","provider":{"@type":"Organization","@id":"{{ site.url }}/#organization","name":"API Cost Audit","url":"{{ site.url }}/"},"areaServed":{"@type":"Country","name":"United States"},"offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"0","highPrice":"5000","offerCount":"{{ entry.prices.length }}","offers":[{% for row in entry.prices %}{"@type":"Offer","name":{{ row.label | json | safe }},"description":{{ row.price | json | safe }},"url":"{{ site.url }}{{ pageUrl }}#cost-comparison"}{% if not loop.last %},{% endif %}{% endfor %}]}}</script>
 {% endif %}
+{% endmacro %}
+
+
+{% macro gpuCloudTcoCalc(rSlug) %}
+{% set gSlug = rSlug or "gpu-cloud-tco" %}
+<section class="tco-calc-box" id="gpu-cloud-tco-calc" data-calc-type="gpu_cloud_tco_calc" data-route-slug="{{ gSlug }}" aria-label="Interactive H100, A100 and L40S GPU Cloud vs Token API Breakeven Calculator">
+  <div>
+    <span class="badge-agent">⚡ DETERMINISTIC 2026 H100 / A100 / L40S GPU CLOUD TCO &amp; VLLM BREAKEVEN CALCULATOR</span>
+    <h2 style="margin:.35rem 0 .2rem;border-top:0;padding-top:0">Calculate Dedicated &amp; Serverless GPU Pod TCO (DigitalOcean, RunPod, Vast.ai vs. AWS P5)</h2>
+    <p style="margin:0;font-size:.92rem;color:#334155">Model GPU count, daily active utilization hours, and egress bandwidth to compare 12-month GPU cluster costs and vLLM token throughput:</p>
+    <div class="calc-preset-bar" role="group" aria-label="One-Click CTO GPU Cloud Scenario Presets" style="display:flex;flex-wrap:wrap;gap:.45rem;margin:.55rem 0 .25rem">
+      <button type="button" class="gpu-preset-btn" data-cfo-preset="gpu_1x_l40s_dev" data-cto-preset="gpu_1x_l40s_dev" data-gpus="1" data-hours="12" data-egress="500" style="font-size:.78rem;padding:.28rem .6rem;border-radius:4px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-weight:600;color:#1e293b">⚡ Preset 1: 1x H100 / L40S Dev &amp; Eval Pod (12h/day, 500 GB Egress)</button>
+      <button type="button" class="gpu-preset-btn" data-cfo-preset="gpu_2x_h100_prod" data-cto-preset="gpu_2x_h100_prod" data-gpus="2" data-hours="24" data-egress="2000" style="font-size:.78rem;padding:.28rem .6rem;border-radius:4px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-weight:600;color:#1e293b">🚀 Preset 2: 2x H100 80GB 24/7 vLLM Production Cluster (2 TB Egress)</button>
+      <button type="button" class="gpu-preset-btn" data-cfo-preset="gpu_8x_h100_node" data-cto-preset="gpu_8x_h100_node" data-gpus="8" data-hours="24" data-egress="10000" style="font-size:.78rem;padding:.28rem .6rem;border-radius:4px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-weight:600;color:#1e293b">🏦 Preset 3: 8x H100 80GB Llama-4-70B/405B Node (24/7, 10 TB Egress)</button>
+    </div>
+  </div>
+  <div class="calc-controls-grid">
+    <div class="calc-field">
+      <label for="gtc-gpus">H100 80GB GPU Count (1–64): <span id="gtc-gpus-lbl">2</span></label>
+      <input type="number" id="gtc-gpus" min="1" max="64" value="2">
+    </div>
+    <div class="calc-field">
+      <label for="gtc-hours">Active Hours / Day (1–24h): <span id="gtc-hours-lbl">24h</span></label>
+      <input type="number" id="gtc-hours" min="1" max="24" value="24">
+    </div>
+    <div class="calc-field">
+      <label for="gtc-egress">Monthly Egress Bandwidth (GB): <span id="gtc-egress-lbl">2,000 GB</span></label>
+      <input type="number" id="gtc-egress" min="0" max="100000" step="500" value="2000">
+    </div>
+  </div>
+  <div class="calc-output-grid" style="margin-top:.75rem">
+    <div class="calc-vendor-card vendor-best">
+      <small>DigitalOcean GPU Droplets ($2.99/hr H100)</small>
+      <strong class="calc-big" id="gtc-do-yr">$52,385/yr</strong>
+      <span class="calc-sub" id="gtc-do-sub">SOC 2 Managed Cloud + generous included transfer</span>
+      <div style="margin-top:.55rem">
+        <a class="cta tbl-cta-btn" data-partner="DigitalOcean GPU (CJ 8108003)" data-cta-slot="gpu_cloud_tco_calc" data-funnel-role="mid_content" data-4axis-key="cj:cj_8108003_do_gpu_{{ gSlug }}:API_COSTS.gpu_vector_infra:mid_content" data-route-slug="{{ gSlug }}" data-clickref="apicostaudit_gpu_calc_{{ gSlug }}_do" href="https://www.digitalocean.com/pricing/gpu-droplets?utm_source=apicostaudit.com&amp;utm_medium=affiliate&amp;sid=8108003&amp;clickref=apicostaudit_gpu_calc_{{ gSlug }}_do" target="_blank" rel="sponsored nofollow noopener">Deploy DigitalOcean H100 GPU →</a>
+      </div>
+    </div>
+    <div class="calc-vendor-card vendor-best">
+      <small>RunPod Secure Cloud ($2.69/hr H100) / Vast.ai ($1.89/hr)</small>
+      <strong class="calc-big" id="gtc-runpod-yr">$47,129/yr</strong>
+      <span class="calc-sub" id="gtc-runpod-sub">Saves 61% vs. AWS EC2 P5 ($6.88/hr + $0.09/GB egress)</span>
+      <div style="margin-top:.55rem">
+        <a class="cta-secondary tbl-cta-btn" data-partner="Bark US (AI Infra &amp; DevOps Quotes)" data-cta-slot="gpu_cloud_tco_calc" data-funnel-role="mid_content" data-4axis-key="awin:awin_3133124_bark_58887_gpu_{{ gSlug }}:API_COSTS.gpu_vector_infra:mid_content" data-route-slug="{{ gSlug }}" data-clickref="apicostaudit_gpu_calc_{{ gSlug }}_bark_58887" href="https://www.awin1.com/cread.php?awinmid=58887&amp;awinaffid=3133124&amp;clickref=apicostaudit_gpu_calc_{{ gSlug }}_bark_58887&amp;ued=https%3A%2F%2Fwww.bark.com%2Fen%2Fus%2Fweb-development%2F" target="_blank" rel="sponsored nofollow noopener">Compare 3 MLOps Quotes (Bark US) →</a>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var box = document.getElementById("gpu-cloud-tco-calc");
+  if (!box) return;
+  var gEl = document.getElementById("gtc-gpus");
+  var hEl = document.getElementById("gtc-hours");
+  var eEl = document.getElementById("gtc-egress");
+  function fmt(n) { return "$" + Math.round(n).toLocaleString("en-US"); }
+  function compute() {
+    var g = Math.max(1, parseInt(gEl.value || "2", 10));
+    var h = Math.max(1, Math.min(24, parseInt(hEl.value || "24", 10)));
+    var eg = Math.max(0, parseInt(eEl.value || "2000", 10));
+    document.getElementById("gtc-gpus-lbl").textContent = String(g);
+    document.getElementById("gtc-hours-lbl").textContent = h + "h";
+    document.getElementById("gtc-egress-lbl").textContent = eg.toLocaleString("en-US") + " GB";
+    var moHours = g * h * 30.4;
+    var doYr = (moHours * 2.99 + Math.max(0, eg - 5000) * 0.01) * 12;
+    var rpYr = (moHours * 2.69 + eg * 0.01) * 12;
+    var awsYr = (moHours * 6.88 + eg * 0.09) * 12;
+    document.getElementById("gtc-do-yr").textContent = fmt(doYr) + "/yr";
+    document.getElementById("gtc-runpod-yr").textContent = fmt(rpYr) + "/yr";
+    document.getElementById("gtc-runpod-sub").textContent = "Saves " + fmt(Math.max(0, awsYr - rpYr)) + "/yr vs. AWS P5 (" + fmt(awsYr) + "/yr)";
+  }
+  [gEl, hEl, eEl].forEach(function(el){ if (el) el.addEventListener("input", compute); });
+  box.querySelectorAll(".gpu-preset-btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      gEl.value = btn.getAttribute("data-gpus") || "2";
+      hEl.value = btn.getAttribute("data-hours") || "24";
+      eEl.value = btn.getAttribute("data-egress") || "2000";
+      compute();
+    });
+  });
+  compute();
+})();
+</script>
+{% endmacro %}
+
+{% macro vectorDbCostCalc(rSlug) %}
+{% set vSlug = rSlug or "vector-db-cost" %}
+<section class="tco-calc-box" id="vector-db-cost-calc" data-calc-type="vector_db_cost_calc" data-route-slug="{{ vSlug }}" aria-label="Interactive Pinecone Serverless vs Qdrant Cloud Vector DB Cost Calculator">
+  <div>
+    <span class="badge-agent">🗄️ DETERMINISTIC 2026 PINECONE SERVERLESS VS. QDRANT CLOUD VECTOR DB TCO CALCULATOR</span>
+    <h2 style="margin:.35rem 0 .2rem;border-top:0;padding-top:0">Compare Vector Storage (GB), Read Units ($8.25/1M) &amp; Write Units ($2.00/1M) vs. Dedicated Qdrant Pods</h2>
+    <p style="margin:0;font-size:.92rem;color:#334155">Model indexed vector storage, monthly Read Units (RUs), and monthly Write Units (WUs) to find the exact QPS crossover between Pinecone Serverless and Qdrant Cloud:</p>
+    <div class="calc-preset-bar" role="group" aria-label="One-Click CTO Vector DB Scenario Presets" style="display:flex;flex-wrap:wrap;gap:.45rem;margin:.55rem 0 .25rem">
+      <button type="button" class="vec-preset-btn" data-cfo-preset="vec_spiky_rag_10gb" data-cto-preset="vec_spiky_rag_10gb" data-gb="10" data-ru="8" data-wu="2" style="font-size:.78rem;padding:.28rem .6rem;border-radius:4px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-weight:600;color:#1e293b">⚡ Preset 1: Spiky SMB RAG Index (10 GB Storage, 8M Read Units/mo)</button>
+      <button type="button" class="vec-preset-btn" data-cfo-preset="vec_growth_saas_50gb" data-cto-preset="vec_growth_saas_50gb" data-gb="50" data-ru="45" data-wu="10" style="font-size:.78rem;padding:.28rem .6rem;border-radius:4px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-weight:600;color:#1e293b">🏢 Preset 2: Growth SaaS Semantic Search (50 GB Storage, 45M Read Units/mo)</button>
+      <button type="button" class="vec-preset-btn" data-cfo-preset="vec_ent_multi_tenant_250gb" data-cto-preset="vec_ent_multi_tenant_250gb" data-gb="250" data-ru="220" data-wu="40" style="font-size:.78rem;padding:.28rem .6rem;border-radius:4px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-weight:600;color:#1e293b">🚀 Preset 3: Enterprise Multi-Tenant RAG (250 GB Storage, 220M Read Units/mo)</button>
+    </div>
+  </div>
+  <div class="calc-controls-grid">
+    <div class="calc-field">
+      <label for="vdc-gb">Vector Index Storage (GB: 1–2,000): <span id="vdc-gb-lbl">50 GB</span></label>
+      <input type="number" id="vdc-gb" min="1" max="2000" value="50">
+    </div>
+    <div class="calc-field">
+      <label for="vdc-ru">Monthly Read Units (Millions): <span id="vdc-ru-lbl">45M</span></label>
+      <input type="number" id="vdc-ru" min="1" max="1000" value="45">
+    </div>
+    <div class="calc-field">
+      <label for="vdc-wu">Monthly Write Units (Millions): <span id="vdc-wu-lbl">10M</span></label>
+      <input type="number" id="vdc-wu" min="1" max="500" value="10">
+    </div>
+  </div>
+  <div class="calc-output-grid" style="margin-top:.75rem">
+    <div class="calc-vendor-card vendor-best">
+      <small>Pinecone Serverless ($0.33/GB + $8.25/1M RU)</small>
+      <strong class="calc-big" id="vdc-pinecone-yr">$4,893/yr</strong>
+      <span class="calc-sub" id="vdc-pinecone-sub">Zero idle pod floor · Best under 30M RUs/mo</span>
+      <div style="margin-top:.55rem">
+        <a class="cta tbl-cta-btn" data-partner="Pinecone Serverless (PartnerStack)" data-cta-slot="vector_db_cost_calc" data-funnel-role="mid_content" data-4axis-key="partnerstack:ps_api_pinecone_vec_{{ vSlug }}:API_COSTS.gpu_vector_infra:mid_content" data-route-slug="{{ vSlug }}" data-clickref="apicostaudit_vec_calc_{{ vSlug }}_pinecone" href="https://www.pinecone.io/pricing/?utm_source=apicostaudit.com&amp;utm_medium=affiliate&amp;clickref=apicostaudit_vec_calc_{{ vSlug }}_pinecone" target="_blank" rel="sponsored nofollow noopener">Start Pinecone Serverless →</a>
+      </div>
+    </div>
+    <div class="calc-vendor-card vendor-best">
+      <small>Qdrant Cloud / Dedicated pgvector Cluster</small>
+      <strong class="calc-big" id="vdc-qdrant-yr">$2,280/yr</strong>
+      <span class="calc-sub" id="vdc-qdrant-sub">Flat RAM/Disk cluster pricing · Unlimited QPS</span>
+      <div style="margin-top:.55rem">
+        <a class="cta-secondary tbl-cta-btn" data-partner="Bark US (AI &amp; RAG Architecture Quotes)" data-cta-slot="vector_db_cost_calc" data-funnel-role="mid_content" data-4axis-key="awin:awin_3133124_bark_58887_vec_{{ vSlug }}:API_COSTS.gpu_vector_infra:mid_content" data-route-slug="{{ vSlug }}" data-clickref="apicostaudit_vec_calc_{{ vSlug }}_bark_58887" href="https://www.awin1.com/cread.php?awinmid=58887&amp;awinaffid=3133124&amp;clickref=apicostaudit_vec_calc_{{ vSlug }}_bark_58887&amp;ued=https%3A%2F%2Fwww.bark.com%2Fen%2Fus%2Fweb-development%2F" target="_blank" rel="sponsored nofollow noopener">Compare 3 RAG Dev Quotes (Bark US) →</a>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var box = document.getElementById("vector-db-cost-calc");
+  if (!box) return;
+  var gbEl = document.getElementById("vdc-gb");
+  var ruEl = document.getElementById("vdc-ru");
+  var wuEl = document.getElementById("vdc-wu");
+  function fmt(n) { return "$" + Math.round(n).toLocaleString("en-US"); }
+  function compute() {
+    var gb = Math.max(1, parseFloat(gbEl.value || "50"));
+    var ru = Math.max(1, parseFloat(ruEl.value || "45"));
+    var wu = Math.max(1, parseFloat(wuEl.value || "10"));
+    document.getElementById("vdc-gb-lbl").textContent = gb + " GB";
+    document.getElementById("vdc-ru-lbl").textContent = ru + "M";
+    document.getElementById("vdc-wu-lbl").textContent = wu + "M";
+    var pcMo = Math.max(25, gb * 0.33 + ru * 8.25 + wu * 2.00);
+    var qdMo = Math.max(95, gb * 3.80);
+    document.getElementById("vdc-pinecone-yr").textContent = fmt(pcMo * 12) + "/yr";
+    document.getElementById("vdc-qdrant-yr").textContent = fmt(qdMo * 12) + "/yr";
+  }
+  [gbEl, ruEl, wuEl].forEach(function(el){ if (el) el.addEventListener("input", compute); });
+  box.querySelectorAll(".vec-preset-btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      gbEl.value = btn.getAttribute("data-gb") || "50";
+      ruEl.value = btn.getAttribute("data-ru") || "45";
+      wuEl.value = btn.getAttribute("data-wu") || "10";
+      compute();
+    });
+  });
+  compute();
+})();
+</script>
+{% endmacro %}
+
+{% macro observabilityCostCalc(rSlug) %}
+{% set oSlug = rSlug or "observability-b2b-api-cost" %}
+<section class="tco-calc-box" id="observability-cost-calc" data-calc-type="observability_cost_calc" data-route-slug="{{ oSlug }}" aria-label="Interactive B2B API, Twilio 10DLC, Webhook and Observability Ingestion Cost Calculator">
+  <div>
+    <span class="badge-agent">📡 DETERMINISTIC 2026 B2B API, TWILIO 10DLC, WEBHOOK &amp; OBSERVABILITY INGESTION CALCULATOR</span>
+    <h2 style="margin:.35rem 0 .2rem;border-top:0;padding-top:0">Calculate Twilio SMS + 10DLC Carrier Fees, Verify OTPs ($0.05) &amp; Log/Trace Observability Overages</h2>
+    <p style="margin:0;font-size:.92rem;color:#334155">Model monthly SMS segments, 2FA OTP verifications, and API log/trace ingestion (GB) to expose hidden carrier surcharges and webhook automation savings:</p>
+    <div class="calc-preset-bar" role="group" aria-label="One-Click CTO B2B API &amp; Observability Scenario Presets" style="display:flex;flex-wrap:wrap;gap:.45rem;margin:.55rem 0 .25rem">
+      <button type="button" class="obs-preset-btn" data-cfo-preset="obs_saas_startup_50k" data-cto-preset="obs_saas_startup_50k" data-sms="50000" data-otp="10000" data-logs="200" style="font-size:.78rem;padding:.28rem .6rem;border-radius:4px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-weight:600;color:#1e293b">⚡ Preset 1: SaaS Startup (50k SMS + 10k Verify OTPs + 200 GB Logs/mo)</button>
+      <button type="button" class="obs-preset-btn" data-cfo-preset="obs_fintech_250k" data-cto-preset="obs_fintech_250k" data-sms="250000" data-otp="60000" data-logs="1000" style="font-size:.78rem;padding:.28rem .6rem;border-radius:4px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-weight:600;color:#1e293b">🏢 Preset 2: Mid-Market FinTech (250k SMS + 60k OTPs + 1 TB Logs/mo)</button>
+      <button type="button" class="obs-preset-btn" data-cfo-preset="obs_ent_platform_1m" data-cto-preset="obs_ent_platform_1m" data-sms="1000000" data-otp="250000" data-logs="5000" style="font-size:.78rem;padding:.28rem .6rem;border-radius:4px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-weight:600;color:#1e293b">🏦 Preset 3: High-Volume B2B Platform (1M SMS + 250k OTPs + 5 TB Logs/mo)</button>
+    </div>
+  </div>
+  <div class="calc-controls-grid">
+    <div class="calc-field">
+      <label for="obc-sms">Monthly US SMS Segments: <span id="obc-sms-lbl">250,000</span></label>
+      <input type="number" id="obc-sms" min="1000" max="10000000" step="10000" value="250000">
+    </div>
+    <div class="calc-field">
+      <label for="obc-otp">Monthly 2FA Verify OTP Checks: <span id="obc-otp-lbl">60,000</span></label>
+      <input type="number" id="obc-otp" min="0" max="2000000" step="5000" value="60000">
+    </div>
+    <div class="calc-field">
+      <label for="obc-logs">Monthly API Log &amp; Trace Ingestion (GB): <span id="obc-logs-lbl">1,000 GB</span></label>
+      <input type="number" id="obc-logs" min="10" max="50000" step="100" value="1000">
+    </div>
+  </div>
+  <div class="calc-output-grid" style="margin-top:.75rem">
+    <div class="calc-vendor-card">
+      <small>Twilio SMS ($0.0118 all-in) + Verify ($0.05) + Datadog Logs ($2.50/GB)</small>
+      <strong class="calc-big" id="obc-incumbent-yr">$101,400/yr</strong>
+      <span class="calc-sub" id="obc-incumbent-sub">Incl. $0.0035/seg 10DLC carrier pass-through + $0.05 OTP surcharge</span>
+      <div style="margin-top:.55rem">
+        <a class="cta tbl-cta-btn" data-partner="Make.com / n8n (PartnerStack)" data-cta-slot="observability_cost_calc" data-funnel-role="mid_content" data-4axis-key="partnerstack:ps_api_make_obs_{{ oSlug }}:API_COSTS.b2b_metered_apis:mid_content" data-route-slug="{{ oSlug }}" data-clickref="apicostaudit_obs_calc_{{ oSlug }}_make" href="https://www.make.com/en/pricing?utm_source=apicostaudit.com&amp;utm_medium=affiliate&amp;clickref=apicostaudit_obs_calc_{{ oSlug }}_make" target="_blank" rel="sponsored nofollow noopener">Optimize Webhook &amp; API Routing →</a>
+      </div>
+    </div>
+    <div class="calc-vendor-card vendor-best">
+      <small>Optimized Stack (Telnyx $0.0075 + Passkeys + OpenTelemetry Sampling)</small>
+      <strong class="calc-big" id="obc-opt-yr">$34,500/yr</strong>
+      <span class="calc-sub" id="obc-opt-sub">Saves $66,900/yr eliminating $0.05 OTP tax &amp; noisy log indexing</span>
+      <div style="margin-top:.55rem">
+        <a class="cta-secondary tbl-cta-btn" data-partner="Bark US (B2B API &amp; Cloud FinOps Quotes)" data-cta-slot="observability_cost_calc" data-funnel-role="mid_content" data-4axis-key="awin:awin_3133124_bark_58887_obs_{{ oSlug }}:API_COSTS.b2b_metered_apis:mid_content" data-route-slug="{{ oSlug }}" data-clickref="apicostaudit_obs_calc_{{ oSlug }}_bark_58887" href="https://www.awin1.com/cread.php?awinmid=58887&amp;awinaffid=3133124&amp;clickref=apicostaudit_obs_calc_{{ oSlug }}_bark_58887&amp;ued=https%3A%2F%2Fwww.bark.com%2Fen%2Fus%2Fweb-development%2F" target="_blank" rel="sponsored nofollow noopener">Compare 3 API FinOps Quotes (Bark US) →</a>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var box = document.getElementById("observability-cost-calc");
+  if (!box) return;
+  var sEl = document.getElementById("obc-sms");
+  var oEl = document.getElementById("obc-otp");
+  var lEl = document.getElementById("obc-logs");
+  function fmt(n) { return "$" + Math.round(n).toLocaleString("en-US"); }
+  function compute() {
+    var sms = Math.max(0, parseInt(sEl.value || "250000", 10));
+    var otp = Math.max(0, parseInt(oEl.value || "60000", 10));
+    var logs = Math.max(0, parseInt(lEl.value || "1000", 10));
+    document.getElementById("obc-sms-lbl").textContent = sms.toLocaleString("en-US");
+    document.getElementById("obc-otp-lbl").textContent = otp.toLocaleString("en-US");
+    document.getElementById("obc-logs-lbl").textContent = logs.toLocaleString("en-US") + " GB";
+    var incYr = ((sms * 0.0118) + (otp * 0.0618) + (logs * 2.50)) * 12;
+    var optYr = ((sms * 0.0075) + (otp * 0.008) + (logs * 0.52)) * 12;
+    document.getElementById("obc-incumbent-yr").textContent = fmt(incYr) + "/yr";
+    document.getElementById("obc-opt-yr").textContent = fmt(optYr) + "/yr";
+    document.getElementById("obc-opt-sub").textContent = "Saves " + fmt(Math.max(0, incYr - optYr)) + "/yr vs. unoptimized Twilio + Datadog stack";
+  }
+  [sEl, oEl, lEl].forEach(function(el){ if (el) el.addEventListener("input", compute); });
+  box.querySelectorAll(".obs-preset-btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      sEl.value = btn.getAttribute("data-sms") || "250000";
+      oEl.value = btn.getAttribute("data-otp") || "60000";
+      lEl.value = btn.getAttribute("data-logs") || "1000";
+      compute();
+    });
+  });
+  compute();
+})();
+</script>
 {% endmacro %}

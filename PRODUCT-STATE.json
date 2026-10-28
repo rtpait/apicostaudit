@@ -2,9 +2,9 @@
   "schema_version": "2.0.0",
   "domain": "apicostaudit.com",
   "product_name": "API Cost Audit",
-  "current_version_tag": "v1.2.0",
-  "prior_version_tag": "v1.1.0",
-  "updated_at_cdt": "2026-10-28T07:35:00-05:00",
+  "current_version_tag": "v1.3.0",
+  "prior_version_tag": "v1.2.0",
+  "updated_at_cdt": "2026-10-28T08:25:00-05:00",
   "po_agent_id": "bc09e0d9-5fae-487c-b526-020d9aac1bd1",
   "po_name": "SaaS Cost Audit PO (API_COSTS)",
   "hub_pm_agent_id": "9c1c413e-5df2-4d17-a576-11713450fceb",
@@ -19,7 +19,10 @@
     "quarantined_cohort_1_routes": 4,
     "route_spec_ceiling": 64,
     "single_home_calculators": [
-      "llm-token-calc"
+      "llm-token-calc",
+      "gpu-cloud-tco-calc",
+      "vector-db-cost-calc",
+      "observability-cost-calc"
     ],
     "aeo_endpoints": [
       "/llms.txt",
@@ -32,7 +35,7 @@
     "drip_gate_status": "HOLD_AWAITING_75PCT_GSC_INDEXATION"
   },
   "live_measured_actuals": {
-    "as_of_utc": "2026-10-28T12:35:00Z",
+    "as_of_utc": "2026-10-28T13:24:00Z",
     "gsc_dns_txt_verified": true,
     "gsc_indexed_html_routes": 0,
     "gsc_total_html_routes": 17,
@@ -41,10 +44,13 @@
     "live_llm_queries_30d": 0,
     "live_outbound_affiliate_clicks_30d": 0,
     "live_confirmed_partner_revenue_usd": 0.0,
-    "commercial_cta_4axis_parity": "187/187 (100% API_COSTS exclusive, 0 foreign keys, 0 leaked calculators)"
+    "commercial_cta_4axis_parity": "214/214 (100% API_COSTS exclusive, 22 Awin Bark US MID 58887 CPL links, 0 foreign keys, 0 leaked calculators)",
+    "gsc_url_inspection_queue_count": 17,
+    "cfo_preset_buttons_count": 66,
+    "awin_bark_us_58887_cpl_links_count": 22
   },
   "latest_sprint_review": {
-    "sprint_id": "RAPID-BUILD-AUTO-ROTATE-20261028-0830",
+    "sprint_id": "RAPID-BUILD-AUTO-ROTATE-20261028-0918",
     "review_file": "/workspace/apicostaudit/SPRINT-REVIEW-2026-10-28.md",
     "verdict": "ACCEPT"
   }

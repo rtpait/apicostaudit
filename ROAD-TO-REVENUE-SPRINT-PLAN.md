@@ -8,6 +8,21 @@
 
 ---
 
+## 0A. Top-Line Short-Term Goal (#1 Priority — Updated Wednesday, Oct 28, 2026): Improve Natural & Organic SEO Results Broadly
+
+- **#1 Leading Short-Term Goal (Listed First Before Conversion/CRO & Downstream Monetization):** Improve `apicostaudit.com`'s **natural SEO and organic SEO results broadly** across the 17 canonical `API_COSTS` routes (currently `0/17` indexed) by whatever appropriate means are necessary—with **no single tactic mandated as the sole top line**.
+- **Valid Means Toward Natural & Organic SEO Growth:**
+  - **Indexation, Crawlability & GSC Verification:** Completing GSC `sc-domain:apicostaudit.com` verification + `sitemap.xml` submission once caller clicks Verify, and queuing all 17 canonical `API_COSTS` routes for GSC URL Inspection.
+  - **AEO Schemas & Agentic Discovery:** `HowTo`, `FAQPage`, `SoftwareApplication`, and `Dataset` JSON-LD structured data alongside `/llms.txt`, `/llms-full.txt`, and `/.well-known/webmcp.json`.
+  - **Technical Benchmark Depth & Title/Meta CTR Optimization:** LLM per-1M token & prompt-caching math, GPU cloud hourly TCO, serverless vector DB read/write units, observability ingestion benchmarks, internal/cross-family link equity, and price-anchored title/meta CTR optimization.
+- **Preserved Calculator & Monetization Deliverables:**
+  1. **One-Click Engineering/CTO Preset Scenarios** on `llm-token-calc`, `gpu-cloud-tco-calc`, `vector-db-cost-calc`, and `observability-cost-calc`.
+  2. **Awin (`3133124` incl. DigitalOcean GPU & Bark US `MID 58887`) / PartnerStack (`ElevenLabs`, `Pinecone`, `n8n`) / CJ (`8108003`) API infrastructure partner activation** across `100%` of `API_COSTS.*` 4-axis slots.
+- **Explicit Sequencing Annotation (Organic SEO -> Downstream Revenue Unlocks):**
+  - **Organic SEO visibility and GSC verification across the 17 canonical `API_COSTS` routes directly unlock downstream `API_COSTS.*` affiliate commission conversions and Cohort 1 expansion.**
+
+---
+
 ## 0. Principle 1 Enforcement: Live Measured Ground Truth vs. Quarantined Target Hypotheses
 
 > **Principle 1 Rule ("Measured Truth First"):** Every phase, dashboard, and sprint review must lead with **absolute live measured metrics** and strictly quarantine modeled projections inside a collapsed drawer badged `HYPOTHESIS / TARGET MODEL — NOT LIVE TELEMETRY`.

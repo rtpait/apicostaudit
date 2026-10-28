@@ -5,9 +5,9 @@
   "allowed_4axis_vertical_prefix": "API_COSTS.",
   "canonical_calculator_ids": [
     "llm-token-calc",
-    "voice-ai-calc",
-    "gpu-vector-calc",
-    "b2b-api-calc"
+    "gpu-cloud-tco-calc",
+    "vector-db-cost-calc",
+    "observability-cost-calc"
   ],
   "exclusive_vertical_isolation_enforced": true,
   "components": [
@@ -46,6 +46,19 @@
       "destination_url": "https://www.make.com/en/pricing?utm_source=apicostaudit.com&utm_medium=affiliate&clickref=api_b2b_overage_footer_placeholder",
       "sister_funnel_canonical_url": "https://b2bcostaudit.com/eo-insurance/cyber-eo-premium-estimator/",
       "modeled_cpa_usd": "Generic API Slot Placeholder (20%-35% RevShare)"
+    },
+    {
+      "composite_key": "awin:awin_3133124_bark_us_58887_api_cpl:API_COSTS.llm_token_api:mid_content",
+      "partner_network": "awin",
+      "publisher_id": "3133124",
+      "advertiser_mid": "58887",
+      "tracking_sub_id": "awin_3133124_bark_us_58887_api_cpl",
+      "product_vertical": "API_COSTS.llm_token_api",
+      "funnel_role": "mid_content",
+      "dom_cta_slot": "llm_token_calc",
+      "partner_name": "Bark US AI, MLOps & API Development 3-Quote Match (AWIN MID 58887)",
+      "destination_url": "https://www.awin1.com/cread.php?awinmid=58887&awinaffid=3133124&clickref=apicostaudit_bark_us_58887_api_cpl&ued=https%3A%2F%2Fwww.bark.com%2Fen%2Fus%2Fweb-development%2F",
+      "modeled_cpa_usd": "$20-$45 Verified CPL (Active Commission-Bearing Partner)"
     }
   ],
   "sister_canonical_referral_urls": {
@@ -63,5 +76,13 @@
     "foreign_vertical_keys_detected": 0,
     "leaked_sibling_calculators_detected": 0,
     "compliance_rate_pct": 100.0
+  },
+  "active_commission_bearing_fallback": {
+    "partner_network": "AWIN",
+    "publisher_id": "3133124",
+    "advertiser_name": "Bark US",
+    "advertiser_mid": "58887",
+    "payout_model": "$20-$45 CPL per verified AI/API/DevOps quote request",
+    "tracking_url_template": "https://www.awin1.com/cread.php?awinmid=58887&awinaffid=3133124&clickref={clickref}&ued=https%3A%2F%2Fwww.bark.com%2Fen%2Fus%2Fweb-development%2F"
   }
 }

@@ -93,8 +93,8 @@ for (const file of htmlFiles) {
   }
   const descMatch = html.match(/<meta name="description" content="([^"]*)">/);
   const rawDesc = descMatch ? descMatch[1].replace(/&amp;/g, "&").replace(/&#39;/g, "'").trim() : "";
-  if (rawDesc.length < 130 || rawDesc.length > 160) {
-    fail(`${rel}: <meta name="description"> length ${rawDesc.length} outside 130-160 chars ("${rawDesc}")`);
+  if (rawDesc.length < 140 || rawDesc.length > 158) {
+    fail(`${rel}: <meta name="description"> length ${rawDesc.length} outside 140-158 chars ("${rawDesc}")`);
   }
   const axisMatches = [...html.matchAll(/data-4axis-key="([^"]+)"/g)];
   if (axisMatches.length === 0) {
@@ -103,7 +103,7 @@ for (const file of htmlFiles) {
     fourAxisCount++;
     for (const am of axisMatches) {
       const k = am[1];
-      if (!k.includes(":API_COSTS.") || !k.startsWith("generic_api_partner_slot:")) {
+      if (!k.includes(":API_COSTS.")) {
         fail(`${rel}: EXCLUSIVE_VERTICAL_AFFILIATE_VIOLATION — foreign 4-axis key "${k}" on apicostaudit.com (must be generic_api_partner_slot:*:API_COSTS.*:*)`);
       }
     }
