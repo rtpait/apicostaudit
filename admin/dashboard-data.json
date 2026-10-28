@@ -1,7 +1,7 @@
 {
   "schema_version": "6.1.0-b2b-family-unified-admin",
-  "generated_at_utc": "2026-10-28T12:37:50Z",
-  "generated_at_edt": "Oct 28, 2026, 08:37:50 AM EDT",
+  "generated_at_utc": "2026-10-28T13:04:49Z",
+  "generated_at_edt": "Oct 28, 2026, 09:04:49 AM EDT",
   "posthog_project_id": 685354,
   "encrypted_bundle_path": "/admin/admin-telemetry.enc.json",
   "b2b_family_leader_chasing_parity": {
@@ -94,7 +94,7 @@
       "name": "API Cost Audit (API_COSTS)",
       "tile_title": "APICostAudit.com Analytics",
       "console_title": "API Cost Audit (API_COSTS) \u2014 Live Visitors & LLM Query Console",
-      "subtitle": "Metered LLM Token APIs, Prompt Caching, Voice AI Per-Minute, Serverless GPU, Vector DB & B2B APIs (17 Canonical Routes / 18 Built)",
+      "subtitle": "Metered LLM Token APIs, Prompt Caching, Voice AI Per-Minute, Serverless GPU, Vector DB & B2B APIs (17 Routes)",
       "is_main_default": false,
       "posthog_project_id": "685354",
       "total_html_routes": 17,
@@ -102,7 +102,7 @@
         "/llms.txt",
         "/.well-known/webmcp.json"
       ],
-      "guardrail_summary": "Active Footprint: 17 Canonical API_COSTS HTML Pages (18 Built incl. /admin/). Chasing Family Leader b2bfeeaudit.com. Current GSC Indexed: 0 / 17 (0.0% \u2014 Cohort 1 locked until >=13/17).",
+      "guardrail_summary": "Active Footprint: 17 HTML Pages (/llm-api/*, /voice-video-api/*, /ai-infra-gpu/*, /b2b-apis/*). Chasing Family Leader b2bfeeaudit.com. Current GSC Indexed: 0 / 17 (0.0%).",
       "third_mini_metric": {
         "label": "GSC Indexed Pages",
         "value": "0 / 17 (0.0%)"

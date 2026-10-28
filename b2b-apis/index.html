@@ -32,6 +32,8 @@
 
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does API Cost Audit calculate 12-month LLM token, prompt caching, and Batch API TCO?","acceptedAnswer":{"@type":"Answer","text":"Our deterministic calculator separates uncached input tokens, cached prefix read tokens (90% off on Anthropic Claude 4.5, 75% off on Google Gemini 2.5, 50% off on OpenAI GPT-5/GPT-4o), and output tokens, then applies the 50% asynchronous 24-hour Batch API discount to the percentage of workloads routed through batch queues."}},{"@type":"Question","name":"When does self-hosting Llama 4 or DeepSeek on H100 GPUs beat managed LLM token APIs?","acceptedAnswer":{"@type":"Answer","text":"A single H100 80GB GPU on RunPod ($2.69/hr), Vast.ai ($1.89/hr), or DigitalOcean GPU Droplets ($2.99/hr) costs ~$1,380 to $2,180/month and sustains ~450M–900M tokens/month via vLLM continuous batching. Once your monthly frontier API bill exceeds ~$2,000/month with steady utilization, dedicated GPU pods reduce unit token cost by 55%–78%."}},{"@type":"Question","name":"Why do Voice AI agents cost $0.14–$0.24/minute in production despite $0.05/min headline pricing?","acceptedAnswer":{"@type":"Answer","text":"Headline orchestrator pricing (such as Vapi at $0.05/min) covers only the orchestration layer. Production calls stack Speech-to-Text (Deepgram Nova-3 at $0.0043–$0.01/min), LLM turn-by-turn context tokens ($0.02–$0.06/min), Text-to-Speech (ElevenLabs Flash/Turbo at $0.035–$0.06/min), and SIP trunking + FCC USF/E911 taxes ($0.015/min)."}},{"@type":"Question","name":"How does the 4-Axis Affiliate Taxonomy and Cross-Family Traffic Funnel work on apicostaudit.com?","acceptedAnswer":{"@type":"Answer","text":"Every commercial slot is tagged with <partner_network>:<tracking_sub_id>:<product_vertical>:<funnel_role> across top_of_page, mid_content, and footer. Where direct LLM APIs (like OpenAI or Anthropic) have no affiliate program, we pair generic API infrastructure slots (GPU cloud, Vector DBs, Voice AI) with direct funnels to our sister properties: SaaSCostAudit.com (per-seat SaaS/UCaaS), B2BFeeAudit.com (Stripe vs. Interchange-Plus payment fees), and B2BCostAudit.com (AI Tech E&O & Cyber Liability insurance)."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Audit 2026 API, LLM Token, GPU & Vector DB TCO: B2B API Cost Calculator: Twilio, Auth0, Clerk & Plaid Audit","description":"Audit 2026 B2B API pricing: Twilio SMS ($0.0083/seg + 10DLC fees), Auth0 vs Clerk vs WorkOS MAU/SSO cliffs, Plaid per-call fees & Make/n8n webhook overages.","totalTime":"PT2M","step":[{"@type":"HowToStep","position":1,"name":"Load a One-Click CTO/CFO Scenario Preset or Enter Volume","text":"Select a pre-configured Engineering/CTO preset (RAG Chatbot, Agentic Coding Loop, High-Throughput Batch ETL, H100 vLLM Pod, or Vector/Observability workload) or enter your monthly token, GPU hour, vector RU, or log GB volume."},{"@type":"HowToStep","position":2,"name":"Model Prompt Caching (90% Off) & 24h Batch API (50% Off)","text":"Adjust your cached prefix read hit rate (90% off on Claude 4.5 Sonnet/Opus, 75% off on Gemini 2.5, 50% off on OpenAI GPT-5/GPT-4o) and asynchronous Batch API share."},{"@type":"HowToStep","position":3,"name":"Compare Self-Hosted H100 GPU Breakeven & Export FinOps CSV","text":"Compare annual API spend against dedicated H100 GPU pods on DigitalOcean/RunPod ($1.89-$2.99/hr), Pinecone vs. Qdrant vector storage, and export your board-ready FinOps CSV."}]}</script>
+
 <script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);posthog.init("phc_v89RLR6JhvrN3Hy7mmWPBSQqVGwFAr7dPLpLan9Pjky8",{api_host:"https://us.i.posthog.com",defaults:"2025-05-24",person_profiles:"identified_only"});try{posthog.register({product_domain:"apicostaudit.com",sister_family_group:"b2b-audit-family",category_key:"API_COSTS",is_headless_or_webdriver:Boolean(navigator.webdriver||(window.screen&&window.screen.width===800&&window.screen.height===600)),analytics_filter_policy:"3_bucket_analytics_only_no_edge_block"});}catch(e){}(function(){try{var r=(document.referrer||"").toLowerCase(),u=(navigator.userAgent||"").toLowerCase(),q=new URLSearchParams(window.location.search),s=((q.get("utm_source")||"")+" "+(q.get("utm_medium")||"")).toLowerCase(),b=r+" "+u+" "+s,m=null;if(b.indexOf("gptbot")!==-1||b.indexOf("oai-searchbot")!==-1||b.indexOf("chatgpt")!==-1||b.indexOf("openai")!==-1)m="ChatGPT / OpenAI";else if(b.indexOf("perplexitybot")!==-1||b.indexOf("perplexity")!==-1)m="Perplexity AI";else if(b.indexOf("claudebot")!==-1||b.indexOf("claude")!==-1||b.indexOf("anthropic")!==-1)m="Claude / Anthropic";else if(b.indexOf("gemini")!==-1||b.indexOf("google-extended")!==-1)m="Google Gemini";else if(b.indexOf("copilot")!==-1)m="Microsoft Copilot";if(m&&window.posthog&&typeof window.posthog.capture==="function"){window.posthog.capture("llm_query",{ai_source:m,product_domain:"apicostaudit.com",topic:document.title,route_slug:window.location.pathname,query_url:window.location.href,referrer:document.referrer||"$direct"});}}catch(e){}})();</script>
 </head><body>
 <nav class="family-top-bar" aria-label="B2B Audit Family Cross-Domain Network Switcher">
@@ -110,6 +112,11 @@
     <span class="badge-agent">🧮 DETERMINISTIC 2026 LLM TOKEN, PROMPT CACHING (90% OFF) &amp; BATCH API (50% OFF) CALCULATOR</span>
     <h2 style="margin:.35rem 0 .2rem;border-top:0;padding-top:0">Compare OpenAI GPT-5/GPT-4o, Claude 4.5 Sonnet &amp; Opus, Gemini 2.5 Pro &amp; Flash, DeepSeek R1/V3 &amp; Llama 4</h2>
     <p style="margin:0;font-size:.93rem;color:#334155">Adjust monthly input/output token volume (in millions), prompt cache hit rate, and asynchronous 24h Batch API share to audit exact monthly and 12-month API spend—plus your self-hosted H100 GPU breakeven point:</p>
+    <div class="calc-preset-bar" role="group" aria-label="One-Click CTO &amp; Engineering LLM Token Scenario Presets" style="display:flex;flex-wrap:wrap;gap:.45rem;margin:.55rem 0 .25rem">
+      <button type="button" class="ltc-preset-btn" data-cfo-preset="rag_support_bot" data-cto-preset="rag_support_bot" data-in="80" data-out="20" data-cache="65" data-batch="10" style="font-size:.78rem;padding:.28rem .6rem;border-radius:4px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-weight:600;color:#1e293b">⚡ Preset 1: Production RAG Support Bot (80M In / 20M Out, 65% Cache Hit)</button>
+      <button type="button" class="ltc-preset-btn" data-cfo-preset="agentic_coding_loop" data-cto-preset="agentic_coding_loop" data-in="450" data-out="90" data-cache="75" data-batch="15" style="font-size:.78rem;padding:.28rem .6rem;border-radius:4px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-weight:600;color:#1e293b">🤖 Preset 2: Agentic Coding &amp; Tool Loop (450M In / 90M Out, 75% Cache Hit)</button>
+      <button type="button" class="ltc-preset-btn" data-cfo-preset="enterprise_batch_etl" data-cto-preset="enterprise_batch_etl" data-in="1500" data-out="350" data-cache="50" data-batch="80" style="font-size:.78rem;padding:.28rem .6rem;border-radius:4px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-weight:600;color:#1e293b">🏦 Preset 3: High-Throughput Batch ETL (1.5B In / 350M Out, 80% Batch API)</button>
+    </div>
   </div>
   <div class="calc-controls-grid">
     <div class="calc-field">
@@ -162,6 +169,9 @@
       <small>Gemini 2.5 Pro / Flash</small>
       <strong class="calc-big" id="ltc-gemini-yr">$4,007/yr</strong>
       <span class="calc-sub" id="ltc-gemini-sub">Pro: $334/mo ($1.25/$10) · Flash: $301/yr ($0.15/$0.60)</span>
+      <div style="margin-top:.55rem">
+        <a class="cta-secondary tbl-cta-btn" data-partner="Bark US (AI &amp; API Dev Quotes)" data-cta-slot="llm_token_calc" data-funnel-role="mid_content" data-4axis-key="awin:awin_3133124_bark_58887_llm_calc_b2b-apis-hub:API_COSTS.llm_token_api:mid_content" data-route-slug="b2b-apis-hub" data-clickref="apicostaudit_llm_calc_b2b-apis-hub_bark_58887" href="https://www.awin1.com/cread.php?awinmid=58887&amp;awinaffid=3133124&amp;clickref=apicostaudit_llm_calc_b2b-apis-hub_bark_58887&amp;ued=https%3A%2F%2Fwww.bark.com%2Fen%2Fus%2Fweb-development%2F" target="_blank" rel="sponsored nofollow noopener">Compare 3 AI Dev Quotes (Bark US) →</a>
+      </div>
     </div>
     <div class="calc-vendor-card vendor-best">
       <small>DeepSeek R1/V3 &amp; Llama 4</small>
@@ -227,11 +237,103 @@
     outEl.addEventListener("input", function(){ outRange.value = outEl.value; compute(true); });
   }
   [cacheEl, batchEl].forEach(function(el){ if (el) el.addEventListener("input", function(){ compute(true); }); });
+  document.querySelectorAll(".ltc-preset-btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      inEl.value = btn.getAttribute("data-in") || "120";
+      if (inRange) inRange.value = inEl.value;
+      outEl.value = btn.getAttribute("data-out") || "30";
+      if (outRange) outRange.value = outEl.value;
+      cacheEl.value = btn.getAttribute("data-cache") || "50";
+      batchEl.value = btn.getAttribute("data-batch") || "25";
+      compute(true);
+    });
+  });
   compute(false);
 })();
 </script>
 
 
+
+
+
+
+<section class="tco-calc-box" id="observability-cost-calc" data-calc-type="observability_cost_calc" data-route-slug="b2b-apis-hub" aria-label="Interactive B2B API, Twilio 10DLC, Webhook and Observability Ingestion Cost Calculator">
+  <div>
+    <span class="badge-agent">📡 DETERMINISTIC 2026 B2B API, TWILIO 10DLC, WEBHOOK &amp; OBSERVABILITY INGESTION CALCULATOR</span>
+    <h2 style="margin:.35rem 0 .2rem;border-top:0;padding-top:0">Calculate Twilio SMS + 10DLC Carrier Fees, Verify OTPs ($0.05) &amp; Log/Trace Observability Overages</h2>
+    <p style="margin:0;font-size:.92rem;color:#334155">Model monthly SMS segments, 2FA OTP verifications, and API log/trace ingestion (GB) to expose hidden carrier surcharges and webhook automation savings:</p>
+    <div class="calc-preset-bar" role="group" aria-label="One-Click CTO B2B API &amp; Observability Scenario Presets" style="display:flex;flex-wrap:wrap;gap:.45rem;margin:.55rem 0 .25rem">
+      <button type="button" class="obs-preset-btn" data-cfo-preset="obs_saas_startup_50k" data-cto-preset="obs_saas_startup_50k" data-sms="50000" data-otp="10000" data-logs="200" style="font-size:.78rem;padding:.28rem .6rem;border-radius:4px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-weight:600;color:#1e293b">⚡ Preset 1: SaaS Startup (50k SMS + 10k Verify OTPs + 200 GB Logs/mo)</button>
+      <button type="button" class="obs-preset-btn" data-cfo-preset="obs_fintech_250k" data-cto-preset="obs_fintech_250k" data-sms="250000" data-otp="60000" data-logs="1000" style="font-size:.78rem;padding:.28rem .6rem;border-radius:4px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-weight:600;color:#1e293b">🏢 Preset 2: Mid-Market FinTech (250k SMS + 60k OTPs + 1 TB Logs/mo)</button>
+      <button type="button" class="obs-preset-btn" data-cfo-preset="obs_ent_platform_1m" data-cto-preset="obs_ent_platform_1m" data-sms="1000000" data-otp="250000" data-logs="5000" style="font-size:.78rem;padding:.28rem .6rem;border-radius:4px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-weight:600;color:#1e293b">🏦 Preset 3: High-Volume B2B Platform (1M SMS + 250k OTPs + 5 TB Logs/mo)</button>
+    </div>
+  </div>
+  <div class="calc-controls-grid">
+    <div class="calc-field">
+      <label for="obc-sms">Monthly US SMS Segments: <span id="obc-sms-lbl">250,000</span></label>
+      <input type="number" id="obc-sms" min="1000" max="10000000" step="10000" value="250000">
+    </div>
+    <div class="calc-field">
+      <label for="obc-otp">Monthly 2FA Verify OTP Checks: <span id="obc-otp-lbl">60,000</span></label>
+      <input type="number" id="obc-otp" min="0" max="2000000" step="5000" value="60000">
+    </div>
+    <div class="calc-field">
+      <label for="obc-logs">Monthly API Log &amp; Trace Ingestion (GB): <span id="obc-logs-lbl">1,000 GB</span></label>
+      <input type="number" id="obc-logs" min="10" max="50000" step="100" value="1000">
+    </div>
+  </div>
+  <div class="calc-output-grid" style="margin-top:.75rem">
+    <div class="calc-vendor-card">
+      <small>Twilio SMS ($0.0118 all-in) + Verify ($0.05) + Datadog Logs ($2.50/GB)</small>
+      <strong class="calc-big" id="obc-incumbent-yr">$101,400/yr</strong>
+      <span class="calc-sub" id="obc-incumbent-sub">Incl. $0.0035/seg 10DLC carrier pass-through + $0.05 OTP surcharge</span>
+      <div style="margin-top:.55rem">
+        <a class="cta tbl-cta-btn" data-partner="Make.com / n8n (PartnerStack)" data-cta-slot="observability_cost_calc" data-funnel-role="mid_content" data-4axis-key="partnerstack:ps_api_make_obs_b2b-apis-hub:API_COSTS.b2b_metered_apis:mid_content" data-route-slug="b2b-apis-hub" data-clickref="apicostaudit_obs_calc_b2b-apis-hub_make" href="https://www.make.com/en/pricing?utm_source=apicostaudit.com&amp;utm_medium=affiliate&amp;clickref=apicostaudit_obs_calc_b2b-apis-hub_make" target="_blank" rel="sponsored nofollow noopener">Optimize Webhook &amp; API Routing →</a>
+      </div>
+    </div>
+    <div class="calc-vendor-card vendor-best">
+      <small>Optimized Stack (Telnyx $0.0075 + Passkeys + OpenTelemetry Sampling)</small>
+      <strong class="calc-big" id="obc-opt-yr">$34,500/yr</strong>
+      <span class="calc-sub" id="obc-opt-sub">Saves $66,900/yr eliminating $0.05 OTP tax &amp; noisy log indexing</span>
+      <div style="margin-top:.55rem">
+        <a class="cta-secondary tbl-cta-btn" data-partner="Bark US (B2B API &amp; Cloud FinOps Quotes)" data-cta-slot="observability_cost_calc" data-funnel-role="mid_content" data-4axis-key="awin:awin_3133124_bark_58887_obs_b2b-apis-hub:API_COSTS.b2b_metered_apis:mid_content" data-route-slug="b2b-apis-hub" data-clickref="apicostaudit_obs_calc_b2b-apis-hub_bark_58887" href="https://www.awin1.com/cread.php?awinmid=58887&amp;awinaffid=3133124&amp;clickref=apicostaudit_obs_calc_b2b-apis-hub_bark_58887&amp;ued=https%3A%2F%2Fwww.bark.com%2Fen%2Fus%2Fweb-development%2F" target="_blank" rel="sponsored nofollow noopener">Compare 3 API FinOps Quotes (Bark US) →</a>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var box = document.getElementById("observability-cost-calc");
+  if (!box) return;
+  var sEl = document.getElementById("obc-sms");
+  var oEl = document.getElementById("obc-otp");
+  var lEl = document.getElementById("obc-logs");
+  function fmt(n) { return "$" + Math.round(n).toLocaleString("en-US"); }
+  function compute() {
+    var sms = Math.max(0, parseInt(sEl.value || "250000", 10));
+    var otp = Math.max(0, parseInt(oEl.value || "60000", 10));
+    var logs = Math.max(0, parseInt(lEl.value || "1000", 10));
+    document.getElementById("obc-sms-lbl").textContent = sms.toLocaleString("en-US");
+    document.getElementById("obc-otp-lbl").textContent = otp.toLocaleString("en-US");
+    document.getElementById("obc-logs-lbl").textContent = logs.toLocaleString("en-US") + " GB";
+    var incYr = ((sms * 0.0118) + (otp * 0.0618) + (logs * 2.50)) * 12;
+    var optYr = ((sms * 0.0075) + (otp * 0.008) + (logs * 0.52)) * 12;
+    document.getElementById("obc-incumbent-yr").textContent = fmt(incYr) + "/yr";
+    document.getElementById("obc-opt-yr").textContent = fmt(optYr) + "/yr";
+    document.getElementById("obc-opt-sub").textContent = "Saves " + fmt(Math.max(0, incYr - optYr)) + "/yr vs. unoptimized Twilio + Datadog stack";
+  }
+  [sEl, oEl, lEl].forEach(function(el){ if (el) el.addEventListener("input", compute); });
+  box.querySelectorAll(".obs-preset-btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      sEl.value = btn.getAttribute("data-sms") || "250000";
+      oEl.value = btn.getAttribute("data-otp") || "60000";
+      lEl.value = btn.getAttribute("data-logs") || "1000";
+      compute();
+    });
+  });
+  compute();
+})();
+</script>
 
 
 
