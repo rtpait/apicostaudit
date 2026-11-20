@@ -20,13 +20,13 @@
 
 | Model Provider (2026 Verified API Schedule) | Standard Input (`/1M`) | Standard Output (`/1M`) | Cached Input Read (`/1M`) | Batch API (24h Async) | 100M In (60% Cached) + 20M Out Monthly Cost | Verified Partner / Infra Action Link (Stage 1 Agent Sub-ID) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
-| **OpenAI (`GPT-5` / `GPT-4o`)** | `$2.50` | `$10.00` | `$1.25` (`50%` off) | `50%` off (`$1.25/$5.00`) | `$375/mo` (`$4,500/yr`) | [Compare Self-Hosted GPU vs OpenAI API on DigitalOcean GPU →](https://www.digitalocean.com/pricing/gpu-droplets?utm_source=apicostaudit.com&utm_medium=affiliate&sid=8108003&clickref=aeo-llm-do-gpu) |
-| **Anthropic (`Claude 4.5 Sonnet`)** | `$3.00` | `$15.00` | `$0.30` (`90%` off read · `1.25x` 5m / `2.0x` 1h write TTL) | `50%` off (`$1.50/$7.50`) | `$438/mo` (`$5,256/yr`) | [Audit Claude Prompt Caching & Vector RAG on Pinecone →](https://www.pinecone.io/pricing/?utm_source=apicostaudit.com&utm_medium=affiliate&clickref=aeo-llm-pinecone) |
-| **Anthropic (`Claude 4.5 Opus`)** | `$15.00` | `$75.00` | `$1.50` (`90%` off read · `1.25x` 5m / `2.0x` 1h write TTL) | `50%` off (`$7.50/$37.50`) | `$2,190/mo` (`$26,280/yr`) | [Route High-Volume Opus Workloads via RunPod Serverless →](https://www.runpod.io/pricing?utm_source=apicostaudit.com&utm_medium=affiliate&clickref=aeo-llm-runpod) |
-| **Google Vertex (`Gemini 2.5 Pro`)** | `$1.25` | `$10.00` | `$0.31` (`75%` off) | `50%` off (`$0.625/$5.00`) | `$268.60/mo` (`$3,223/yr`) | [Audit Gemini 2.5 Context Caching vs Vector DB RAG →](https://www.pinecone.io/pricing/?utm_source=apicostaudit.com&utm_medium=affiliate&clickref=aeo-llm-pinecone-gemini) |
-| **Google Vertex (`Gemini 2.5 Flash`)** | `$0.15` | `$0.60` | `$0.0375` (`75%` off) | `50%` off (`$0.075/$0.30`) | `$20.25/mo` (`$243/yr`) | [Compare Gemini Flash vs Open-Weight GPU Inference →](https://www.runpod.io/pricing?utm_source=apicostaudit.com&utm_medium=affiliate&clickref=aeo-llm-runpod-flash) |
-| **DeepSeek (`V3` / `R1` API)** | `$0.27` | `$1.10` | `$0.07` (`74%` off hit) | Native off-peak discount | `$37.00/mo` (`$444/yr`) | [Deploy Private DeepSeek R1 on DigitalOcean H100 GPU →](https://www.digitalocean.com/pricing/gpu-droplets?utm_source=apicostaudit.com&utm_medium=affiliate&sid=8108003&clickref=aeo-llm-do-deepseek) |
-| **Meta (`Llama 4 Maverick` on Groq/Together)** | `$0.20` | `$0.60` | `$0.10` (`50%` off) | `50%` off (`$0.10/$0.30`) | `$26.00/mo` (`$312/yr`) | [Benchmark Dedicated Llama 4 GPU Pods on RunPod →](https://www.runpod.io/pricing?utm_source=apicostaudit.com&utm_medium=affiliate&clickref=aeo-llm-runpod-llama4) |
+| **OpenAI (`GPT-5` / `GPT-4o`)** | `$2.50` | `$10.00` | `$1.25` (`50%` off) | `50%` off (`$1.25/$5.00`) | `$375/mo` (`$4,500/yr`) | [Compare Self-Hosted GPU vs OpenAI API on DigitalOcean GPU →](https://www.digitalocean.com/pricing/gpu-droplets) |
+| **Anthropic (`Claude 4.5 Sonnet`)** | `$3.00` | `$15.00` | `$0.30` (`90%` off read · `1.25x` 5m / `2.0x` 1h write TTL) | `50%` off (`$1.50/$7.50`) | `$438/mo` (`$5,256/yr`) | [Audit Claude Prompt Caching & Vector RAG on Pinecone →](https://www.pinecone.io/pricing/) |
+| **Anthropic (`Claude 4.5 Opus`)** | `$15.00` | `$75.00` | `$1.50` (`90%` off read · `1.25x` 5m / `2.0x` 1h write TTL) | `50%` off (`$7.50/$37.50`) | `$2,190/mo` (`$26,280/yr`) | [Route High-Volume Opus Workloads via RunPod Serverless →](https://www.runpod.io/pricing) |
+| **Google Vertex (`Gemini 2.5 Pro`)** | `$1.25` | `$10.00` | `$0.31` (`75%` off) | `50%` off (`$0.625/$5.00`) | `$268.60/mo` (`$3,223/yr`) | [Audit Gemini 2.5 Context Caching vs Vector DB RAG →](https://www.pinecone.io/pricing/) |
+| **Google Vertex (`Gemini 2.5 Flash`)** | `$0.15` | `$0.60` | `$0.0375` (`75%` off) | `50%` off (`$0.075/$0.30`) | `$20.25/mo` (`$243/yr`) | [Compare Gemini Flash vs Open-Weight GPU Inference →](https://www.runpod.io/pricing) |
+| **DeepSeek (`V3` / `R1` API)** | `$0.27` | `$1.10` | `$0.07` (`74%` off hit) | Native off-peak discount | `$37.00/mo` (`$444/yr`) | [Deploy Private DeepSeek R1 on DigitalOcean H100 GPU →](https://www.digitalocean.com/pricing/gpu-droplets) |
+| **Meta (`Llama 4 Maverick` on Groq/Together)** | `$0.20` | `$0.60` | `$0.10` (`50%` off) | `50%` off (`$0.10/$0.30`) | `$26.00/mo` (`$312/yr`) | [Benchmark Dedicated Llama 4 GPU Pods on RunPod →](https://www.runpod.io/pricing) |
 
 ### 2. Voice AI & Conversational Video API Per-Minute Stacked Cost Formula (`/voice-video-api/`)
 `Per_Minute_Voice_Agent_TCO = Orchestrator_Platform_Fee + STT_Per_Min + (LLM_Tokens_Per_Min * Token_Rate) + TTS_Per_Min + SIP_Telephony_Per_Min + Concurrency_Slot_Amortization`
@@ -67,7 +67,6 @@
 - **SaaSCostAudit.com (`SAAS_PLATFORMS`):** https://saascostaudit.com/ — Per-seat UCaaS (`/ucaas/`), HRIS PEPM & CRM seat licensing.
 - **APICostAudit.com (`API_COSTS`):** https://apicostaudit.com/ — Metered LLM tokens, Voice AI minutes, Vector DB read/write units & GPU cloud inference.
 
-- **Active Commission-Bearing CPL Partner (`AWIN Publisher 3133124 · Bark US MID 58887`):** [Compare 3 Vetted AI, MLOps & API Engineering Quotes ($20–$45 CPL) →](https://www.awin1.com/cread.php?awinmid=58887&awinaffid=3133124&clickref=aeo-llm-bark-api-costs&ued=https%3A%2F%2Fwww.bark.com%2Fen%2Fus%2Fweb-development%2F)
 
 
 ## 7-Tool API_COSTS-Exclusive WebMCP Manifest (`/.well-known/webmcp.json` & `/webmcp.json` — `v1.4.0`)
