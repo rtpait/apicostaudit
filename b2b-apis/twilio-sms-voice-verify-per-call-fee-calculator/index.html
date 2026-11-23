@@ -67,12 +67,12 @@
 
 <div class="verified-gov-bar" role="region" aria-label="Regulatory and Rate Card Verification Status">
   <span class="verified-gov-badge">✓ Verified 2026 API Rate Cards &amp; .gov Benchmarks · 2026-10-27</span>
-  <a class="gov-seal-pill" href="#official-sources" title="Jump to primary .gov and vendor rate card citations">🏛️ NIST AI RMF (AI 600-1) · FCC USF Telecom Rules · FTC 16 CFR Part 255 (.gov)</a>
+  <a class="gov-seal-pill" href="#official-sources">🏛️ NIST AI RMF (AI 600-1) · FCC USF Telecom Rules · FTC 16 CFR Part 255 (.gov)</a>
 </div>
 
 
 <h1>Twilio SMS ($0.0083/Segment + 10DLC Carrier Fees), Voice &amp; Verify OTP ($0.05) API Cost Calculator (2026)</h1>
-<p><strong>True All-In Twilio Messaging &amp; OTP Math:</strong> Twilio's headline $0.0083/SMS rate excludes AT&amp;T/T-Mobile/Verizon 10DLC carrier pass-through fees ($0.003–$0.005/segment), A2P campaign registration fees, and FCC USF telecom surcharges.</p>
+<p><strong>True All-In Twilio Messaging &amp; OTP Math:</strong> Twilio's headline $0.0083/SMS rate excludes AT&amp;T/T-Mobile/Verizon 10DLC carrier pass-through fees ($0.0035–$0.005 per outbound long-code segment, Twilio US table, Nov 2026), A2P campaign registration fees, and FCC USF telecom surcharges.</p>
 
 
 
@@ -85,11 +85,11 @@
   <ul class="verdict-list">
     <li class="verdict-item">
       <span class="verdict-tag tag-winner">🏆 12-MONTH TCO WINNER</span>
-      <div>True all-in Twilio US SMS cost is $0.0118–$0.0135/segment (+42% above headline $0.0083). Switching OTPs from Twilio Verify ($0.05/success + SMS segment) to passkeys/email or Telnyx saves 55%–78%.</div>
+      <div>True all-in Twilio US long-code SMS cost is $0.0118–$0.0133/segment (+42% to +60% above the headline $0.0083, depending on the recipient's carrier). Switching OTPs from Twilio Verify ($0.05/success + SMS segment) to passkeys/email or Telnyx saves 55%–78%.</div>
     </li>
     <li class="verdict-item">
       <span class="verdict-tag tag-trap">⚠️ HIDDEN API BILL TRAP</span>
-      <div>Twilio Verify charges $0.05 per successful verification ON TOP OF the underlying SMS segment + carrier fee ($0.012), making each SMS 2FA login cost ~$0.062.</div>
+      <div>Twilio Verify charges $0.05 per successful verification ON TOP OF the $0.0083 SMS segment. If the long-code carrier fees below apply ($0.0035–$0.005), a one-SMS 2FA login costs ~$0.062–$0.063.</div>
     </li>
     <li class="verdict-item">
       <span class="verdict-tag tag-action">⚡ RECOMMENDED FINOPS ACTION</span>
@@ -101,6 +101,32 @@
     <a class="cta-secondary verdict-btn" data-cta-slot="verdict_card" data-funnel-role="top_of_page" data-route-slug="twilio-sms-voice-verify-per-call-fee-calculator" data-calc-inputs='{"slot":"verdict_top_2"}' href="https://elevenlabs.io/pricing" target="_blank" rel="nofollow noopener">Audit ElevenLabs &amp; Voice AI Per-Minute API Rates →</a>
   </div>
 </section>
+
+<section class="box" id="twilio-us-rates-2026-11" aria-label="Twilio US SMS and Verify rates checked November 23, 2026">
+  <h2 style="margin-top:.35rem;border-top:0;padding-top:0">Twilio US SMS &amp; Verify Rates (checked Nov 23, 2026)</h2>
+  <p>Read from Twilio's US SMS pricing page ("Pricing current as of November 2026") and Verify pricing page ("Pricing current as of October 2026") on November 23, 2026. Twilio notes prices may change without notice.<a href="#src-5"><sup>[5]</sup></a><a href="#src-6"><sup>[6]</sup></a></p>
+  <div class="table-wrap">
+  <table class="price-action-table">
+    <thead>
+      <tr><th class="sticky-col">Line item (US)</th><th>Twilio price</th><th>All-in per outbound long-code SMS</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="sticky-col">SMS outbound or inbound (long code, toll-free, short code)</td><td>$0.0083 per segment</td><td>Base rate before carrier fees</td></tr>
+      <tr><td class="sticky-col">Carrier fee: AT&amp;T (long code, outbound SMS)</td><td>$0.0035 per segment</td><td>$0.0118</td></tr>
+      <tr><td class="sticky-col">Carrier fee: T-Mobile (long code, outbound SMS)</td><td>$0.0045 per segment</td><td>$0.0128</td></tr>
+      <tr><td class="sticky-col">Carrier fee: Verizon (long code, outbound SMS)</td><td>$0.005 per segment</td><td>$0.0133</td></tr>
+      <tr><td class="sticky-col">Carrier fee: US Cellular (long code, outbound SMS)</td><td>$0.005 per segment</td><td>$0.0133</td></tr>
+      <tr><td class="sticky-col">Carrier fee: all other carriers (long code, outbound SMS)</td><td>$0.0042 per segment</td><td>$0.0125</td></tr>
+      <tr><td class="sticky-col">MMS outbound (long code)</td><td>$0.022 per message, plus carrier fee ($0.007–$0.01)</td><td>n/a</td></tr>
+      <tr><td class="sticky-col">Failed message processing fee</td><td>$0.001 per message that ends in "Failed"</td><td>n/a</td></tr>
+      <tr><td class="sticky-col">Long code phone number (Twilio leased)</td><td>$1.15 per month (toll-free $2.15)</td><td>n/a</td></tr>
+      <tr><td class="sticky-col">Verify, SMS channel</td><td>$0.05 per successful verification + $0.0083 per SMS</td><td>$0.0583 before carrier fees; ~$0.0618–$0.0633 if the long-code carrier fees above apply</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><small>A2P 10DLC registration onboarding fees also apply; Twilio's pricing page does not list the amounts. Verify charges the $0.05 fee only for successful verifications, but SMS delivery attempts are billed even when the user never completes the flow.</small></p>
+</section>
+
 
 
 
@@ -285,9 +311,9 @@
   </div>
   <div class="calc-output-grid" style="margin-top:.75rem">
     <div class="calc-vendor-card">
-      <small>Twilio SMS ($0.0118 all-in) + Verify ($0.05) + Datadog Logs ($2.50/GB)</small>
+      <small>Twilio SMS ($0.0118 all-in at the AT&amp;T carrier fee) + Verify ($0.05) + Datadog Logs ($2.50/GB)</small>
       <strong class="calc-big" id="obc-incumbent-yr">$101,400/yr</strong>
-      <span class="calc-sub" id="obc-incumbent-sub">Incl. $0.0035/seg 10DLC carrier pass-through + $0.05 OTP surcharge</span>
+      <span class="calc-sub" id="obc-incumbent-sub">Incl. $0.0035/seg 10DLC carrier pass-through (AT&amp;T; other carriers $0.0042–$0.005) + $0.05 OTP surcharge</span>
       <div style="margin-top:.55rem">
         <a class="cta tbl-cta-btn" data-cta-slot="observability_cost_calc" data-funnel-role="mid_content" data-route-slug="twilio-sms-voice-verify-per-call-fee-calculator" href="https://www.make.com/en/pricing" target="_blank" rel="nofollow noopener">Optimize Webhook &amp; API Routing →</a>
       </div>
@@ -528,6 +554,10 @@
   <li id="src-3"><a href="https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-255" rel="nofollow noopener" target="_blank">FTC 16 CFR Part 255 — Guides Concerning the Use of Endorsements and Testimonials in Advertising (.gov)</a> <small>(verified 2026-10-27)</small></li>
   
   <li id="src-4"><a href="https://www.pinecone.io/pricing/" rel="nofollow noopener" target="_blank">Published October 2026 API Pricing Schedules (OpenAI, Anthropic, Google Vertex AI, DeepSeek, ElevenLabs, Deepgram, Retell AI, Vapi, Pinecone, Qdrant, RunPod, DigitalOcean, Twilio)</a> <small>(verified 2026-10-27)</small></li>
+  
+  <li id="src-5"><a href="https://www.twilio.com/en-us/sms/pricing/us" rel="nofollow noopener" target="_blank">Twilio: SMS Pricing in United States (pricing current as of November 2026)</a> <small>(verified 2026-11-23)</small></li>
+  
+  <li id="src-6"><a href="https://www.twilio.com/en-us/verify/pricing" rel="nofollow noopener" target="_blank">Twilio: Verify Pricing (pricing current as of October 2026)</a> <small>(verified 2026-11-23)</small></li>
   
 </ol>
 
